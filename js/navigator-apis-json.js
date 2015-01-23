@@ -352,7 +352,7 @@ function buildAPIsJSONEditor(apisJSON)
 	
     howmanyincludes = apisJSONIncludes.length;
 
-    if(howmanyapis>0)
+    if(howmanyincludes>0)
     	{	
 	
 	 	$html = APIJSONNavigatorGetIncludeSpacer();
