@@ -82,6 +82,9 @@ function APISJSONSave()
         auth: "oauth"
             });
         
+	console.log('org2: ' + $org);
+	console.log('repo2: ' + $repo);        
+        
 	var repo = github.getRepo($org,$repo);  	
 
 	repo.getTree('gh-pages', function(err, tree) {
