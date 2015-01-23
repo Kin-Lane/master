@@ -16,8 +16,6 @@ function SwaggerShowMe($row)
 	$thisrow = $row.id;			
 	$thisslug = $thisrow.replace("-icon","");
 	
-	//console.log('viewing: ' + $thisslug);
-		
 	$thisrow = document.getElementById($thisslug).style.display;
 
 	if($thisrow=='none')
@@ -79,7 +77,7 @@ function SwaggerSave()
         auth: "oauth"
             });
         
-	var repo = github.getRepo('Stack-Network','blog');  	
+	var repo = github.getRepo($org,$repo);  	
 
 	repo.getTree('gh-pages', function(err, tree) {
 		
