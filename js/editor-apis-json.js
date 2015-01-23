@@ -81,10 +81,7 @@ function APISJSONSave()
         token: $oAuth_Token,
         auth: "oauth"
             });
-        
-	console.log('org2: ' + $org);
-	console.log('repo2: ' + $repo);        
-        
+          
 	var repo = github.getRepo($org,$repo);  	
 
 	repo.getTree('gh-pages', function(err, tree) {
@@ -99,7 +96,7 @@ function APISJSONSave()
 			
 			if($path=='apis.json')
 				{	
-				console.log($path + ' - ' + $sha);							
+				//console.log($path + ' - ' + $sha);							
 			    repo.writemanual('gh-pages', 'apis.json', $WriteAPIsJSON, 'Save', $sha, function(err) { });									
 				}
 			});
