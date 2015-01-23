@@ -723,7 +723,7 @@ function loadAPIsJSONEditor($org,$repo)
 				{							
 			    repo.manualread('gh-pages', $url, $sha, function(err, data) {
 			    	
-			    	console.log(data);	
+			    	//console.log(data);	
 			    	
 			    	$apisJSON = JSON.parse(data);
 
@@ -731,9 +731,9 @@ function loadAPIsJSONEditor($org,$repo)
 			
 					$viewer = JSON.stringify($apisJSON, null, 4);
 					document.getElementById("jsonViewerDetails").value = $viewer;
-					
+					console.log($apisJSON);
 					buildAPIsJSONEditor($apisJSON);
-		    				    	
+		    		console.log("DONE!!");
 			    	});							
 				}
 
