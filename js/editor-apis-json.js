@@ -82,7 +82,7 @@ function APISJSONSave()
         auth: "oauth"
             });
         
-	var repo = github.getRepo('Stack-Network','blog');  	
+	var repo = github.getRepo($org,$repo);  	
 
 	repo.getTree('gh-pages', function(err, tree) {
 		
