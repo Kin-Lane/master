@@ -1267,18 +1267,13 @@ function SwaggerEditDefinitionProperty($definitioncount,$definitionpropertycount
 	$dc = 0;
 	$dpc = 0;
 	$.each($MasterSwagger['definitions'], function(key1, val1) {		
-		$.each(val1['properties'], function(key2, val2) { 
-			
-			console.log(val2);   
-			console.log($definitioncount + ' == ' + $dc + ' && ' + $definitionpropertycount + ' == ' + $dpc);
+		$.each(val1['properties'], function(key2, val2) {   
+			//console.log($definitioncount + ' == ' + $dc + ' && ' + $definitionpropertycount + ' == ' + $dpc);
 			if($definitioncount == $dc && $definitionpropertycount == $dpc)
 				{	
-				console.log(key1 + ' - ' + $property_name);
-
 				$MasterSwagger['definitions'][key1]['properties'][$property_name]['description'] = $property_description;
 				$MasterSwagger['definitions'][key1]['properties'][$property_name]['type'] = $property_type;
-				$MasterSwagger['definitions'][key1]['properties'][$property_name]['format'] = $property_format;
-				
+				$MasterSwagger['definitions'][key1]['properties'][$property_name]['format'] = $property_format;				
 				}	
 			 $dpc++;	
 			});			
