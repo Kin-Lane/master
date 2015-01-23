@@ -314,11 +314,13 @@ function buildAPIsJSONEditor(apisJSON)
     apisJSONMaintainers = apisJSON['maintainers'];	
     
     howmanyapis = apisJSONAPIs.length;
-    console.log(howmanyapis);
-    
- 	$html = APIJSONNavigatorGetAPITitle('APIs');
- 	$('#jsonNavigatorTable').append($html);   	 			 	    
 
+    if(howmanyapis>0)
+    	{
+ 		$html = APIJSONNavigatorGetAPITitle('APIs');
+ 		$('#jsonNavigatorTable').append($html);   	 			 	    
+		}
+		
      $.each(apisJSONAPIs, function(apiKey, apiVal) { 
 
      	 $apiName = apiVal['name']; 
@@ -348,12 +350,19 @@ function buildAPIsJSONEditor(apisJSON)
 		 $apicount++;										
 	});
 	
- 	$html = APIJSONNavigatorGetIncludeSpacer();
- 	$('#jsonNavigatorTable').append($html);   	 
-		
- 	$html = APIJSONNavigatorGetIncludeTitle('Include');
- 	$('#jsonNavigatorTable').append($html);   	 		
+    howmanyincludes = apisJSONIncludes.length;
+
+    if(howmanyapis>0)
+    	{	
 	
+	 	$html = APIJSONNavigatorGetIncludeSpacer();
+	 	$('#jsonNavigatorTable').append($html);   	 
+			
+	 	$html = APIJSONNavigatorGetIncludeTitle('Includes');
+	 	$('#jsonNavigatorTable').append($html);
+	 	   	 		
+		}
+		
      $.each(apisJSONIncludes, function(apiKey, apiVal) { 
 
      	 $includeName = apiVal['name']; 
