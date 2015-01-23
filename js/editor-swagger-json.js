@@ -1137,11 +1137,13 @@ function SwaggerAddDefinitionProperty($definitioncount)
 
 	$property_name = document.getElementById('swagger-api-definition-' + $definitioncount + '-name-add').value;
 	$property_description = document.getElementById('swagger-api-definition-' + $definitioncount + '-description-add').value
-	$property_type = document.getElementById('swagger-api-definition-' + $definitioncount + '-type-add').value	
+	$property_type = document.getElementById('swagger-api-definition-' + $definitioncount + '-type-add').value
+	$property_format = document.getElementById('swagger-api-definition-' + $definitioncount + '-format-add').value	
 
 	$PropertyDetailArray = {};	  
 	$PropertyDetailArray['description'] = $property_description;
 	$PropertyDetailArray['type'] = $property_type;
+	$PropertyDetailArray['format'] = $property_format;
 
 	$dc = 0;
 	$dpc = 0;
@@ -1188,7 +1190,12 @@ function SwaggerGetAddDefinitionProperty($definitioncount)
     html = html + '<tr>';
     html = html + '<td align="right" width="35%" style="font-size: 12px;"><strong>Type:</strong></td>';
     html = html + '<td align="left" style="background-color:#FFF; font-size: 12px;"><input type="text" id="swagger-api-definition-' + $definitioncount + '-type-add" style="width: 75%; height: 25px; border: 1px solid #000;" /></td>';
-    html = html + '</tr>'                              
+    html = html + '</tr>'   
+    
+    html = html + '<tr>';
+    html = html + '<td align="right" width="35%" style="font-size: 12px;"><strong>Format:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF; font-size: 12px;"><input type="text" id="swagger-api-definition-' + $definitioncount + '-format-add" style="width: 75%; height: 25px; border: 1px solid #000;" /></td>';
+    html = html + '</tr>'                                
     
     html = html + '<tr>';
     html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" name="SwaggerAddSwaggerPathVerbTagButton" value="Add" onclick="SwaggerAddDefinitionProperty(' + $definitioncount + ');" /></td>';
@@ -1227,7 +1234,7 @@ function SwaggerGetDefinitionPropertyTitle($definitioncount)
 	return html; 			
 	}		
 	
-function SwaggerGetDefinitionProperty($property_name,$property_description,$property_type,$definitioncount,$definitionpropertycount)
+function SwaggerGetDefinitionProperty($property_name,$property_description,$property_type,$property_format,$definitioncount,$definitionpropertycount)
 	{		
     html = '<tr>';
     html = html + '<td align="center" valign="top" colspan="2" id="apisjsonHeaderCell">';
@@ -1255,6 +1262,7 @@ function SwaggerEditDefinitionProperty($definitioncount,$definitionpropertycount
 	$property_name = document.getElementById('swagger-api-definition-' + $definitioncount + '-property-' + $definitionpropertycount + '-name-edit').value;
 	$property_description = document.getElementById('swagger-api-definition-' + $definitioncount + '-property-' + $definitionpropertycount + '-description-edit').value;	
 	$property_type = document.getElementById('swagger-api-definition-' + $definitioncount + '-property-' + $definitionpropertycount + '-type-edit').value;		
+	$property_format = document.getElementById('swagger-api-definition-' + $definitioncount + '-property-' + $definitionpropertycount + '-format-edit').value;
 
 	$dc = 0;
 	$dpc = 0;
@@ -1268,6 +1276,7 @@ function SwaggerEditDefinitionProperty($definitioncount,$definitionpropertycount
 
 				$MasterSwagger['definitions'][key1]['properties'][$property_name]['description'] = $property_description;
 				$MasterSwagger['definitions'][key1]['properties'][$property_name]['type'] = $property_type;
+				$MasterSwagger['definitions'][key1]['properties'][$property_name]['format'] = $property_format;
 				
 				}	
 			 $dpc++;	
@@ -1280,7 +1289,7 @@ function SwaggerEditDefinitionProperty($definitioncount,$definitionpropertycount
 
 	}	
 	
-function SwaggerGetEditDefinitionProperty($property_name,$property_description,$property_type,$definitioncount,$definitionpropertycount)
+function SwaggerGetEditDefinitionProperty($property_name,$property_description,$property_type,$property_format,$definitioncount,$definitionpropertycount)
 	{		
 		
     html = '<tr id="edit-definition-' + $definitioncount + '" style="display: none;">';
@@ -1305,7 +1314,12 @@ function SwaggerGetEditDefinitionProperty($property_name,$property_description,$
     html = html + '<tr>';
     html = html + '<td align="right" width="35%" style="font-size: 12px;""><strong>Type:</strong></td>';
     html = html + '<td align="left" style="background-color:#FFF;font-size: 12px;"><select id="swagger-api-definition-' + $definitioncount + '-property-' + $definitionpropertycount + '-type-edit" style=""><option value="' + $property_type + '">' + $property_type + '</option><option value="string">string</option><option value="integer">integer</option></select></td>';
-    html = html + '</tr>'                        
+    html = html + '</tr>'   
+    
+    html = html + '<tr>';
+    html = html + '<td align="right" width="35%" style="font-size: 12px;""><strong>Format:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;font-size: 12px;"><select id="swagger-api-definition-' + $definitioncount + '-property-' + $definitionpropertycount + '-format-edit" style=""><option value="' + $property_format + '">' + $property_format + '</option><option value=""></option><option value="id">id</option><option value="label">label</option></select></td>';
+    html = html + '</tr>'                          
     
     html = html + '<tr>';
     html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" name="SwaggerEditDefinitionPropertyButton" value="Save" onclick="SwaggerEditDefinitionProperty(' + $definitioncount + ',' + $definitionpropertycount + ');" /></td>';
@@ -1451,7 +1465,7 @@ function buildSwaggerEditor(Swagger)
         		$parameter_required = parameterValue['required'];
         		$parameter_type = parameterValue['type'];
         		$parameter_format = parameterValue['format'];           	 		
-     	 		console.log("format: " + $parameter_format);
+     	 		//console.log("format: " + $parameter_format);
      	 		
 				$html = SwaggerGetPathVerbParameter($parameter_name,$parameter_in,$parameter_desc,$parameter_required,$parameter_type,$parameter_format,$pathcount,$pathverbcount,$pathverbpropertycount);
 				$('#swaggerEditorTable').append($html); 
@@ -1542,12 +1556,13 @@ function buildSwaggerEditor(Swagger)
       			{
       			$definition_property_desc = "";	
       			}
-      		$definition_property_type = definitionPropertyValue['type'];	
+      		$definition_property_type = definitionPropertyValue['type'];
+      		$definition_property_format = definitionPropertyValue['format'];		
 
-			$html = SwaggerGetDefinitionProperty(definitionProperyKey,$definition_property_desc,$definition_property_type,$definitioncount,$definitionpropertycount);
+			$html = SwaggerGetDefinitionProperty(definitionProperyKey,$definition_property_desc,$definition_property_type,$definition_property_format,$definitioncount,$definitionpropertycount);
 			$('#swaggerEditorTable').append($html);	
 			
-			$html = SwaggerGetEditDefinitionProperty(definitionProperyKey,$definition_property_desc,$definition_property_type,$definitioncount,$definitionpropertycount);
+			$html = SwaggerGetEditDefinitionProperty(definitionProperyKey,$definition_property_desc,$definition_property_type,$definition_property_format,$definitioncount,$definitionpropertycount);
 			$('#swaggerEditorTable').append($html);							
 
 			$definitionpropertycount++;
