@@ -695,12 +695,9 @@ function loadPropertyTypes()
          	  	
     }
 
-function loadAPIsJSONEditor()
+function loadAPIsJSONEditor($apisjsonURL)
     {
-
-    $apisjsonURL = '/blog/apis.json';
-
-    //console.log($apisjsonURL);
+    console.log('starting!');
     
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
@@ -742,7 +739,8 @@ function buildAPIsJSONEditor(apisJSON)
 
 	{
 	$apisJSONName = apisJSON['name'];
- 	//console.log($apisJSONName);
+ 	console.log($apisJSONName);
+ 	
  	$apisJSONDesc = apisJSON['description'];
  	$apisJSONLogo = apisJSON['image'];
  	$apisJSONURL = apisJSON['url'];
