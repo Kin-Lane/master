@@ -1285,7 +1285,7 @@ function SwaggerEditDefinitionProperty($definitioncount,$definitionpropertycount
 		});	
 
 	// Need a Rebuild
-	rebuildSwaggerditor();
+	//rebuildSwaggerditor();
 
 	}	
 	
