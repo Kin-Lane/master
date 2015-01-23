@@ -708,11 +708,15 @@ function loadAPIsJSONEditor($org,$repo)
 	// go through master branch
 	repo.getTree('gh-pages', function(err, tree) {
 		$.each(tree, function(treeKey, treeValue) {
+					
+			console.log(treeValue);		
 							
 			// not sure why I have to do through the tree, but it is only way that works				
 			$path = treeValue['path'];
 			$url = treeValue['url'];
 			$sha = treeValue['sha'];
+
+			console.log($path);	
 
 			// Pull in api-config
 			if($path=='apis.json')
