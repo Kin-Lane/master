@@ -91,8 +91,8 @@ function SwaggerSave()
 			//console.log($path);
 			if($path=='swagger.json')
 				{
-				console.log('writing to: ' + $path);
-				console.log('writing: ' + $WriteAPIsJSON);							
+				//console.log('writing to: ' + $path);
+				//console.log('writing: ' + $WriteAPIsJSON);							
 			    repo.writemanual('gh-pages', 'swagger.json', $WriteAPIsJSON, 'Save', $sha, function(err) { });									
 				}
 			});
@@ -1451,6 +1451,7 @@ function buildSwaggerEditor(Swagger)
         		$parameter_required = parameterValue['required'];
         		$parameter_type = parameterValue['type'];
         		$parameter_format = parameterValue['format'];           	 		
+     	 		console.log("format: " + $parameter_format);
      	 		
 				$html = SwaggerGetPathVerbParameter($parameter_name,$parameter_in,$parameter_desc,$parameter_required,$parameter_type,$parameter_format,$pathcount,$pathverbcount,$pathverbpropertycount);
 				$('#swaggerEditorTable').append($html); 
