@@ -732,7 +732,9 @@ function loadAPIsJSONEditor($org,$repo)
 					$viewer = JSON.stringify($apisJSON, null, 4);
 					document.getElementById("jsonViewerDetails").value = $viewer;
 					console.log($apisJSON);
+					
 					buildAPIsJSONEditor($apisJSON);
+					
 		    		console.log("DONE!!");
 			    	});							
 				}
@@ -760,7 +762,8 @@ function rebuildAPIsJSONEditor()
 function buildAPIsJSONEditor(apisJSON)
 	{
 		
-	console.log('building!');	
+	console.log(apisJSON);
+	console.log('hello!');	
 		
 	$apisJSONName = apisJSON['name'];
 	
