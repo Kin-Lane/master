@@ -1267,7 +1267,9 @@ function SwaggerEditDefinitionProperty($definitioncount,$definitionpropertycount
 	$dc = 0;
 	$dpc = 0;
 	$.each($MasterSwagger['definitions'], function(key1, val1) {		
-		$.each(val1, function(key2, val2) {    
+		$.each(val1, function(key2, val2) { 
+			
+			console.log(val2);   
 			console.log($definitioncount + ' == ' + $dc + ' && ' + $definitionpropertycount + ' == ' + $dpc);
 			if($definitioncount == $dc && $definitionpropertycount == $dpc)
 				{	
