@@ -699,7 +699,7 @@ function loadAPIsJSONEditor($apisjsonURL)
     {
     console.log('starting!');
     
-	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
+	$.getJSON($apisjsonURL, function(apisJSON) { 													
 
 		// Set our Master Store
 		$MasterAPISJSON = apisJSON;
@@ -709,14 +709,7 @@ function loadAPIsJSONEditor($apisjsonURL)
 		
 		buildAPIsJSONEditor(apisJSON);
 
-	});	
-
-	// Set another completion function for the request above
-	jqxhr.complete(function() {
-		
-	  	document.getElementById("jsonEditor").style.display=''; 
-	  	                 
-        });		  
+		});	  
          	  	
     } 
     
