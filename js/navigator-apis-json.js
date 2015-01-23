@@ -48,38 +48,6 @@ function APISJSONQuestions()
 		}
 	}	
 
-function APISJSONSave()
-	{
-
-  	$WriteAPIsJSON = JSON.stringify($MasterAPISJSON);
-    $WriteAPIsJSON = JSON.stringify(JSON.parse($WriteAPIsJSON),null,2); 	
-
-    var github = new Github({
-        token: $oAuth_Token,
-        auth: "oauth"
-            });
-        
-	var repo = github.getRepo('Stack-Network','blog');  	
-
-	repo.getTree('gh-pages', function(err, tree) {
-		
-		// This is a workaround hack to get sha, as the github.js getSha doesn't seem to be working and I couldn't fix.
-		// I'm looping through the tree to get sha, and then manually passing it to updates, and deletes
-		
-		$.each(tree, function(treeKey, treeValue) {
-			
-			$path = treeValue['path'];
-			$sha = treeValue['sha'];
-			
-			if($path=='apis.json')
-				{	
-				console.log($path + ' - ' + $sha);							
-			    repo.writemanual('gh-pages', 'apis.json', $WriteAPIsJSON, 'Save', $sha, function(err) { });									
-				}
-			});
-		});  	    	
-	}
-
 // Header
 
 function APIJSONNavigatorAPIJSONNavigatorSaveAPIs()
