@@ -237,8 +237,8 @@ function APIJSONNavigatorGetIncludeSpacer()
 	html = html + '</tr>';
 	return html; 			
 	}		
-	
-function APIJSONNavigatorGetIncludeListingCell($includeName,$includeUrl,$includecount)
+
+function APIJSONNavigatorGetIncludeListingCell($includeName,$includeRootUrl,$includeUrl,$includecount)
 	{	
 		
 	$thisslug = name.toLowerCase();	
@@ -366,9 +366,11 @@ function buildAPIsJSONEditor(apisJSON)
      $.each(apisJSONIncludes, function(apiKey, apiVal) { 
 
      	 $includeName = apiVal['name']; 
-     	 $includeUrl = apiVal['url'];	 	 
+     	 $includeRootUrl = apiVal['url'];	 
+     	 
+     	 $includeUrl = $includeRootUrl.replace("apis.json","");	 
 		 
-         $html = APIJSONNavigatorGetIncludeListing($includeName,$includeUrl,$apicount)
+         $html = APIJSONNavigatorGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
          $('#jsonNavigatorTable').append($html); 	          
 
 		 $includecount++;										
