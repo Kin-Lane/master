@@ -237,8 +237,8 @@ function APIJSONNavigatorGetIncludeSpacer()
 	html = html + '</tr>';
 	return html; 			
 	}		
-
-function APIJSONNavigatorGetIncludeListingCell($includeName,$includeRootUrl,$includeUrl,$includecount)
+	
+function APIJSONNavigatorGetIncludeListingCell($includeName,$includeUrl,$includecount)
 	{	
 		
 	$thisslug = name.toLowerCase();	
@@ -252,7 +252,7 @@ function APIJSONNavigatorGetIncludeListingCell($includeName,$includeRootUrl,$inc
 	return $html; 			
 	}		
 	
-function APIJSONNavigatorGetIncludeListing($includeName,$includeUrl,$includecount)
+function APIJSONNavigatorGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
 	{	
 		
 	$thisslug = $includeName.toLowerCase();	
@@ -264,7 +264,8 @@ function APIJSONNavigatorGetIncludeListing($includeName,$includeUrl,$includecoun
     
     html = html + '<span style="font-size:16px;">';
     html = html + '<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>';
-    html = html + '      (<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>)';
+    html = html + ' (<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '">site</a>)';
+    html = html + ' (<a href="' + $includeRootUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '">apis.json</a>)';       
     html = html + '</span>';
     
     html = html + '</td>';
@@ -370,7 +371,7 @@ function buildAPIsJSONEditor(apisJSON)
      	 
      	 $includeUrl = $includeRootUrl.replace("apis.json","");	 
 		 
-         $html = APIJSONNavigatorGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
+         $html = APIJSONNavigatorGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$apicount)
          $('#jsonNavigatorTable').append($html); 	          
 
 		 $includecount++;										
