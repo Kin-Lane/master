@@ -708,34 +708,26 @@ function loadAPIsJSONEditor($org,$repo)
 	// go through master branch
 	repo.getTree('gh-pages', function(err, tree) {
 		$.each(tree, function(treeKey, treeValue) {
-					
-			//console.log(treeValue);		
-							
+
 			// not sure why I have to do through the tree, but it is only way that works				
 			$path = treeValue['path'];
 			$url = treeValue['url'];
 			$sha = treeValue['sha'];
 
-			//console.log($path);	
-
 			// Pull in api-config
 			if($path=='apis.json')
 				{							
 			    repo.manualread('gh-pages', $url, $sha, function(err, data) {
-			    	
-			    	//console.log(data);	
-			    	
+
 			    	$apisJSON = JSON.parse(data);
 
 					$MasterAPISJSON = $apisJSON;
 			
 					$viewer = JSON.stringify($apisJSON, null, 4);
 					document.getElementById("jsonViewerDetails").value = $viewer;
-					console.log($apisJSON);
 					
 					buildThisAPIJSONEditor($apisJSON);
-					
-		    		console.log("DONE!!");
+
 			    	});							
 				}
 
@@ -750,8 +742,7 @@ function rebuildThisAPIJSONEditor()
 	$apicount = 0;  
 	$propertycount = 0;    	
 
-	document.getElementById("jsonEditor").innerHTML = '';
-	
+	document.getElementById("jsonEditor").innerHTML = '';	
 	document.getElementById("jsonEditor").innerHTML = '<table cellpadding="3" cellspacing="2" border="0" width="95%" id="jsonEditorTable" style="margin-left: 15px;"></table>';
 
 	// Pull From our Master Store
@@ -764,8 +755,6 @@ function buildThisAPIJSONEditor(apisJSON)
 		
 	$apisJSONName = apisJSON['name'];
 	
- 	//console.log($apisJSONName);
- 	
  	$apisJSONDesc = apisJSON['description'];
  	$apisJSONLogo = apisJSON['image'];
  	$apisJSONURL = apisJSON['url'];
