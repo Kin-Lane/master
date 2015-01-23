@@ -695,23 +695,51 @@ function loadPropertyTypes()
          	  	
     }
 
-function loadAPIsJSONEditor($apisjsonURL)
+function loadAPIsJSONEditor($org,$repo)    
     {
-    console.log('Starting - ' + $apisjsonURL);
-    
-	$.getJSON($apisjsonURL, function(apisJSON) { 													
-
-		// Set our Master Store
-		$MasterAPISJSON = apisJSON;
-
-		$viewer = JSON.stringify(apisJSON, null, 4);
-		document.getElementById("jsonViewerDetails").value = $viewer;
+	
+	$apisjsonURL = 'https://' + $org + '.github.io/' + $repo + '/apis.json';
+	
+	console.log('Starting - ' + $apisjsonURL);
+	
+    var github = new Github({
+        token: $oAuth_Token,
+        auth: "oauth"
+            });
+        
+	var repo = github.getRepo($org,$repo); 		
 		
-		buildAPIsJSONEditor(apisJSON);
+	// go through master branch
+	repo.getTree('master', function(err, tree) {
+		$.each(tree, function(treeKey, treeValue) {
+							
+			// not sure why I have to do through the tree, but it is only way that works				
+			$path = treeValue['path'];
+			$url = treeValue['url'];
+			$sha = treeValue['sha'];
 
-		});	  
+			// Pull in api-config
+			if($path=='apis.json')
+				{							
+			    repo.manualread('gh-pages', $url, $sha, function(err, data) {
+			    	
+			    	$apisJSON = JSON.parse(data);
+			    	
+						// Set our Master Store
+					$MasterAPISJSON = $apisJSON;
+			
+					$viewer = JSON.stringify($apisJSON, null, 4);
+					document.getElementById("jsonViewerDetails").value = $viewer;
+					
+					buildAPIsJSONEditor($apisJSON);
+		    				    	
+			    	});							
+				}
+
+			});							
+		});		  
          	  	
-    } 
+    }     
     
 function rebuildAPIsJSONEditor()
     {
