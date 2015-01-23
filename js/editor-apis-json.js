@@ -695,7 +695,7 @@ function loadPropertyTypes()
          	  	
     }
 	
-function buildAPIsJSONEditor(apisJSON)
+function doit(apisJSON)
 	{
 		
 	console.log(apisJSON);
@@ -742,7 +742,7 @@ function loadAPIsJSONEditor($org,$repo)
 					document.getElementById("jsonViewerDetails").value = $viewer;
 					console.log('HERE: ' + $apisJSON);
 					
-					buildAPIsJSONEditor($apisJSON);
+					doit($apisJSON);
 					
 		    		console.log("DONE!!");
 		    		
