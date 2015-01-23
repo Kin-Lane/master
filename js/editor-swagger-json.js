@@ -1244,7 +1244,7 @@ function SwaggerGetDefinitionProperty($property_name,$property_description,$prop
     html = html + '<tr>';
     html = html + '<td align="left" colspan="2" id="swagger-header-swagger-version-view" style="font-size: 12px;">';
     html = html + '<strong>' + $property_name + '</strong> (' + $property_type + ') - ' + $property_description;
-    html = html + '<a href="#" onclick="SwaggerShowMe(this); return false;" id="edit-definition-' + $definitioncount + '-icon" title="Edit Swagger Header"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="20" align="right"  /></a>';			 
+    html = html + '<a href="#" onclick="SwaggerShowMe(this); return false;" id="edit-definition-' + $definitioncount + '-' + $definitionpropertycount + '-icon" title="Edit Swagger Header"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="20" align="right"  /></a>';			 
     html = html + '</td>';
     html = html + '</tr>';              
 
@@ -1291,8 +1291,8 @@ function SwaggerEditDefinitionProperty($definitioncount,$definitionpropertycount
 	
 function SwaggerGetEditDefinitionProperty($property_name,$property_description,$property_type,$property_format,$definitioncount,$definitionpropertycount)
 	{		
-		
-    html = '<tr id="edit-definition-' + $definitioncount + '" style="display: none;">';
+
+    html = '<tr id="edit-definition-' + $definitioncount + '-' + $definitionpropertycount + '" style="display: none;">';
     html = html + '<td align="center" valign="top" colspan="2">';
 
     html = html + '<table cellpadding="1" cellspacing="1" border="0" width="70%" style="border: 1px solid #000;padding-top5px;">';
