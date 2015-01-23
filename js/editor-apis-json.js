@@ -698,10 +698,6 @@ function loadPropertyTypes()
 function loadAPIsJSONEditor($org,$repo)    
     {
 	
-	$apisjsonURL = 'https://' + $org + '.github.io/' + $repo + '/apis.json';
-	
-	console.log('Starting - ' + $apisjsonURL);
-	
     var github = new Github({
         token: $oAuth_Token,
         auth: "oauth"
@@ -710,7 +706,7 @@ function loadAPIsJSONEditor($org,$repo)
 	var repo = github.getRepo($org,$repo); 		
 		
 	// go through master branch
-	repo.getTree('master', function(err, tree) {
+	repo.getTree('gh-pages', function(err, tree) {
 		$.each(tree, function(treeKey, treeValue) {
 							
 			// not sure why I have to do through the tree, but it is only way that works				
@@ -724,8 +720,7 @@ function loadAPIsJSONEditor($org,$repo)
 			    repo.manualread('gh-pages', $url, $sha, function(err, data) {
 			    	
 			    	$apisJSON = JSON.parse(data);
-			    	
-						// Set our Master Store
+e
 					$MasterAPISJSON = $apisJSON;
 			
 					$viewer = JSON.stringify($apisJSON, null, 4);
