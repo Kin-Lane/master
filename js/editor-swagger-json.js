@@ -1272,7 +1272,7 @@ function SwaggerEditDefinitionProperty($definitioncount,$definitionpropertycount
 			//console.log($definitioncount + ' == ' + $dc + ' && ' + $definitionpropertycount + ' == ' + $dpc);
 			if($definitioncount == $dc && $definitionpropertycount == $dpc)
 				{	
-				//console.log(key1 + ' - ' + key2);
+				console.log(key1 + ' - ' + $property_name);
 
 				$MasterSwagger['definitions'][key1]['properties'][$property_name]['description'] = $property_description;
 				$MasterSwagger['definitions'][key1]['properties'][$property_name]['type'] = $property_type;
