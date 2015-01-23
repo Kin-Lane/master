@@ -462,13 +462,15 @@ function SwaggerAddPathVerbParameter($pathcount,$pathverbcount)
 	$parameter_desc = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-parameter-description-name-add').value;
 	$parameter_required = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-parameter-required-add').value;
 	$parameter_type = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-parameter-type-add').value;
+	$parameter_format = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-parameter-format-add').value;
 
 	$APIPropertyArray = {};	  
 	$APIPropertyArray['name'] = $parameter_name;
 	$APIPropertyArray['in'] = $parameter_in;
 	$APIPropertyArray['description'] = $parameter_desc;	
 	$APIPropertyArray['required'] = $parameter_required;	
-	$APIPropertyArray['type'] = $parameter_type;		
+	$APIPropertyArray['type'] = $parameter_type;
+	$APIPropertyArray['format'] = $parameter_format;		
 
 	$p = 0;
 	$v = 0;
@@ -522,7 +524,12 @@ function SwaggerGetAddPathVerbParameter($pathcount,$pathverbcount)
     html = html + '<tr>';
     html = html + '<td align="right" width="35%" style="font-size: 12px;"><strong>Type:</strong></td>';
     html = html + '<td align="left" style="background-color:#FFF;"font-size: 12px;><select id="swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-parameter-type-add" style=""><option value="string">string</option><option value="integer">integer</option></select></td>';
-    html = html + '</tr>'                    
+    html = html + '</tr>'  
+    
+    html = html + '<tr>';
+    html = html + '<td align="right" width="35%" style="font-size: 12px;"><strong>Format:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"font-size: 12px;><select id="swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-parameter-format-add" style=""><option value=""></option><option value="id">id</option><option value="label">label</option></select></td>';
+    html = html + '</tr>'                       
     
     html = html + '<tr>';
     html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" name="SwaggerAddSwaggerPathVerbParameterButton" value="Add" onclick="SwaggerAddPathVerbParameter(' + $pathcount + ',' + $pathverbcount + ');" /></td>';
@@ -561,7 +568,7 @@ function SwaggerGetPathVerbParameterTitle($pathcount,$pathverbcount,$pathverbpro
 	return html; 			
 	}		
 	
-function SwaggerGetPathVerbParameter($parameter_name,$parameter_in,$parameter_desc,$parameter_required,$parameter_type,$pathcount,$pathverbcount,$pathverbpropertycount)
+function SwaggerGetPathVerbParameter($parameter_name,$parameter_in,$parameter_desc,$parameter_required,$parameter_type,$parameter_format,$pathcount,$pathverbcount,$pathverbpropertycount)
 	{		
     html = '<tr>';
     html = html + '<td align="center" valign="top" colspan="2" id="apisjsonHeaderCell">';
@@ -590,7 +597,8 @@ function SwaggerEditPathVerbParameter($pathcount,$pathverbcount,$pathverbpropert
 	$parameter_desc = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-' + $pathverbpropertycount + '-description-edit').value;
 	$parameter_required = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-' + $pathverbpropertycount + '-required-edit').value;	
 	$parameter_type = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-' + $pathverbpropertycount + '-type-edit').value;		
-
+	$parameter_format = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-' + $pathverbpropertycount + '-format-edit').value;
+	
 	$path_verb_summary = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-summary-edit').value;	
 	$path_verb_desc = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-description-edit').value;	
 	$path_verb_operationid = document.getElementById('swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-operationid-edit').value;	
@@ -607,7 +615,8 @@ function SwaggerEditPathVerbParameter($pathcount,$pathverbcount,$pathverbpropert
 					$MasterSwagger['paths'][key1][key2]['parameters'][key3]['in'] = $parameter_in;
 					$MasterSwagger['paths'][key1][key2]['parameters'][key3]['description'] = $parameter_desc;
 					$MasterSwagger['paths'][key1][key2]['parameters'][key3]['required'] = $parameter_required;
-					$MasterSwagger['paths'][key1][key2]['parameters'][key3]['type'] = $parameter_type;				
+					$MasterSwagger['paths'][key1][key2]['parameters'][key3]['type'] = $parameter_type;
+					$MasterSwagger['paths'][key1][key2]['parameters'][key3]['format'] = $parameter_format;				
 					}
 				 $pp++;
 				});	
@@ -621,7 +630,7 @@ function SwaggerEditPathVerbParameter($pathcount,$pathverbcount,$pathverbpropert
 
 	}	
 	
-function SwaggerGetEditPathVerbParameter($parameter_name,$parameter_in,$parameter_desc,$parameter_required,$parameter_type,$pathcount,$pathverbcount,$pathverbpropertycount)
+function SwaggerGetEditPathVerbParameter($parameter_name,$parameter_in,$parameter_desc,$parameter_required,$parameter_type,$parameter_format,$pathcount,$pathverbcount,$pathverbpropertycount)
 	{		
 		
     html = '<tr id="edit-path-' + $pathcount + '-verb-' + $pathverbcount + '-property-' + $pathverbpropertycount + '" style="display: none;">';
@@ -631,32 +640,37 @@ function SwaggerGetEditPathVerbParameter($parameter_name,$parameter_in,$paramete
     
     html = html + '<tr>';
     html = html + '<td align="center" colspan="2" style="font-size: 12px;"><strong>Edit Parameter</strong></td>';
-    html = html + '</tr>'     
+    html = html + '</tr>';    
     
     html = html + '<tr>';
     html = html + '<td align="right" width="35%" style="font-size: 12px;"><strong>Name:</strong></td>';
     html = html + '<td align="left" style="background-color:#FFF; font-size: 12px;"><input type="text" id="swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-' + $pathverbpropertycount + '-name-edit" value="' + $parameter_name + '" style="width: 75%; height: 25px; border: 1px solid #000;" /></td>';
-    html = html + '</tr>'  
+    html = html + '</tr>'; 
     
     html = html + '<tr>';
     html = html + '<td align="right" width="35%" style="font-size: 12px;""><strong>In:</strong></td>';
     html = html + '<td align="left" style="background-color:#FFF;font-size: 12px;"><select id="swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-' + $pathverbpropertycount + '-in-edit" style=""><option value="' + $parameter_in + '">' + $parameter_in + '</option><option value="query">query</option><option value="path">path</option></select></td>';
-    html = html + '</tr>'  
+    html = html + '</tr>';
     
     html = html + '<tr>';
     html = html + '<td align="right" width="35%" style="font-size: 12px;"><strong>Description:</strong></td>';
     html = html + '<td align="left" style="background-color:#FFF;"font-size: 12px;><input type="text" id="swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-' + $pathverbpropertycount + '-description-edit" value="' + $parameter_desc + '" style="width: 75%; height: 75px; border: 1px solid #000;" /></td>';
-    html = html + '</tr>'      
+    html = html + '</tr>';   
     
     html = html + '<tr>';
     html = html + '<td align="right" width="35%" style="font-size: 12px;"><strong>Required:</strong></td>';
     html = html + '<td align="left" style="background-color:#FFF;"font-size: 12px;><select id="swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-' + $pathverbpropertycount + '-required-edit" style=""><option value="' + $parameter_required + '">' + $parameter_required + '</option><option value="true">true</option><option value="false">false</option></select></td>';
-    html = html + '</tr>'   
+    html = html + '</tr>';  
     
     html = html + '<tr>';
     html = html + '<td align="right" width="35%" style="font-size: 12px;"><strong>Type:</strong></td>';
     html = html + '<td align="left" style="background-color:#FFF;"font-size: 12px;><select id="swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-' + $pathverbpropertycount + '-type-edit" style=""><option value="' + $parameter_type + '">' + $parameter_type + '</option><option value="string">string</option><option value="integer">integer</option></select></td>';
-    html = html + '</tr>'                     
+    html = html + '</tr>';
+    
+    html = html + '<tr>';
+    html = html + '<td align="right" width="35%" style="font-size: 12px;"><strong>Format:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"font-size: 12px;><select id="swagger-api-path-' + $pathcount + '-verb-' + $pathverbcount + '-' + $pathverbpropertycount + '-format-edit" style=""><option value="' + $parameter_format + '">' + $parameter_format + '</option><option value=""></option><option value="id">id</option><option value="label">label</option></select></td>';
+    html = html + '</tr>';                          
     
     html = html + '<tr>';
     html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" name="SwaggerEditPathVerbParameterButton" value="Save" onclick="SwaggerEditPathVerbParameter(' + $pathcount + ',' + $pathverbcount + ',' + $pathverbpropertycount + ');" /></td>';
@@ -1435,12 +1449,13 @@ function buildSwaggerEditor(Swagger)
         		$parameter_in = parameterValue['in']; 
         		$parameter_desc = parameterValue['description']; 
         		$parameter_required = parameterValue['required'];
-        		$parameter_type = parameterValue['type'];         	 		
+        		$parameter_type = parameterValue['type'];
+        		$parameter_format = parameterValue['format'];           	 		
      	 		
-				$html = SwaggerGetPathVerbParameter($parameter_name,$parameter_in,$parameter_desc,$parameter_required,$parameter_type,$pathcount,$pathverbcount,$pathverbpropertycount);
+				$html = SwaggerGetPathVerbParameter($parameter_name,$parameter_in,$parameter_desc,$parameter_required,$parameter_type,$parameter_format,$pathcount,$pathverbcount,$pathverbpropertycount);
 				$('#swaggerEditorTable').append($html); 
 								
-				$html = SwaggerGetEditPathVerbParameter($parameter_name,$parameter_in,$parameter_desc,$parameter_required,$parameter_type,$pathcount,$pathverbcount,$pathverbpropertycount);
+				$html = SwaggerGetEditPathVerbParameter($parameter_name,$parameter_in,$parameter_desc,$parameter_required,$parameter_type,$parameter_format,$pathcount,$pathverbcount,$pathverbpropertycount);
 				$('#swaggerEditorTable').append($html);	  	 
 	 
 	 			$pathverbpropertycount++;
