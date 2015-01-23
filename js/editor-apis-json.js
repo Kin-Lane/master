@@ -720,7 +720,7 @@ function loadAPIsJSONEditor($org,$repo)
 			    repo.manualread('gh-pages', $url, $sha, function(err, data) {
 			    	
 			    	$apisJSON = JSON.parse(data);
-e
+
 					$MasterAPISJSON = $apisJSON;
 			
 					$viewer = JSON.stringify($apisJSON, null, 4);
