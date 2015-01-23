@@ -88,10 +88,12 @@ function SwaggerSave()
 			
 			$path = treeValue['path'];
 			$sha = treeValue['sha'];
-			console.log($path);
-			if($path=='definitions/swagger.json')
-				{							
-			    repo.writemanual('gh-pages', 'definitions/swagger.json', $WriteAPIsJSON, 'Save', $sha, function(err) { });									
+			//console.log($path);
+			if($path=='swagger.json')
+				{
+				console.log('writing to: ' + $path);
+				console.log('writing: ' + $WriteAPIsJSON);							
+			    repo.writemanual('gh-pages', 'swagger.json', $WriteAPIsJSON, 'Save', $sha, function(err) { });									
 				}
 			});
 		});  	    	
