@@ -697,7 +697,7 @@ function loadPropertyTypes()
 
 function loadAPIsJSONEditor($apisjsonURL)
     {
-    console.log('starting!');
+    console.log('starting - ' + $apisjsonURL);
     
 	$.getJSON($apisjsonURL, function(apisJSON) { 													
 
@@ -729,8 +729,9 @@ function rebuildAPIsJSONEditor()
 	}
 	
 function buildAPIsJSONEditor(apisJSON)
-
 	{
+	console.log('building!');	
+		
 	$apisJSONName = apisJSON['name'];
  	console.log($apisJSONName);
  	
