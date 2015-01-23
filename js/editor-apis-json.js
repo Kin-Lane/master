@@ -695,7 +695,7 @@ function loadPropertyTypes()
          	  	
     }
 
-function loadAPIsJSONEditor($org,$repo)    
+function loadAPIsJSONEditor()    
     {
 	
     var github = new Github({
