@@ -771,10 +771,10 @@ function buildThisAPIJSONEditor(apisJSON)
  	$apisJSONURL = apisJSON['url'];
  	
  	// Header	 	
-    $html = APIJSONGetHeader($apisJSONName,$apisJSONDesc,$apisJSONURL,$apisJSONLogo,$apisjsonURL);
+    $html = APIJSONGetHeader($apisJSONName,$apisJSONDesc,$apisJSONURL,$apisJSONLogo,$apisJSONURL);
     $('#jsonEditorTable').append($html); 
     
-    $html = APIJSONGetEditHeader($apisJSONName,$apisJSONDesc,$apisJSONURL,$apisJSONLogo,$apisjsonURL);
+    $html = APIJSONGetEditHeader($apisJSONName,$apisJSONDesc,$apisJSONURL,$apisJSONLogo,$apisJSONURL);
     $('#jsonEditorTable').append($html);         
             
     apisJSONTags = apisJSON['tags'];            
