@@ -759,9 +759,11 @@ function rebuildAPIsJSONEditor()
 	
 function buildAPIsJSONEditor(apisJSON)
 	{
+		
 	console.log('building!');	
 		
 	$apisJSONName = apisJSON['name'];
+	
  	console.log($apisJSONName);
  	
  	$apisJSONDesc = apisJSON['description'];
