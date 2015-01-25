@@ -49,6 +49,10 @@
       "url": "https://kin-lane.github.io/page/apis.json"
     },
     {
+      "name": "Patent API",
+      "url": "https://kin-lane.github.io/patent/apis.json"
+    },    
+    {
       "name": "Video API",
       "url": "https://kin-lane.github.io/video/apis.json"
     }     
