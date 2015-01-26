@@ -250,6 +250,8 @@ function loadAPIsJSONNavigator($apisjsonURL)
 
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
+		console.log("i am in you..."); 
+
 		// Set our Master Store
 		$MasterAPISJSON = apisJSON;
 
