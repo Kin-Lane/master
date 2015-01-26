@@ -247,6 +247,8 @@ function loadAPIsJSONNavigator($apisjsonURL)
     {
 
 	console.log("loading navigator...");
+	
+	console.log($apisjsonURL);
 
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
