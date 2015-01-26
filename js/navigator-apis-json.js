@@ -250,7 +250,7 @@ function loadAPIsJSONNavigator($apisjsonURL)
 	
 	console.log($apisjsonURL);
 
-	$.getJSON($apisjsonURL, function(apisJSON) { 													
+	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
 		console.log("I am in you!..."); 
 
