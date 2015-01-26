@@ -248,16 +248,25 @@ function loadAPIsJSONNavigator($apisjsonURL)
 
 	console.log("loading navigator...");
 
-	$.getJSON($apisjsonURL, function(apisJSON) { 													
+	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
-		console.log("i am in you..."); 
+		console.log("I am in you!..."); 
 
 		// Set our Master Store
 		$MasterAPISJSON = apisJSON;
 
 		buildAPIsJSONNavigator(apisJSON);
 
-		});  
+	});	
+
+	// Set another completion function for the request above
+	jqxhr.complete(function() {
+		
+	  	document.getElementById("jsonNavigator").style.display=''; 
+	  	 
+	  	console.log("done loading navigator..."); 
+	  	                 
+        });		  
          	  	
     } 
 
