@@ -246,6 +246,8 @@ function APIJSONNavigatorGetIncludeListing($includeName,$includeRootUrl,$include
 function loadAPIsJSONNavigator($apisjsonURL)
     {
 
+	console.log("loading navigator...");
+
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
 		// Set our Master Store
@@ -259,6 +261,8 @@ function loadAPIsJSONNavigator($apisjsonURL)
 	jqxhr.complete(function() {
 		
 	  	document.getElementById("jsonNavigator").style.display=''; 
+	  	 
+	  	console.log("done loading navigator..."); 
 	  	                 
         });		  
          	  	
