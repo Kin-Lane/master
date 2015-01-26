@@ -253,7 +253,7 @@ function loadAPIsJSONNavigator($apisjsonURL)
 		// Set our Master Store
 		$MasterAPISJSON = apisJSON;
 
-		buildAPIsJSONEditor(apisJSON);
+		buildAPIsJSONNavigator(apisJSON);
 
 	});	
 
@@ -268,7 +268,7 @@ function loadAPIsJSONNavigator($apisjsonURL)
          	  	
     } 
 
-function buildAPIsJSONEditor(apisJSON)
+function buildAPIsJSONNavigator(apisJSON)
 
 	{
 	$apisJSONName = apisJSON['name'];
