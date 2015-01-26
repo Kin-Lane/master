@@ -248,7 +248,7 @@ function loadAPIsJSONNavigator($apisjsonURL)
 
 	console.log("loading navigator...");
 
-	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
+	$.getJSON($apisjsonURL, function(apisJSON) { 													
 
 		console.log("i am in you..."); 
 
@@ -257,16 +257,7 @@ function loadAPIsJSONNavigator($apisjsonURL)
 
 		buildAPIsJSONNavigator(apisJSON);
 
-	});	
-
-	// Set another completion function for the request above
-	jqxhr.complete(function() {
-		
-	  	document.getElementById("jsonNavigator").style.display=''; 
-	  	 
-	  	console.log("done loading navigator..."); 
-	  	                 
-        });		  
+		});  
          	  	
     } 
 
