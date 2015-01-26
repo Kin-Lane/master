@@ -272,7 +272,7 @@ function buildAPIsJSONEditor(apisJSON)
 
 	{
 	$apisJSONName = apisJSON['name'];
- 	//console.log($apisJSONName);
+ 	console.log($apisJSONName);
  	$apisJSONDesc = apisJSON['description'];
  	$apisJSONLogo = apisJSON['image'];
  	$apisJSONURL = apisJSON['url'];
