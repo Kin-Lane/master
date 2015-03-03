@@ -238,13 +238,9 @@ function loadQuestionEditor()
 
     $.getJSON("api-questions.json", function( data ) {
 		
-		//console.log(data);
+		console.log(data);
 		
-    	$APIQuestion = JSON.parse(data);
-    	
-    	$MasterQuestion = $APIQuestion;
-
-		buildQuestionEditor($MasterQuestion);		
+    		
 									
 		});		  
          	  	
