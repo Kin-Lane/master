@@ -378,7 +378,7 @@ function loadQuestionEditor()
 
 	console.log("loaded question editor...")
 
-    $.getJSON("ajax/test.json", function( data ) {
+    $.getJSON("api-question.json", function( data ) {
 		
 		console.log(data);
 									
