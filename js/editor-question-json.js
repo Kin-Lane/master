@@ -282,7 +282,7 @@ function buildQuestionEditor($APIQuestion)
 
 	$.each($APIQuestion, function($key, $value) { 																										
 
-		console.log($key . " = " . $value);
+		console.log($key + " = " + $value);
 
 		$question_count++;	
 			
