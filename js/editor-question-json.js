@@ -107,7 +107,7 @@ function getAddQuestion()
 	return html; 			
 	}		
 	
-function getQuestion($questionGroupKey,$question_key,$question_value,$question_group_count,$question_count)
+function getQuestion($question_question,$question_answer,$question_count)
 	{	
 
 	html = '<tr id="edit-header"><td align="center" colspan="2" style="font-size: 12px;">';
@@ -120,9 +120,9 @@ function getQuestion($questionGroupKey,$question_key,$question_value,$question_g
     
     html = html + $question_value;
      
-    html = html + '<a href="#" onclick="deleteQuestion(this);" id="delete-' + $questionGroupKey + '-' + $question_group_count + '-' + $question_count + '-icon" title="Delete Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="20" align="right"  /></a>';                     
+    html = html + '<a href="#" onclick="deleteQuestion(this);" id="delete-question' + $question_group_count + '-' + $question_count + '-icon" title="Delete Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="20" align="right"  /></a>';                     
      
-    html = html + '<a href="#" onclick="QuestionShowMe(this); return false;" id="edit-' + $questionGroupKey + '-' + $question_group_count + '-' + $question_count + '-icon" title="Edit Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="20" align="right"  /></a>';
+    html = html + '<a href="#" onclick="QuestionShowMe(this); return false;" id="edit-question' + $question_group_count + '-' + $question_count + '-icon" title="Edit Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="20" align="right"  /></a>';
       
     html = html + '</td>';
     html = html + '</tr>';
@@ -210,18 +210,23 @@ function saveQuestion($button)
 function getEditQuestion($question_question,$question_answer,$question_count)
 	{		
 
-	html = '<tr id="edit-' + $questionGroupKey + '-' + $question_group_count + '-' + $question_count + '" style="display: none;"><td align="center" colspan="2" style="font-size: 12px; background-color:#CCC;">';
+	html = '<tr id="edit-question-' + $question_count + '" style="display: none;"><td align="center" colspan="2" style="font-size: 12px; background-color:#CCC;">';
 
 	html = html + '<strong>Edit Question</strong>';
     html = html + '<table border="0" width="90%">';  
     
     html = html + '<tr>';
-    html = html + '<td align="right" style="background-color:#FFF;"><strong>' + $question_key + ':</strong></td>';
-    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-' + $questionGroupKey + '-' + $question_count + '-value" value="' + $question_value + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '<td align="right" style="background-color:#FFF;"><strong>Question:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-question" value="' + $question_question + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
     html = html + '</tr>';
     
     html = html + '<tr>';
-    html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" id="question-' + $questionGroupKey + '-' + $question_group_count + '-' + $question_count + '-' + $question_key + '-value-button" name="QuestionSave-' + $question_group_count + '-' + $question_count + '-button" value="Save Changes" onclick="saveQuestion(this);" /></td>';
+    html = html + '<td align="right" style="background-color:#FFF;"><strong>Answer:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-answer" value="' + $question_answer + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '</tr>';    
+    
+    html = html + '<tr>';
+    html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" id="question-question-' + $question_count + '-' + $question_key + '-value-button" name="QuestionSave-' + $question_count + '-button" value="Save Changes" onclick="saveQuestion(this);" /></td>';
     html = html + '</tr>'    
     
     html = html + '</table>';
@@ -271,7 +276,7 @@ function buildQuestionEditor($APIQuestion)
 		
 	console.log("building question editor...")
 	
-	console.log($APIQuestion);
+	//console.log($APIQuestion);
 			    	
 	$MasterQuestion = $APIQuestion;
 	
@@ -284,7 +289,14 @@ function buildQuestionEditor($APIQuestion)
 
 	$.each($APIQuestion, function($key, $value) { 																										
 
-		console.log($key + " = " + $value);
+		$question_question = $value['question'];
+		$question_answer = $value['answer'];
+
+		$HTML = getQuestion($question_question,$question_answer,$question_count)
+		$('#jsonQuestionEditorTable').append($HTML);    	
+
+		$HTML = getEditQuestion($question_question,$question_answer,$question_count)
+		$('#jsonQuestionEditorTable').append($HTML); 
 
 		$question_count++;	
 			
