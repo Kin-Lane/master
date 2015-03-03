@@ -268,13 +268,10 @@ function rebuildQuestionEditor($QuestionArray)
 function buildQuestionEditor($APIQuestion)
 	{
 		
-	console.log("building question editor...")
+	console.log("building question editor...123")
 			    	
 	$MasterQuestion = $APIQuestion;
 	
-	$viewer = JSON.stringify($APIQuestion, null, 4);
-	
-	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer;
-																	    		
+	$																    		
 	
 	}
