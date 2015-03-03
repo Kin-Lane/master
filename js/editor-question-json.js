@@ -28,27 +28,27 @@ function QuestionViewEdit()
 		{
 		document.getElementById("jsonQuestionViewer").style.display='none';
 		document.getElementById("jsonQuestionEditor").style.display='';
-		document.getElementById("questionsViewer").style.display='none';
+		document.getElementById("questionViewer").style.display='none';
 		}	
 	else
 		{
 		document.getElementById("jsonQuestionViewer").style.display='';
 		document.getElementById("jsonQuestionEditor").style.display='none';	
-		document.getElementById("questionsViewer").style.display='none';	
+		document.getElementById("questionViewer").style.display='none';	
 		}
 	}
 	
-function QuestionQuestions()
+function QuestionQuestion()
 	{
-	if(document.getElementById("questionsViewer").style.display=='')
+	if(document.getElementById("questionViewer").style.display=='')
 		{
-		document.getElementById("questionsViewer").style.display='none';
+		document.getElementById("questionViewer").style.display='none';
 		document.getElementById("jsonQuestionViewer").style.display='none';
 		document.getElementById("jsonQuestionEditor").style.display='';
 		}	
 	else
 		{
-		document.getElementById("questionsViewer").style.display='';
+		document.getElementById("questionViewer").style.display='';
 		document.getElementById("jsonQuestionViewer").style.display='none';
 		document.getElementById("jsonQuestionEditor").style.display='none';			
 		}
@@ -269,7 +269,7 @@ function loadQuestionEditor()
 
 	console.log("loaded question editor...")
 
-    $.getJSON("api-questions.json", function( data ) {
+    $.getJSON("api-question.json", function( data ) {
 		
 		//console.log(data);
 		
