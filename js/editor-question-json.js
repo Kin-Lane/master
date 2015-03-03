@@ -275,16 +275,6 @@ function buildQuestionEditor($APIQuestion)
 	$viewer = JSON.stringify($APIQuestion, null, 4);
 	
 	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer;
-
-	$HTML = getAddQuestion();
-	$('#jsonQuestionEditorTable').append($HTML);    	
-
-	$.each($APIQuestion, function($key, $value) { 																										
-
-		console.log($key + " = " + $value);
-
-		$question_count++;	
-			
-		});																		    		
+																	    		
 	
 	}
