@@ -115,7 +115,7 @@ function getQuestion($question_question,$question_answer,$question_count)
     html = html + '<table border="1" width="95%">';
     
     html = html + '<tr>';
-    html = html + '<td align="right" style="" width="15%"><strong>' + $question_question + ':</strong></td>';
+    html = html + '<td align="right" style="" width="30%"><strong>' + $question_question + ':</strong></td>';
     html = html + '<td align="left" style="">'
     
     html = html + $question_answer;
