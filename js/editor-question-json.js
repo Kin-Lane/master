@@ -115,14 +115,14 @@ function getQuestion($question_question,$question_answer,$question_count)
     html = html + '<table border="0" width="95%">';
     
     html = html + '<tr>';
-    html = html + '<td align="right" style="" width="15%"><strong>' + $question_key + ':</strong></td>';
+    html = html + '<td align="right" style="" width="15%"><strong>' + $question_question + ':</strong></td>';
     html = html + '<td align="left" style="">'
     
-    html = html + $question_value;
+    html = html + $question_answer;
      
-    html = html + '<a href="#" onclick="deleteQuestion(this);" id="delete-question' + $question_group_count + '-' + $question_count + '-icon" title="Delete Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="20" align="right"  /></a>';                     
+    html = html + '<a href="#" onclick="deleteQuestion(this);" id="delete-question-' + $question_count + '-icon" title="Delete Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="20" align="right"  /></a>';                     
      
-    html = html + '<a href="#" onclick="QuestionShowMe(this); return false;" id="edit-question' + $question_group_count + '-' + $question_count + '-icon" title="Edit Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="20" align="right"  /></a>';
+    html = html + '<a href="#" onclick="QuestionShowMe(this); return false;" id="edit-question-' + $question_count + '-icon" title="Edit Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="20" align="right"  /></a>';
       
     html = html + '</td>';
     html = html + '</tr>';
@@ -226,7 +226,7 @@ function getEditQuestion($question_question,$question_answer,$question_count)
     html = html + '</tr>';    
     
     html = html + '<tr>';
-    html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" id="question-question-' + $question_count + '-' + $question_key + '-value-button" name="QuestionSave-' + $question_count + '-button" value="Save Changes" onclick="saveQuestion(this);" /></td>';
+    html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" id="question-question-' + $question_count + '-value-button" name="QuestionSave-' + $question_count + '-button" value="Save Changes" onclick="saveQuestion(this);" /></td>';
     html = html + '</tr>'    
     
     html = html + '</table>';
