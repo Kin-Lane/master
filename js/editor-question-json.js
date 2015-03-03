@@ -1,9 +1,7 @@
 // Purposely keeping this verbose, and expanded, until I figure out best patterns for question and extensability
 
-$question_group_count = 0;
 $question_count = 0;
 
-	 	
 // The Master 
 $MasterQuestion = "";
 
@@ -56,146 +54,6 @@ function QuestionQuestions()
 		}
 	}
 	
-function saveQuestionFile()
-	{
-
-	$QuestionJSON = JSON.stringify($MasterQuestion, null, 4);		
-
-	// Save The File
-    var github = new Github({
-        token: $oAuth_Token,
-        auth: "oauth"
-            });
-        
-	var repo = github.getRepo('Stack-Network','blog');  	
-
-	repo.getTree('master', function(err, tree) {
-		
-		// This is a workaround hack to get sha, as the github.js getSha doesn't seem to be working and I couldn't fix.
-		// I'm looping through the tree to get sha, and then manually passing it to updates, and deletes
-		
-		$.each(tree, function(treeKey, treeValue) {
-			
-			$path = treeValue['path'];
-			$sha = treeValue['sha'];
-			
-			if($path=='api-question.json')
-				{							
-			    repo.writemanual('master', 'api-question.json', $QuestionJSON, 'Saving question.json', $sha, function(err) { 
-			    	
-			    	document.getElementById("alertarea").innerHTML = 'api-question.json file has been saved';
-			    	
-			    	});									
-				}
-			});
-		}); 	
-
-	}		
-	
-function addQuestionGroup()
-	{
-		
-	$question_group_key = document.getElementById('add-question-group-name').value;
-
-	$questionGroupArray = [];	  
-	$questionGroupArray[$question_group_key] = {};	  
-
- 	$.extend($MasterQuestion, $questionGroupArray);
-
-	rebuildQuestionEditor($MasterQuestion);
-	
-	document.getElementById("alertarea").innerHTML = 'question group has been added';			
-		
-	}	
-	
-function getAddQuestionGroup()
-	{	
-
-	html = '<tr id="add-question-group" style="display: none;"><td align="center" colspan="2" style="font-size: 12px; background-color:#CCC;">';
-
-	html = html + '<strong>Add Question Group</strong>';
-    html = html + '<table border="0" width="90%">';
-    
-    html = html + '<tr>';
-    html = html + '<td align="right" style="background-color:#FFF;"><strong>group:</strong></td>';
-    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="add-question-group-name" value="" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
-    html = html + '</tr>';      
-
-    html = html + '<tr>';
-    html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" name="add-question-group-button" id="add-question-group-button" value="Add" onclick="addQuestionGroup();" /></td>';
-    html = html + '</tr>'     
-    
-    html = html + '</table>';
-    
-    html = html + '<br /></td></tr>'; 
-    	
-	return html; 			
-	}	
-	
-function deleteQuestionGroup($button)
-	{
-		
-	$id = $button.id;
-	var $idArray = $id.split('-');	
-	
-	$question_group_count = $idArray[2];
-
-	$FullArray = $MasterQuestion; 
-	$FullArrayCount =  Object.keys($FullArray).length;
-
-	$MasterQuestion = {};
-	$thisCount = 0;
- 	$.each($FullArray, function(paramKey, paramValue) {
- 		
- 		$thisKey = paramKey;
- 		$thisValue = paramValue;
- 		
- 		if($thisCount != $question_group_count)
- 			{
-
-			$questionGroupObject = [];	  
-			$questionGroupObject[$thisKey] = $thisValue;
-
-		 	$.extend($MasterQuestion, $questionGroupObject);
-	
-			}
-		
-		$thisCount++;
-		
-		if($thisCount == $FullArrayCount)
-			{
-				
-			$viewer = JSON.stringify($MasterQuestion, null, 4);
-	
-			document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer; 	
- 	
- 			rebuildQuestionEditor($MasterQuestion);
- 			 			
-			}
-		
- 		});
- 		
- 	document.getElementById("alertarea").innerHTML = 'question group has been deleted';		
- 	
-	}		
-	
-// Localize Templating, making as editable as possible	
-function getQuestionGroup($question_group_name,$question_group_count)
-	{		
-	html = '<tr>';
-	html = html + '<td colspan="2" style="padding-top: 5px; padding-bottom: 5px;">';
-	html = html + '<span style="font-size:20px;">';
-	html = html + '<strong>' + $question_group_name + '</strong>';
-	
-	html = html + '<a href="#" onclick="deleteQuestionGroup(this); return false;" id="delete-question-' + $question_group_count + '-icon" title="Delete Question Group"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="35" align="right"  /></a>';
-			
-	html = html + '<a href="#" onclick="QuestionShowMe(this); return false;" id="add-question-' + $question_group_count + '-icon" title="Add Question"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-add-circle.png" width="35" align="right"  /></a>';
-	
-	html = html + '</span>';
-	html = html + '</td>';
-	html = html + '</tr>';
-	return html;   				
-	}	
 	
 function addThisQuestion($question)
 	{
@@ -204,13 +62,13 @@ function addThisQuestion($question)
 	console.log($ThisGroup);
 	$question_group_count = $question.name;
 
-	$question_key = document.getElementById('add-question-' + $question_group_count + '-key').value;
-	$question_value = document.getElementById('add-question-' + $question_group_count + '-value').value;
+	$question_question = document.getElementById('add-question-question').value;
+	$question_answer = document.getElementById('add-question-answer').value;
 
-	console.log($question_key + ' - ' + $question_value);
+	console.log($question_question + ' - ' + $question_answer);
 
 	$questionArray = [];	  
-	$questionArray[$question_key] = $question_value;
+	$questionArray[$question_question] = $question_answer;
 
  	$.extend($MasterQuestion[$ThisGroup], $questionArray);
 
@@ -220,26 +78,26 @@ function addThisQuestion($question)
 	
 	}		
 	
-function getAddQuestion($questionGroupKey,$question_group_count)
+function getAddQuestion()
 	{	
 
-	html = '<tr id="add-question-' + $question_group_count + '" style="display: none;"><td align="center" colspan="2" style="font-size: 12px; background-color:#CCC;">';
+	html = '<tr id="add-question" style="display: none;"><td align="center" colspan="2" style="font-size: 12px; background-color:#CCC;">';
 
-	html = html + '<strong>Add Question in ' + $questionGroupKey + '</strong>';
+	html = html + '<strong>Add Question</strong>';
     html = html + '<table border="0" width="90%">';
     
     html = html + '<tr>';
-    html = html + '<td align="right" style="background-color:#FFF;"><strong>key:</strong></td>';
-    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="add-question-' + $question_group_count + '-key" value="" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '<td align="right" style="background-color:#FFF;"><strong>Question:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="add-question-question" value="" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
     html = html + '</tr>';      
     
     html = html + '<tr>';
-    html = html + '<td align="right" style="background-color:#FFF;"><strong>value:</strong></td>';
-    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="add-question-' + $question_group_count + '-value" value="" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '<td align="right" style="background-color:#FFF;"><strong>Answer:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="add-question-answer" value="" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
     html = html + '</tr>';
     
     html = html + '<tr>';
-    html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" name="' + $question_group_count + '" id="' + $questionGroupKey + '" value="Add This Property" onclick="addThisQuestion(this);" /></td>';
+    html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" name="add-question" id="add-question" value="Add This Property" onclick="addThisQuestion(this);" /></td>';
     html = html + '</tr>'     
     
     html = html + '</table>';
@@ -339,7 +197,7 @@ function saveQuestion($button)
 	$question_count = $idArray[3];
 	$question_key = $idArray[4];
 	
-	$question_value = document.getElementById('question-' + $questionGroupKey + '-' + $question_count + '-value').value;
+	$question_value = document.getElementById('question-' + $question_count + '-value').value;
 
  	$MasterQuestion[$questionGroupKey][$question_key] = $question_value;
  		
@@ -349,7 +207,7 @@ function saveQuestion($button)
  	
 	}	
 	
-function getEditQuestion($questionGroupKey,$question_key,$question_value,$question_group_count,$question_count)
+function getEditQuestion($question_question,$question_answer,$question_count)
 	{		
 
 	html = '<tr id="edit-' + $questionGroupKey + '-' + $question_group_count + '-' + $question_count + '" style="display: none;"><td align="center" colspan="2" style="font-size: 12px; background-color:#CCC;">';
@@ -380,7 +238,13 @@ function loadQuestionEditor()
 
     $.getJSON("api-questions.json", function( data ) {
 		
-		console.log(data);
+		//console.log(data);
+		
+    	$APIQuestion = JSON.parse(data);
+    	
+    	$MasterQuestion = $APIQuestion;
+
+		buildQuestionEditor($MasterQuestion);		
 									
 		});		  
          	  	
@@ -403,6 +267,8 @@ function rebuildQuestionEditor($QuestionArray)
 	
 function buildQuestionEditor($APIQuestion)
 	{
+		
+	console.log("building question editor...")
 			    	
 	$MasterQuestion = $APIQuestion;
 	
@@ -410,35 +276,15 @@ function buildQuestionEditor($APIQuestion)
 	
 	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer;
 
-	$HTML = getAddQuestionGroup();
+	$HTML = getAddQuestion();
 	$('#jsonQuestionEditorTable').append($HTML);    	
 
-	$.each($APIQuestion, function(questionGroupKey, $values) { 
+	$.each($APIQuestion, function($key, $value) { 																										
 
-		$HTML = getQuestionGroup(questionGroupKey,$question_group_count);			
-		$('#jsonQuestionEditorTable').append($HTML);    						
-						
-		$HTML = getAddQuestion(questionGroupKey,$question_group_count)			
-		$('#jsonQuestionEditorTable').append($HTML);    																										
-						
-		$.each($values, function(questionKey, questionValue) { 
+		console.log($key . " = " . $value);
 
-			$HTML = getQuestion(questionGroupKey,questionKey,questionValue,$question_group_count,$question_count);		
-			$('#jsonQuestionEditorTable').append($HTML);   	
+		$question_count++;	
 			
-			$HTML = getEditQuestion(questionGroupKey,questionKey,questionValue,$question_group_count,$question_count)		
-			$('#jsonQuestionEditorTable').append($HTML);   							
-			
-			getEditQuestion(questionKey,questionValue,$question_group_count,$question_count)						
-				
-			$question_count++;	
-				
-			});						
-			
-			$question_group_count++;	
-			$question_count = 0;
-												
-		});													    	
-	
+		});																		    		
 	
 	}
