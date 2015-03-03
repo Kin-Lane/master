@@ -270,6 +270,8 @@ function buildQuestionEditor($APIQuestion)
 	{
 		
 	console.log("building question editor...")
+	
+	console.log($APIQuestion);
 			    	
 	$MasterQuestion = $APIQuestion;
 	
