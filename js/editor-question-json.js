@@ -116,12 +116,14 @@ function getQuestion($question_question,$question_answer,$question_host,$questio
     
     html = html + '<tr>';
     html = html + '<td align="right" style="" width="40%"><strong>' + $question_question + ':</strong></td>';
-    html = html + '<td align="left" style="">'
+    html = html + '<td align="left" style="" width="40%">';
     
     html = html + $question_answer;
      
-    html = html + '<a href="#" onclick="deleteQuestion(this);" id="delete-question-' + $question_count + '-icon" title="Delete Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="25" align="right"  /></a>';                     
-     
+    html = html + '</td>'; 
+    html = html + '<td align="center" width="10%">';
+      
+    html = html + '<a href="#" onclick="deleteQuestion(this);" id="delete-question-' + $question_count + '-icon" title="Delete Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="25" align="right"  /></a>';                          
     html = html + '<a href="#" onclick="QuestionShowMe(this); return false;" id="edit-question-' + $question_count + '-icon" title="Edit Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="25" align="right"  /></a>';
       
     html = html + '</td>';
