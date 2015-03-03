@@ -107,22 +107,22 @@ function getAddQuestion()
 	return html; 			
 	}		
 	
-function getQuestion($question_question,$question_answer,$question_count)
+function getQuestion($question_question,$question_answer,$question_host,$question_baseurl,$question_path,$question_method,$question_count)
 	{	
 
 	html = '<tr id="edit-header"><td align="center" colspan="2" style="font-size: 12px;">';
 
-    html = html + '<table border="1" width="95%">';
+    html = html + '<table border="0" width="95%">';
     
     html = html + '<tr>';
-    html = html + '<td align="right" style="" width="30%"><strong>' + $question_question + ':</strong></td>';
+    html = html + '<td align="right" style="" width="50%"><strong>' + $question_question + ':</strong></td>';
     html = html + '<td align="left" style="">'
     
     html = html + $question_answer;
      
-    html = html + '<a href="#" onclick="deleteQuestion(this);" id="delete-question-' + $question_count + '-icon" title="Delete Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="20" align="right"  /></a>';                     
+    html = html + '<a href="#" onclick="deleteQuestion(this);" id="delete-question-' + $question_count + '-icon" title="Delete Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="25" align="right"  /></a>';                     
      
-    html = html + '<a href="#" onclick="QuestionShowMe(this); return false;" id="edit-question-' + $question_count + '-icon" title="Edit Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="20" align="right"  /></a>';
+    html = html + '<a href="#" onclick="QuestionShowMe(this); return false;" id="edit-question-' + $question_count + '-icon" title="Edit Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="25" align="right"  /></a>';
       
     html = html + '</td>';
     html = html + '</tr>';
@@ -207,7 +207,7 @@ function saveQuestion($button)
  	
 	}	
 	
-function getEditQuestion($question_question,$question_answer,$question_count)
+function getEditQuestion($question_question,$question_answer,$question_host,$question_baseurl,$question_path,$question_method,$question_count)
 	{		
 
 	html = '<tr id="edit-question-' + $question_count + '" style="display: none;"><td align="center" colspan="2" style="font-size: 12px; background-color:#CCC;">';
@@ -216,14 +216,35 @@ function getEditQuestion($question_question,$question_answer,$question_count)
     html = html + '<table border="0" width="90%">';  
     
     html = html + '<tr>';
-    html = html + '<td align="right" style="background-color:#FFF;"><strong>Question:</strong></td>';
+    html = html + '<td align="right" style="background-color:#FFF;"><strong>question:</strong></td>';
     html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-question" value="' + $question_question + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
     html = html + '</tr>';
     
     html = html + '<tr>';
-    html = html + '<td align="right" style="background-color:#FFF;"><strong>Answer:</strong></td>';
+    html = html + '<td align="right" style="background-color:#FFF;"><strong>answer:</strong></td>';
     html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-answer" value="' + $question_answer + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
-    html = html + '</tr>';    
+    html = html + '</tr>'; 
+    
+    
+    html = html + '<tr>';
+    html = html + '<td align="right" style="background-color:#FFF;"><strong>host:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-host" value="' + $question_host + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '</tr>'; 
+    
+    html = html + '<tr>';
+    html = html + '<td align="right" style="background-color:#FFF;"><strong>baseUrl:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-baseurl" value="' + $question_baseurl + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '</tr>'; 
+    
+    html = html + '<tr>';
+    html = html + '<td align="right" style="background-color:#FFF;"><strong>path:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-path" value="' + $question_path + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '</tr>';   
+    
+    html = html + '<tr>';
+    html = html + '<td align="right" style="background-color:#FFF;"><strong>method:</strong></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-method" value="' + $question_method + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '</tr>';                
     
     html = html + '<tr>';
     html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" id="question-question-' + $question_count + '-value-button" name="QuestionSave-' + $question_count + '-button" value="Save Changes" onclick="saveQuestion(this);" /></td>';
@@ -291,11 +312,16 @@ function buildQuestionEditor($APIQuestion)
 
 		$question_question = $value['question'];
 		$question_answer = $value['answer'];
+		
+		$question_host = $value['host'];
+		$question_baseurl = $value['baseUrl'];
+		$question_path = $value['path'];
+		$question_method = $value['method'];
 
-		$HTML = getQuestion($question_question,$question_answer,$question_count)
+		$HTML = getQuestion($question_question,$question_answer,$question_host,$question_baseurl,$question_path,$question_method,$question_count);
 		$('#jsonQuestionEditorTable').append($HTML);    	
 
-		$HTML = getEditQuestion($question_question,$question_answer,$question_count)
+		$HTML = getEditQuestion($question_question,$question_answer,$question_host,$question_baseurl,$question_path,$question_method,$question_count);
 		$('#jsonQuestionEditorTable').append($HTML); 
 
 		$question_count++;	
