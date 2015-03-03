@@ -58,19 +58,20 @@ function QuestionQuestions()
 function addThisQuestion($question)
 	{
 
-	$ThisGroup = $question.id;
-	console.log($ThisGroup);
-	$question_group_count = $question.name;
-
 	$question_question = document.getElementById('add-question-question').value;
 	$question_answer = document.getElementById('add-question-answer').value;
 
 	console.log($question_question + ' - ' + $question_answer);
 
 	$questionArray = [];	  
-	$questionArray[$question_question] = $question_answer;
+	$questionArray['answer'] = $question_question;
+	$questionArray['answer'] = $question_answer;
+	$questionArray['host'] = '';
+	$questionArray['baseUrl'] = '';
+	$questionArray['path'] = '';
+	$questionArray['method'] = '';
 
- 	$.extend($MasterQuestion[$ThisGroup], $questionArray);
+ 	$.extend($MasterQuestion, $questionArray);
 
 	rebuildQuestionEditor($MasterQuestion);
 	
@@ -142,17 +143,14 @@ function deleteQuestion($button)
 	$id = $button.id;
 	var $idArray = $id.split('-');	
 	
-	$questionGroupKey = $idArray[1];
+	$question_count = $idArray[2];
 
-	$question_group_count = $idArray[2];
-	$question_count = $idArray[3];
-
-	$FullArray = $MasterQuestion[$questionGroupKey]; 
+	$FullArray = $MasterQuestion;
 	$FullArrayCount =  Object.keys($FullArray).length;
 	
-	$checkArray = Array.isArray($MasterQuestion[$questionGroupKey]);
+	$checkArray = Array.isArray($MasterQuestion[$question_count]);
 
-	$MasterQuestion[$questionGroupKey] = {};
+	$MasterQuestion[$question_count] = {};
 	$thisCount = 0;
  	$.each($FullArray, function(paramKey, paramValue) {
  		
@@ -165,7 +163,7 @@ function deleteQuestion($button)
 			$questionObject = [];	  
 			$questionObject[$thisKey] = $thisValue;
 
-		 	$.extend($MasterQuestion[$questionGroupKey], $questionObject);
+		 	$.extend($MasterQuestion[$question_count], $questionObject);
 	
 			}
 		
@@ -194,14 +192,21 @@ function saveQuestion($button)
 	$id = $button.id;
 	var $idArray = $id.split('-');	
 	
-	$questionGroupKey = $idArray[1];
-	$question_group_count = $idArray[2];
-	$question_count = $idArray[3];
-	$question_key = $idArray[4];
+	$question_count = $idArray[2];
 	
-	$question_value = document.getElementById('question-' + $question_count + '-value').value;
+	$question_question = document.getElementById('question-' + $question_count + '-question').value;
+	$question_answer = document.getElementById('question-' + $question_count + '-answer').value;
+	$question_host = document.getElementById('question-' + $question_count + '-host').value;
+	$question_baseUrl = document.getElementById('question-' + $question_count + '-baseUrl').value;
+	$question_path = document.getElementById('question-' + $question_count + '-path').value;
+	$question_method = document.getElementById('question-' + $question_count + '-method').value;
 
- 	$MasterQuestion[$questionGroupKey][$question_key] = $question_value;
+ 	$MasterQuestion[$question_count]['question'] = $question_question;
+ 	$MasterQuestion[$question_count]['answer'] = $question_answer;
+ 	$MasterQuestion[$question_count]['host'] = $question_host;
+ 	$MasterQuestion[$question_count]['baseUrl'] = $question_baseUrl;
+ 	$MasterQuestion[$question_count]['path'] = $question_path;
+ 	$MasterQuestion[$question_count]['method'] = $question_method;
  		
  	rebuildQuestionEditor($MasterQuestion);
  	
@@ -219,37 +224,37 @@ function getEditQuestion($question_question,$question_answer,$question_host,$que
     
     html = html + '<tr>';
     html = html + '<td align="right" style="background-color:#FFF;"><strong>question:</strong></td>';
-    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-question" value="' + $question_question + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-' + $question_count + '-question" value="' + $question_question + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
     html = html + '</tr>';
     
     html = html + '<tr>';
     html = html + '<td align="right" style="background-color:#FFF;"><strong>answer:</strong></td>';
-    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-answer" value="' + $question_answer + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-' + $question_count + '-answer" value="' + $question_answer + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
     html = html + '</tr>'; 
     
     
     html = html + '<tr>';
     html = html + '<td align="right" style="background-color:#FFF;"><strong>host:</strong></td>';
-    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-host" value="' + $question_host + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-' + $question_count + '-host" value="' + $question_host + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
     html = html + '</tr>'; 
     
     html = html + '<tr>';
     html = html + '<td align="right" style="background-color:#FFF;"><strong>baseUrl:</strong></td>';
-    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-baseurl" value="' + $question_baseurl + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-' + $question_count + '-baseUrl" value="' + $question_baseurl + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
     html = html + '</tr>'; 
     
     html = html + '<tr>';
     html = html + '<td align="right" style="background-color:#FFF;"><strong>path:</strong></td>';
-    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-path" value="' + $question_path + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-' + $question_count + '-path" value="' + $question_path + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
     html = html + '</tr>';   
     
     html = html + '<tr>';
     html = html + '<td align="right" style="background-color:#FFF;"><strong>method:</strong></td>';
-    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-question-' + $question_count + '-method" value="' + $question_method + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
+    html = html + '<td align="left" style="background-color:#FFF;"><input type="text" id="question-' + $question_count + '-method" value="' + $question_method + '" style="width: 100%; height: 100%; border: 0px solid #FFF;" /></td>';
     html = html + '</tr>';                
     
     html = html + '<tr>';
-    html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" id="question-question-' + $question_count + '-value-button" name="QuestionSave-' + $question_count + '-button" value="Save Changes" onclick="saveQuestion(this);" /></td>';
+    html = html + '<td align="center" style="background-color:#FFF;" colspan="2"><input type="button" id="question-' + $question_count + '-value-button" name="QuestionSave-' + $question_count + '-button" value="Save Changes" onclick="saveQuestion(this);" /></td>';
     html = html + '</tr>'    
     
     html = html + '</table>';
