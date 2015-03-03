@@ -234,18 +234,18 @@ function getEditQuestion($question_question,$question_answer,$question_count)
 function loadQuestionEditor()
     {
 
-	console.log("loaded question editor...123")
+	console.log("loaded question editor...")
 
-
-	$.getJSON("api-questions.json", function(data) {
+    $.getJSON("api-questions.json", function( data ) {
 		
-		console.log(data);
+		//console.log(data);
 		
+    	$APIQuestion = data;
     	//$APIQuestion = JSON.parse(data);
     	
-    	//$MasterQuestion = $APIQuestion;
+    	$MasterQuestion = $APIQuestion;
 
-		//buildQuestionEditor($MasterQuestion);		
+		buildQuestionEditor($MasterQuestion);		
 									
 		});		  
          	  	
@@ -269,7 +269,23 @@ function rebuildQuestionEditor($QuestionArray)
 function buildQuestionEditor($APIQuestion)
 	{
 		
-	console.log("building question editor...123")
-															    		
+	console.log("building question editor...")
+			    	
+	$MasterQuestion = $APIQuestion;
+	
+	$viewer = JSON.stringify($APIQuestion, null, 4);
+	
+	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer;
+
+	$HTML = getAddQuestion();
+	$('#jsonQuestionEditorTable').append($HTML);    	
+
+	$.each($APIQuestion, function($key, $value) { 																										
+
+		console.log($key . " = " . $value);
+
+		$question_count++;	
+			
+		});																		    		
 	
 	}
