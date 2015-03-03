@@ -269,9 +269,6 @@ function buildQuestionEditor($APIQuestion)
 	{
 		
 	console.log("building question editor...123")
-			    	
-	$MasterQuestion = $APIQuestion;
-	
-	$																    		
+															    		
 	
 	}
