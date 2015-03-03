@@ -242,7 +242,7 @@ function loadQuestionEditor()
 		
     	$APIQuestion = JSON.parse(data);
     	
-    	$MasterQuestion = $APIQuestion;
+    	//$MasterQuestion = $APIQuestion;
 
 		//buildQuestionEditor($MasterQuestion);		
 									
