@@ -240,7 +240,11 @@ function loadQuestionEditor()
 		
 		console.log(data);
 		
-    		
+    	$APIQuestion = JSON.parse(data);
+    	
+    	$MasterQuestion = $APIQuestion;
+
+		//buildQuestionEditor($MasterQuestion);		
 									
 		});		  
          	  	
