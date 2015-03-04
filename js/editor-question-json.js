@@ -156,8 +156,8 @@ function getQuestion($question_question,$question_answer,$question_host,$questio
     html = html + '<table border="0" width="95%">';
     
     html = html + '<tr>';
-    html = html + '<td align="right" style="" width="70%"><strong>' + $question_question + ':</strong> (' + $question_host + $question_baseurl + $question_path +  ' ' + $question_method + ')</td>';
-    html = html + '<td align="left" style="" width="40%">';
+    html = html + '<td align="right" style="" width="70%"><strong>' + $question_question + '</strong>  (' + $question_host + $question_baseurl + $question_path +  ' ' + $question_method + ')  </td>';
+    html = html + '<td align="left" style="" width="40%">  ';
     
     html = html + $question_answer;
      
