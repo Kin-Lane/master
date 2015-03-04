@@ -72,10 +72,11 @@ function addThisQuestion($question)
 	$questionArray['method'] = '';
 
  	$.extend($MasterQuestion, $questionArray);
-
+ 	
+	$viewer = JSON.stringify($MasterQuestion, null, 4);	
+	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer; 	
+ 	
 	rebuildQuestionEditor($MasterQuestion);
-	
-	//document.getElementById("alertarea").innerHTML = 'question has been added';	
 	
 	}		
 	
