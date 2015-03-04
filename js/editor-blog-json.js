@@ -145,7 +145,7 @@ function deleteBlogPost($blogcount)
 	;
 	$blog_slug = document.getElementById("edit-blog-slug-" + $blogcount).value;	
 	
-	$hosturl = 'http://blog.api.kinlane.com';
+	$hosturl = 'https://blog.api.kinlane.com';
 	$baseurl = '/';
 	
 	$resource = 'blog/';
@@ -188,7 +188,7 @@ function editBlogPost($blogcount)
 	$postData['url'] = $blog_url;
 	$postData['tags'] = $blog_tags;
 		
-	$hosturl = 'http://blog.api.kinlane.com';
+	$hosturl = 'https://blog.api.kinlane.com';
 	$baseurl = '/';
 	
 	$resource = 'blog/';
@@ -293,7 +293,7 @@ function loadBlogEditor()
 	$('#jsonBlogEditorTable').append($html); 
 	$textEditors = "add-blog-post";
 	
-	$hosturl = 'http://blog.api.kinlane.com';
+	$hosturl = 'https://blog.api.kinlane.com';
 	$baseurl = '/';
 	
 	$resource = 'blog/';
