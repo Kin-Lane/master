@@ -444,6 +444,8 @@ function loadKeys()
 			    	
 					$.each($setConfig, function(keysGroupKey, $values) { 										
 
+						$apikeys[keysGroupKey] = {};
+
 						$.each($values, function(keysKey, keysValue) { 
 				
 							console.log('[' + keysGroupKey + '][' + keysKey + ']');
