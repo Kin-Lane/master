@@ -202,13 +202,11 @@ function addThisKeys($keys)
 	{
 
 	$ThisGroup = $keys.id;
-	console.log($ThisGroup);
+
 	$keys_group_count = $keys.name;
 
 	$keys_key = document.getElementById('add-keys-' + $keys_group_count + '-key').value;
 	$keys_value = document.getElementById('add-keys-' + $keys_group_count + '-value').value;
-
-	console.log($keys_key + ' - ' + $keys_value);
 
 	$keysArray = [];	  
 	$keysArray[$keys_key] = $keys_value;
@@ -376,9 +374,7 @@ function getEditKeys($keysGroupKey,$keys_key,$keys_value,$keys_group_count,$keys
 	
 function loadKeysEditor()
     {
-    	
-    console.log("loading keys editor...");
-
+ 
     var github = new Github({
         token: $oAuth_Token,
         auth: "oauth"
@@ -417,8 +413,6 @@ function loadKeysEditor()
 function loadKeys()
     {
     	
-    console.log("loading keys...");
-
     var github = new Github({
         token: $oAuth_Token,
         auth: "oauth"
@@ -479,9 +473,7 @@ function rebuildKeysEditor($KeysArray)
 	
 function buildKeysEditor($APIKeys)
 	{
-			    
-	console.log("building keys editor...");			    
-			    	
+			    	    	
 	$MasterKeys = $APIKeys;
 	
 	$viewer = JSON.stringify($APIKeys, null, 4);

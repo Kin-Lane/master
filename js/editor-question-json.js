@@ -77,8 +77,6 @@ function QuestionSave()
 			$path = treeValue['path'];
 			$sha = treeValue['sha'];
 			
-			//console.log($path);
-			
 			if($path=='api-questions.json')
 				{							
 			    repo.writemanual('gh-pages', 'api-questions.json', $QuestionJSON, 'Saving api-questions.json', $sha, function(err) { 
@@ -307,8 +305,6 @@ function getEditQuestion($question_question,$question_answer,$question_host,$que
 function loadQuestionEditor()
     {
 
-	//console.log("loaded question editor...")
-
     $.getJSON("api-questions.json", function( data ) {
 		    	
 
@@ -335,9 +331,7 @@ function rebuildQuestionEditor($QuestionArray)
 	
 function buildQuestionEditor($APIQuestion)
 	{
-		
-	//console.log("building question editor...")
-	
+
 	$viewer = JSON.stringify($APIQuestion, null, 4);	
 	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer;
 
