@@ -54,6 +54,42 @@ function QuestionQuestion()
 		}
 	}
 	
+function QuestionSave()
+	{
+
+	$QuestionJSON = JSON.stringify($MasterQuestion, null, 4);		
+
+	// Save The File
+    var github = new Github({
+        token: $oAuth_Token,
+        auth: "oauth"
+            });
+        
+	var repo = github.getRepo($org,$repo);  	
+
+	repo.getTree('gh-pages', function(err, tree) {
+		
+		// This is a workaround hack to get sha, as the github.js getSha doesn't seem to be working and I couldn't fix.
+		// I'm looping through the tree to get sha, and then manually passing it to updates, and deletes
+		
+		$.each(tree, function(treeKey, treeValue) {
+			
+			$path = treeValue['path'];
+			$sha = treeValue['sha'];
+			
+			if($path=='api-questions.json')
+				{							
+			    repo.writemanual('master', 'api-questions.json', $QuestionJSON, 'Saving api-questions.json', $sha, function(err) { 
+			    	
+			    	//document.getElementById("alertarea").innerHTML = 'api-questions.json file has been saved';
+			    	
+			    	});									
+				}
+			});
+		}); 	
+
+	}	
+	
 	
 function addThisQuestion($question)
 	{
@@ -71,13 +107,8 @@ function addThisQuestion($question)
 	$questionArray['path'] = '';
 	$questionArray['method'] = '';
 
-	console.log($MasterQuestion);
-
  	$MasterQuestion.push($questionArray);
- 	
- 	console.log($questionArray);
- 	console.log($MasterQuestion);
- 	
+
 	$viewer = JSON.stringify($MasterQuestion, null, 4);	
 	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer; 	
  	
