@@ -205,7 +205,7 @@ function deleteQuestion($button)
 			$questionObject = [];	  
 			$questionObject[$thisKey] = $thisValue;
 
-		 	$MasterQuestion.push($questionObject);
+		 	$.extend($MasterQuestion, $questionObject);
 	
 			}
 		
