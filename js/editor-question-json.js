@@ -73,7 +73,7 @@ function addThisQuestion($question)
 
 	console.log($MasterQuestion);
 
- 	$.extend($MasterQuestion, $questionArray);
+ 	$MasterQuestion.push($questionArray);
  	
  	console.log($questionArray);
  	console.log($MasterQuestion);
