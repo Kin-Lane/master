@@ -14,9 +14,7 @@ function APIJSONNavigatorShowMe($row)
 	{
 	$thisrow = $row.id;			
 	$thisslug = $thisrow.replace("-icon","");
-	
-	//console.log('viewing: ' + $thisslug);
-		
+
 	$thisrow = document.getElementById($thisslug).style.display;
 
 	if($thisrow=='none')
@@ -246,13 +244,7 @@ function APIJSONNavigatorGetIncludeListing($includeName,$includeRootUrl,$include
 function loadAPIsJSONNavigator($apisjsonURL)
     {
 
-	console.log("loading navigator...");
-	
-	console.log($apisjsonURL);
-
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
-
-		console.log("I am in you!..."); 
 
 		// Set our Master Store
 		$MasterAPISJSON = apisJSON;
@@ -265,8 +257,6 @@ function loadAPIsJSONNavigator($apisjsonURL)
 	jqxhr.complete(function() {
 		
 	  	document.getElementById("jsonNavigator").style.display=''; 
-	  	 
-	  	console.log("done loading navigator..."); 
 	  	                 
         });		  
          	  	
@@ -276,7 +266,7 @@ function buildAPIsJSONNavigator(apisJSON)
 
 	{
 	$apisJSONName = apisJSON['name'];
- 	console.log($apisJSONName);
+
  	$apisJSONDesc = apisJSON['description'];
  	$apisJSONLogo = apisJSON['image'];
  	$apisJSONURL = apisJSON['url'];
