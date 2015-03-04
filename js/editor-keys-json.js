@@ -440,7 +440,9 @@ function loadKeys()
 				{							
 			    repo.manualread('master', $url, $sha, function(err, data) {
 			    	
-					$.each(data, function(keysGroupKey, $values) { 										
+			    	$setConfig = JSON.parse(data);
+			    	
+					$.each($setConfig, function(keysGroupKey, $values) { 										
 
 						$.each($values, function(keysKey, keysValue) { 
 				
