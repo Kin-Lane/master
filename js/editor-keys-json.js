@@ -447,16 +447,13 @@ function loadKeys()
 						$apikeys[keysGroupKey] = {};
 
 						$.each($values, function(keysKey, keysValue) { 
-				
-							console.log('[' + keysGroupKey + '][' + keysKey + ']');
-				
+
 							$apikeys[keysGroupKey][keysKey] = keysValue;
 								
 							});						
 		
 																
-						});						
-							    	
+						});													    	
 							    				    	
 			    	});							
 				}

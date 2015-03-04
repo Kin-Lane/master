@@ -435,7 +435,7 @@ function loadConfig()
 			$url = treeValue['url'];
 			$sha = treeValue['sha'];
 
-			// Pull in api-keys
+			// Pull in api-config
 			if($path=='api-config.json')
 				{							
 			    repo.manualread('master', $url, $sha, function(err, data) {
@@ -447,17 +447,13 @@ function loadConfig()
 						$apiconfig[keysGroupKey] = {};
 						
 						$.each($values, function(keysKey, keysValue) { 
-				
-							console.log('[' + keysGroupKey + '][' + keysKey + ']');
-				
+
 							$apiconfig[keysGroupKey][keysKey] = keysValue;
 								
 							});						
-		
-																
+																		
 						});						
-							    	
-							    				    	
+							    								    				    	
 			    	});							
 				}
 
