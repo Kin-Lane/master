@@ -61,6 +61,8 @@ function addThisQuestion($question)
 	$question_question = document.getElementById('add-question-question').value;
 	$question_answer = document.getElementById('add-question-answer').value;
 
+	$Questions = JSON.parse($MasterQuestion);
+
 	console.log($question_question + ' - ' + $question_answer);
 
 	$questionArray = [];	  
@@ -71,12 +73,14 @@ function addThisQuestion($question)
 	$questionArray['path'] = '';
 	$questionArray['method'] = '';
 
- 	$.extend($MasterQuestion, $questionArray);
+ 	$.extend($Questions, $questionArray);
  	
- 	console.log($MasterQuestion);
+ 	console.log($Questions);
  	
-	$viewer = JSON.stringify($MasterQuestion, null, 4);	
-	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer; 	
+	$viewer = JSON.stringify($Questions, null, 4);	
+	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer; 
+	
+	$MasterQuestion = $viewer; 	
  	
 	rebuildQuestionEditor($MasterQuestion);
 	
