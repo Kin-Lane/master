@@ -153,7 +153,7 @@ function getQuestion($question_question,$question_answer,$question_host,$questio
 
 	html = '<tr id="edit-header"><td align="center" colspan="2" style="font-size: 12px;">';
 
-    html = html + '<table border="1" width="95%">';
+    html = html + '<table border="0" width="95%">';
     
     html = html + '<tr>';
     html = html + '<td align="right" style="" width="40%"><strong>' + $question_question + ':</strong> (' + $question_host + $question_baseurl + $question_path +  ' ' + $question_method + ')</td>';
