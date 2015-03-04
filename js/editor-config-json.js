@@ -439,12 +439,12 @@ function loadConfig()
 			if($path=='api-config.json')
 				{							
 			    repo.manualread('master', $url, $sha, function(err, data) {
-			    	
-			    	$APIConfig = JSON.parse(data);
-			    	
-					$.each($APIConfig, function(keysGroupKey, $values) { 										
+
+					$.each(data, function(keysGroupKey, $values) { 										
 						
 						$.each($values, function(keysKey, keysValue) { 
+				
+							console.log('[' + keysGroupKey + '][' + keysKey + ']');
 				
 							$apiconfig[keysGroupKey][keysKey] = keysValue;
 								

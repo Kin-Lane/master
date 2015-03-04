@@ -440,11 +440,11 @@ function loadKeys()
 				{							
 			    repo.manualread('master', $url, $sha, function(err, data) {
 			    	
-			    	$APIKeys = JSON.parse(data);
-			    	
-					$.each($APIKeys, function(keysGroupKey, $values) { 										
-						
+					$.each(data, function(keysGroupKey, $values) { 										
+
 						$.each($values, function(keysKey, keysValue) { 
+				
+							console.log('[' + keysGroupKey + '][' + keysKey + ']');
 				
 							$apikeys[keysGroupKey][keysKey] = keysValue;
 								
