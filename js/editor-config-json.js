@@ -414,6 +414,54 @@ function loadConfigEditor()
          	  	
     } 	
     
+function loadConfig()
+    {
+    	
+    console.log("loading config...");
+
+    var github = new Github({
+        token: $oAuth_Token,
+        auth: "oauth"
+            });
+        
+	var repo = github.getRepo($org,$repo); 		
+		
+	// go through master branch
+	repo.getTree('master', function(err, tree) {
+		$.each(tree, function(treeKey, treeValue) {
+							
+			// not sure why I have to do through the tree, but it is only way that works				
+			$path = treeValue['path'];
+			$url = treeValue['url'];
+			$sha = treeValue['sha'];
+
+			// Pull in api-keys
+			if($path=='api-config.json')
+				{							
+			    repo.manualread('master', $url, $sha, function(err, data) {
+			    	
+			    	$APIConfig = JSON.parse(data);
+			    	
+					$.each($APIConfig, function(keysGroupKey, $values) { 										
+						
+						$.each($values, function(keysKey, keysValue) { 
+				
+							$apiconfig[keysGroupKey][keysKey] = keysValue;
+								
+							});						
+		
+																
+						});						
+							    	
+							    				    	
+			    	});							
+				}
+
+			});							
+		});		  
+         	  	
+    }     
+    
 function rebuildConfigEditor($ConfigArray)
     {
     	
