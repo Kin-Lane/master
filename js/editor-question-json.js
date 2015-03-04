@@ -201,7 +201,12 @@ function deleteQuestion($button)
  		
  		if($thisCount != $question_count)
  			{
-		 	$MasterQuestion.push($thisValue);	
+
+			$questionObject = {};	  
+			$questionObject[$thisKey] = $thisValue;
+
+		 	$MasterQuestion.push($questionObject);
+	
 			}
 		
 		$thisCount++;
