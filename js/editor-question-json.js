@@ -201,7 +201,10 @@ function deleteQuestion($button)
  		
  		if($thisCount != $question_count)
  			{
- 				
+
+			$questionObject = [];	  
+			$questionObject[$thisKey] = $thisValue;
+
 		 	$.extend($MasterQuestion, $thisValue);
 	
 			}
