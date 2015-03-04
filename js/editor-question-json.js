@@ -75,7 +75,7 @@ function addThisQuestion($question)
 
 	rebuildQuestionEditor($MasterQuestion);
 	
-	document.getElementById("alertarea").innerHTML = 'question has been added';	
+	//document.getElementById("alertarea").innerHTML = 'question has been added';	
 	
 	}		
 	
