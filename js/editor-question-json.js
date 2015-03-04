@@ -218,7 +218,7 @@ function deleteQuestion($button)
  	
  			rebuildQuestionEditor($MasterQuestion);
  			
- 			document.getElementById("alertarea").innerHTML = 'question has been deleted';	
+ 			//document.getElementById("alertarea").innerHTML = 'question has been deleted';	
  			 			
 			}
 		
