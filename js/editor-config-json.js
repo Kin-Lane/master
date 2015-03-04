@@ -67,7 +67,7 @@ function saveConfigFile()
         auth: "oauth"
             });
         
-	var repo = github.getRepo('Stack-Network','blog');  	
+	var repo = github.getRepo($org,$repo);  	
 
 	repo.getTree('master', function(err, tree) {
 		
@@ -80,7 +80,8 @@ function saveConfigFile()
 			$sha = treeValue['sha'];
 			
 			if($path=='api-config.json')
-				{							
+				{						
+						
 			    repo.writemanual('master', 'api-config.json', $ConfigJSON, 'Saving config.json', $sha, function(err) { 
 			    	
 			    	document.getElementById("alertarea").innerHTML = 'api-config.json file has been saved';
