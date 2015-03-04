@@ -305,13 +305,10 @@ function buildQuestionEditor($APIQuestion)
 		
 	console.log("building question editor...")
 	
-	//console.log($APIQuestion);
-			    	
-	$MasterQuestion = {};
-	
-	$viewer = JSON.stringify($APIQuestion, null, 4);
-	
+	$viewer = JSON.stringify($APIQuestion, null, 4);	
 	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer;
+
+	$MasterQuestion = JSON.parse($viewer);
 
 	$HTML = getAddQuestion();
 	$('#jsonQuestionEditorTable').append($HTML);    	
@@ -324,16 +321,7 @@ function buildQuestionEditor($APIQuestion)
 		$question_host = $value['host'];
 		$question_baseurl = $value['baseUrl'];
 		$question_path = $value['path'];
-		$question_method = $value['method'];
-		
-		$questionArray = {};	  	  
-		$questionArray['answer'] = $question_question;
-		$questionArray['answer'] = $question_answer;
-		$questionArray['host'] = $question_host;
-		$questionArray['baseUrl'] = $question_baseurl;
-		$questionArray['path'] = $question_path;
-		$questionArray['method'] = $question_method;
-		$.extend($MasterQuestion, $questionArray);				
+		$question_method = $value['method'];			
 
 		$HTML = getQuestion($question_question,$question_answer,$question_host,$question_baseurl,$question_path,$question_method,$question_count);
 		$('#jsonQuestionEditorTable').append($HTML);    	
