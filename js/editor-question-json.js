@@ -84,6 +84,7 @@ function QuestionSave()
 			    repo.writemanual('gh-pages', 'api-questions.json', $QuestionJSON, 'Saving api-questions.json', $sha, function(err) { 
 			    	
 			    	//document.getElementById("alertarea").innerHTML = 'api-questions.json file has been saved';
+			    	console.log("saved!");
 			    	
 			    	});									
 				}
