@@ -375,13 +375,15 @@ function getEditConfig($configGroupKey,$config_key,$config_value,$config_group_c
 	
 function loadConfigEditor()
     {
+    	
+    console.log("loading config editor...");
 
     var github = new Github({
         token: $oAuth_Token,
         auth: "oauth"
             });
         
-	var repo = github.getRepo('Stack-Network','blog'); 		
+	var repo = github.getRepo($org,$repo); 		
 		
 	// go through master branch
 	repo.getTree('master', function(err, tree) {
@@ -428,6 +430,8 @@ function rebuildConfigEditor($ConfigArray)
 	
 function buildConfigEditor($APIConfig)
 	{
+			    
+	console.log("building config editor...");			    
 			    	
 	$MasterConfig = $APIConfig;
 	
