@@ -73,6 +73,8 @@ function addThisQuestion($question)
 
  	$.extend($MasterQuestion, $questionArray);
  	
+ 	console.log($MasterQuestion);
+ 	
 	$viewer = JSON.stringify($MasterQuestion, null, 4);	
 	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer; 	
  	
