@@ -453,7 +453,10 @@ function loadKeys()
 							});						
 		
 																
-						});													    	
+						});	
+						
+						
+					console.log("keys22" + JSON.stringify($apikeys));													    	
 							    				    	
 			    	});							
 				}
@@ -462,7 +465,7 @@ function loadKeys()
 		});	
 		
 		
-	console.log("keys2" + JSON.stringify($apikeys));		  
+		
          	  	
     } 	    
     

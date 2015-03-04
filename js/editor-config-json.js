@@ -437,7 +437,8 @@ function loadConfig()
 
 			// Pull in api-config
 			if($path=='api-config.json')
-				{							
+				{	
+											
 			    repo.manualread('master', $url, $sha, function(err, data) {
 			    	
 			    	$setConfig = JSON.parse(data);
@@ -452,7 +453,10 @@ function loadConfig()
 								
 							});						
 																		
-						});						
+						});
+						
+						
+					console.log("config22" + JSON.stringify($apiconfig));							
 							    								    				    	
 			    	});							
 				}
@@ -460,7 +464,7 @@ function loadConfig()
 			});							
 		});	
 		
-	console.log("config2" + JSON.stringify($apiconfig));				
+					
 			  
          	  	
     }     
