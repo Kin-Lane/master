@@ -185,8 +185,6 @@ function deleteQuestion($button)
 	
 	$question_count = $idArray[2];
 	
-	console.log('removing ' + $question_count);
-
 	$FullArray = $MasterQuestion;
 	$FullArrayCount =  Object.keys($FullArray).length;
 	
@@ -309,7 +307,7 @@ function getEditQuestion($question_question,$question_answer,$question_host,$que
 function loadQuestionEditor()
     {
 
-	console.log("loaded question editor...")
+	//console.log("loaded question editor...")
 
     $.getJSON("api-questions.json", function( data ) {
 		    	
@@ -338,7 +336,7 @@ function rebuildQuestionEditor($QuestionArray)
 function buildQuestionEditor($APIQuestion)
 	{
 		
-	console.log("building question editor...")
+	//console.log("building question editor...")
 	
 	$viewer = JSON.stringify($APIQuestion, null, 4);	
 	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer;
