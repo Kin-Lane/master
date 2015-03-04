@@ -156,7 +156,7 @@ function getQuestion($question_question,$question_answer,$question_host,$questio
     html = html + '<table border="1" width="95%">';
     
     html = html + '<tr>';
-    html = html + '<td align="right" style="" width="40%"><strong>' + $question_question + ':</strong> (' + $question_host + $question_baseurl + $question_path +  ' ' + $question_method.toUpperCase() + ')</td>';
+    html = html + '<td align="right" style="" width="40%"><strong>' + $question_question + ':</strong> (' + $question_host + $question_baseurl + $question_path +  ' ' + $question_method + ')</td>';
     html = html + '<td align="left" style="" width="40%">';
     
     html = html + $question_answer;
@@ -250,7 +250,7 @@ function saveQuestion($button)
  		
  	rebuildQuestionEditor($MasterQuestion);
  	
- 	document.getElementById("alertarea").innerHTML = 'question has been saved';	
+ 	//document.getElementById("alertarea").innerHTML = 'question has been saved';	
  	
 	}	
 	
