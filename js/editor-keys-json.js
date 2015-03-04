@@ -451,22 +451,15 @@ function loadKeys()
 							$apikeys[keysGroupKey][keysKey] = keysValue;
 								
 							});						
-		
-																
-						});	
-						
-						
-					console.log("keys22" + JSON.stringify($apikeys));													    	
-							    				    	
+																		
+						});							
+	    				    	
 			    	});							
 				}
 
 			});							
 		});	
-		
-		
-		
-         	  	
+   	  	
     } 	    
     
 function rebuildKeysEditor($KeysArray)

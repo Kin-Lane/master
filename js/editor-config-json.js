@@ -417,8 +417,6 @@ function loadConfigEditor()
 function loadConfig()
     {
     	
-    console.log("loading config...");
-
     var github = new Github({
         token: $oAuth_Token,
         auth: "oauth"
@@ -454,19 +452,13 @@ function loadConfig()
 							});						
 																		
 						});
-						
-						
-					console.log("config22" + JSON.stringify($apiconfig));							
-							    								    				    	
+	    								    				    	
 			    	});							
 				}
 
 			});							
 		});	
-		
-					
-			  
-         	  	
+   	  	
     }     
     
 function rebuildConfigEditor($ConfigArray)
@@ -486,9 +478,7 @@ function rebuildConfigEditor($ConfigArray)
 	
 function buildConfigEditor($APIConfig)
 	{
-			    
-	console.log("building config editor...");			    
-			    	
+		    	
 	$MasterConfig = $APIConfig;
 	
 	$viewer = JSON.stringify($APIConfig, null, 4);
