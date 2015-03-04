@@ -44,7 +44,7 @@ function addBlogPost(tinyInstance)
 	$postData['tags'] = $blog_tags;
 	$postData['slug'] = $blog_slug
 		
-	$hosturl = 'http://blog.api.kinlane.com';
+	$hosturl = 'https://blog.api.kinlane.com';
 	$baseurl = '/';
 	
 	$resource = 'blog/';
