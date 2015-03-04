@@ -151,7 +151,7 @@ function getAddQuestion()
 function getQuestion($question_question,$question_answer,$question_host,$question_baseurl,$question_path,$question_method,$question_count)
 	{	
 
-	html = '<tr id="edit-header"><td align="center" colspan="2" style="font-size: 12px;">';
+	html = '<tr id="edit-header"><td align="center" colspan="2" style="font-size: 14px;">';
 
     html = html + '<table border="0" width="95%">';
     
@@ -164,8 +164,8 @@ function getQuestion($question_question,$question_answer,$question_host,$questio
     html = html + '</td>'; 
     html = html + '<td align="center" width="10%">';
       
-    html = html + '<a href="#" onclick="deleteQuestion(this);" id="delete-question-' + $question_count + '-icon" title="Delete Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="25" align="right"  /></a>';                          
-    html = html + '<a href="#" onclick="QuestionShowMe(this); return false;" id="edit-question-' + $question_count + '-icon" title="Edit Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="25" align="right"  /></a>';
+    html = html + '<a href="#" onclick="deleteQuestion(this);" id="delete-question-' + $question_count + '-icon" title="Delete Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-delete-circle.png" width="30" align="right"  /></a>';                          
+    html = html + '<a href="#" onclick="QuestionShowMe(this); return false;" id="edit-question-' + $question_count + '-icon" title="Edit Property"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-edit-circle.png" width="30" align="right"  /></a>';
       
     html = html + '</td>';
     html = html + '</tr>';
