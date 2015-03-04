@@ -64,7 +64,7 @@ function addThisQuestion($question)
 	console.log($question_question + ' - ' + $question_answer);
 
 	$questionArray = [];	  	  
-	$questionArray['answer'] = $question_question;
+	$questionArray['question'] = $question_question;
 	$questionArray['answer'] = $question_answer;
 	$questionArray['host'] = '';
 	$questionArray['baseUrl'] = '';
