@@ -222,7 +222,9 @@ function APIJSONNavigatorGetIncludeListing($includeName,$includeRootUrl,$include
 	{	
 		
 	$thisslug = $includeName.toLowerCase();	
-	$thisslug = $thisslug.replace(" ", "-");			
+	$thisslug = $thisslug.replace(" ", "-");	
+	
+	if($oAuth_Token!=''){ $includeUrl = $includeUrl + '?oAuth_Token=' + $oAuth_Token; }			
 
     html = '<tr style="background-color:#FFF;">';
     
