@@ -77,9 +77,11 @@ function QuestionSave()
 			$path = treeValue['path'];
 			$sha = treeValue['sha'];
 			
+			console.log($path);
+			
 			if($path=='api-questions.json')
 				{							
-			    repo.writemanual('master', 'api-questions.json', $QuestionJSON, 'Saving api-questions.json', $sha, function(err) { 
+			    repo.writemanual('gh-pages', 'api-questions.json', $QuestionJSON, 'Saving api-questions.json', $sha, function(err) { 
 			    	
 			    	//document.getElementById("alertarea").innerHTML = 'api-questions.json file has been saved';
 			    	
