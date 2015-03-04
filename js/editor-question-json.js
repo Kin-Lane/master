@@ -63,7 +63,7 @@ function addThisQuestion($question)
 
 	console.log($question_question + ' - ' + $question_answer);
 
-	$questionArray = {};	  	  
+	$questionArray = [];	  	  
 	$questionArray['answer'] = $question_question;
 	$questionArray['answer'] = $question_answer;
 	$questionArray['host'] = '';
@@ -71,8 +71,11 @@ function addThisQuestion($question)
 	$questionArray['path'] = '';
 	$questionArray['method'] = '';
 
+	console.log($MasterQuestion);
+
  	$.extend($MasterQuestion, $questionArray);
  	
+ 	console.log($questionArray);
  	console.log($MasterQuestion);
  	
 	$viewer = JSON.stringify($MasterQuestion, null, 4);	
