@@ -232,7 +232,7 @@ function saveQuestion($button)
 	$id = $button.id;
 	var $idArray = $id.split('-');	
 	
-	$question_count = $idArray[2];
+	$question_count = $idArray[1];
 	
 	$question_question = document.getElementById('question-' + $question_count + '-question').value;
 	$question_answer = document.getElementById('question-' + $question_count + '-answer').value;
