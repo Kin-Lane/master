@@ -458,7 +458,10 @@ function loadConfig()
 				}
 
 			});							
-		});		  
+		});	
+		
+	console.log("config2" + JSON.stringify($apiconfig));				
+			  
          	  	
     }     
     

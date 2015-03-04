@@ -459,7 +459,10 @@ function loadKeys()
 				}
 
 			});							
-		});		  
+		});	
+		
+		
+	console.log("keys2" + JSON.stringify($apikeys));		  
          	  	
     } 	    
     
