@@ -183,7 +183,7 @@ function deleteQuestion($button)
 	$id = $button.id;
 	var $idArray = $id.split('-');	
 	
-	$question_count = $idArray[1];
+	$question_count = $idArray[2];
 
 	$FullArray = $MasterQuestion;
 	$FullArrayCount =  Object.keys($FullArray).length;
