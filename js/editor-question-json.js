@@ -192,7 +192,7 @@ function deleteQuestion($button)
 	
 	$checkArray = Array.isArray($MasterQuestion[$question_count]);
 
-	$MasterQuestion = {};
+	$MasterQuestion = [];
 	$thisCount = 0;
  	$.each($FullArray, function(paramKey, paramValue) {
  		
@@ -202,7 +202,7 @@ function deleteQuestion($button)
  		if($thisCount != $question_count)
  			{
 
-			$questionObject = {};	  
+			$questionObject = [];	  
 			$questionObject[$thisKey] = $thisValue;
 
 		 	$MasterQuestion.push($questionObject);
