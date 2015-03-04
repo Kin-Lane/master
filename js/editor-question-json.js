@@ -61,7 +61,7 @@ function addThisQuestion($question)
 	$question_question = document.getElementById('add-question-question').value;
 	$question_answer = document.getElementById('add-question-answer').value;
 
-	$Questions = JSON.parse($MasterQuestion);
+	$Questions = $MasterQuestion;
 
 	console.log($question_question + ' - ' + $question_answer);
 
@@ -80,7 +80,7 @@ function addThisQuestion($question)
 	$viewer = JSON.stringify($Questions, null, 4);	
 	document.getElementById('jsonQuestionViewerDetails').innerHTML = $viewer; 
 	
-	$MasterQuestion = $viewer; 	
+	$MasterQuestion = $Questions; 	
  	
 	rebuildQuestionEditor($MasterQuestion);
 	
@@ -283,7 +283,7 @@ function loadQuestionEditor()
     	$APIQuestion = data;
     	//$APIQuestion = JSON.parse(data);
     	
-    	$MasterQuestion = JSON.stringify($APIQuestion);
+    	$MasterQuestion = $APIQuestion;
 
 		buildQuestionEditor($MasterQuestion);		
 									
