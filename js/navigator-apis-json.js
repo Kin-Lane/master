@@ -173,7 +173,7 @@ function APIJSONNavigatorPropertyListing($apiName,$thistype,$thisurl,$apicount,$
     html = html + '<td width="10%" align="right" id="api-' + $apicount + '-property-' + $propertycount + '-1">';
     html = html + '<a href="' + $thisurl + '" title="' + $thistype + '"><img style="padding: 5px;" src="https://s3.amazonaws.com/kinlane-productions/building-blocks/' + $thistype + '.png" width="50" align="right" " /></a>';
     html = html + '</td>';
-    html = html + '<td align="left" id="api-' + $apicount + '-property-' + $propertycount + '-2">';
+    html = html + '<td align="left" id="api-' + $apicount + '-property-' + $propertycount + '-2" width="50%">';
     html = html + '<a href="' + $thisurl + '" style="color: #000; font-size: 16px; text-decoration: none;" title="' + $thistype + '"><strong>' + $thistype + '</strong></a> (<a href="editor-swagger-json.html?url=' + $thisurl + '&oAuth_Token=' + $oAuth_Token + '">edit</a>) (<a href="swagger.html">UI</a>)';
     html = html + '</td>';
     html = html + '</tr>';
