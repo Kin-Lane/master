@@ -69,7 +69,9 @@ function APIJSONNavigatorGetHeaderCell(name,description,url,image,apijsonurl)
 	{		
 	html = "";
     html = html + '<a href="' + url + '" title="' + name + '"><img src="' + image + '" width="175" align="left" style="padding: 15px;" /></a>';
-    html = html + '<a href="' + url + '" style="color: #000; font-size: 22px; text-decoration: none;" title="' + name + '"><strong>' + name + '</strong></a><br />' + description;  	
+    html = html + '<a href="' + url + '" style="color: #000; font-size: 22px; text-decoration: none;" title="' + name + '"><strong>' + name + '</strong></a>";
+    html = html + '(<a href="' + url + '" style="color: #000; font-size: 22px; text-decoration: none;" title="' + name + '">view APIs.json</a>)";
+    html = html + '<br />' + description;  	
 	
 	return html; 			
 	}
