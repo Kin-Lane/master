@@ -177,12 +177,10 @@ function APIJSONNavigatorPropertyListing($apiName,$thistype,$thisurl,$apicount,$
     
     html = html + '<a href="' + $thisurl + '" style="color: #000; font-size: 16px; text-decoration: none;" title="' + $thistype + '"><strong>' + $thistype + '</strong></a>';
     
-    html = html + '(<a href="editor-swagger-json.html?url=' + $thisurl + '&oAuth_Token=' + $oAuth_Token + '">edit</a>)';
-    
-    html = html + ' ';
-    
     if($thistype=='Swagger')
     	{
+    	html = html + '(<a href="editor-swagger-json.html?url=' + $thisurl + '&oAuth_Token=' + $oAuth_Token + '">edit</a>)';    
+    	html = html + ' ';    		
     	html = html + '(<a href="swagger.html?oAuth_Token=' + $oAuth_Token + '">UI</a>)';
     	}
     
