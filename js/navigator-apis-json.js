@@ -177,7 +177,7 @@ function APIJSONNavigatorPropertyListing($apiName,$thistype,$thisurl,$apicount,$
     html = html + '</td>';
     html = html + '<td align="left" id="api-' + $apicount + '-property-' + $propertycount + '-2" width="50%" valign="middle" style="border: 1px solid #000;">';
     
-    html = html + '<p style="line-height:4em;"><a href="' + $thisurl + '" style="color: #000; font-size: 16px; text-decoration: none;" title="' + $thistype + '"><strong>' + $thistype + '</strong></a></p>';
+    html = html + '<p style="line-height:1em;"><a href="' + $thisurl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $thistype + '"><strong>' + $thistype + '</strong></a></p>';
     
     if($thistype=='swagger')
     	{
