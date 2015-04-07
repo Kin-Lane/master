@@ -176,7 +176,7 @@ function APIJSONNavigatorPropertyListing($apiName,$thistype,$thisurl,$apicount,$
     html = html + '<td align="left" id="api-' + $apicount + '-property-' + $propertycount + '-2" width="50%" style="border: 1px solid #000;"">';
     html = html + '<a href="' + $thisurl + '" style="color: #000; font-size: 16px; text-decoration: none;" title="' + $thistype + '"><strong>' + $thistype + '</strong></a>';
     
-    html = html + '(<a href="editor-swagger-json.html?url=' + $thisurl + '&oAuth_Token=' + $oAuth_Token + '">edit</a>)";
+    html = html + '(<a href="editor-swagger-json.html?url=' + $thisurl + '&oAuth_Token=' + $oAuth_Token + '">edit</a>)';
     
     html = html + ' ';
     
