@@ -170,12 +170,12 @@ function APIJSONNavigatorPropertyListing($apiName,$thistype,$thisurl,$apicount,$
 	$thisslug = $thistype.replace(" ", "-");
 	
     html = '<tr>';
-    html = html + '<td width="10%" align="right" id="api-' + $apicount + '-property-' + $propertycount + '-1" style="border: 1px solid #000;">';
+    html = html + '<td width="10%" align="right" id="api-' + $apicount + '-property-' + $propertycount + '-1" style="border: 0px solid #000;">';
     
     html = html + '<a href="' + $thisurl + '" title="' + $thistype + '"><img style="padding: 5px;" src="https://s3.amazonaws.com/kinlane-productions/building-blocks/' + $thistype + '.png" width="50" align="right" " /></a>';
     
     html = html + '</td>';
-    html = html + '<td align="left" id="api-' + $apicount + '-property-' + $propertycount + '-2" width="50%" valign="middle" style="border: 1px solid #000; vertical-align: middle;">';
+    html = html + '<td align="left" id="api-' + $apicount + '-property-' + $propertycount + '-2" width="50%" valign="middle" style="border: 0px solid #000; vertical-align: middle; padding-left: 10px;">';
     
     html = html + '<a href="' + $thisurl + '" style="color: #000; font-size: 18px;" title="' + $thistype + '"><strong>' + $thistype + '</strong></a>';
     
