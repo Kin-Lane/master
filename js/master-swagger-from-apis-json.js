@@ -9,6 +9,8 @@ $includecount = 1;
 $MasterAPISJSON = "";
 
 $apipropertyoptions = "";
+
+$APIsJSONSwaggerUI = Array();
 	
   function deploySwaggerMaster($swaggerURL,$itemcount)
   	{		
@@ -24,7 +26,7 @@ $apipropertyoptions = "";
   		
 	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
 	  
-	  window.swaggerUi = new SwaggerUi({
+	  $APIsJSONSwaggerUI[$itemcount] = new SwaggerUi({
 	  	
 	    url: $swaggerURL,
 	    dom_id: $swaggerContainer,
@@ -68,7 +70,7 @@ $apipropertyoptions = "";
 	    sorter : "alpha"
 	  });
 	
-	  window.swaggerUi.load();	
+	  $APIsJSONSwaggerUI[$itemcount].load();	
   }
 
 function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
