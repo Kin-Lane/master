@@ -10,6 +10,11 @@ $MasterAPISJSON = "";
 
 $apipropertyoptions = "";
 
+function waitforit()
+	{
+	console.log("waiting...");
+	}
+
 function loadMasterSwaggerFromAPIsJSON($url)
     {
 
@@ -142,6 +147,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 						
 						  window.swaggerUi.load();			    	
 				    	  $itemcount++;
+				    	  setTimeout(waitforit, 10000);
 				    	}	 	
 			
 				 	$propertycount++;
