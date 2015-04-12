@@ -10,6 +10,61 @@ $MasterAPISJSON = "";
 
 $apipropertyoptions = "";
 	
+  function deploySwagger($swaggerURL)
+  	{		
+  		
+  	  $swaggerContainer = "swagger-ui-container-" + $includecount;	
+  		
+	  html = '<div class="swagger-section">';
+	  html = html + '<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>';
+	  html = html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
+	  html = html + '</div>';
+	  
+	  $('#master-swagger-section').append($html);  
+  		
+	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
+	  
+	  window.swaggerUi = new SwaggerUi({
+	    url: $swaggerURL,
+	    dom_id: $swaggerContainer,
+	    supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+	    onComplete: function(swaggerApi, swaggerUi){
+	
+	      var textboxes = document.getElementsByTagName("input");        
+
+	      $appid = $apikeys["API Evangelist"]['appid'];
+	      $appkey = $apikeys["API Evangelist"]['appkey'];
+
+			for (var i=0;i<textboxes.length;i++)
+			 	{
+			    var textbox = textboxes[i];
+			    if (textbox.type.toLowerCase() == "text")
+			       {
+			       if(textbox.name=='appid')
+			       	{
+			       	textboxes[i].value = $appid	;
+			       	}
+			       if(textbox.name=='appkey')
+			       	{
+			       	textboxes[i].value = $appkey;	
+			       	}			       	
+			     }
+			 } 	
+	
+	      $('pre code').each(function(i, e) {
+	        hljs.highlightBlock(e)
+	      });
+	      
+	    },
+	    onFailure: function(data) {
+	      log("Unable to Load SwaggerUI");
+	    },
+	    docExpansion: "none",
+	    sorter : "alpha"
+	  });
+	
+	  window.swaggerUi.load();	
+  }
 
 function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
     {
@@ -119,6 +174,7 @@ function buildSwaggerFromAPIsJSON(apisJSON)
 		    if($propertyType=='swagger'||$propertyType=='Swagger')
 		    	{
 		    	console.log("API: " + $propertyURL);	
+		    	deploySwagger($propertyURL);
 		    	}	 	
 	
 		 	$propertycount++;
