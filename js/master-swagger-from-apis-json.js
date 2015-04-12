@@ -66,7 +66,9 @@ $apipropertyoptions = "";
 	    },
 	    docExpansion: "none",
 	    sorter : "alpha"
-	  });	
+	  });
+	
+	  window.swaggerUi.load();	
   }
 
 function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
@@ -85,8 +87,6 @@ function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
 	jqxhr.complete(function() {
 		
 	  	//document.getElementById("jsonNavigator").style.display=''; 
-	  		
-	 	 window.swaggerUi.load();
 	  	                 
         });		  
          	  	
