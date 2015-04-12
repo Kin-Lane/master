@@ -12,7 +12,7 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 paginate: 50
-paginate_path: "/news/page:num"
+paginate_path: "/master/blog/page:num"
 
 production_url : http://kin-lane.github.io/master/
 
