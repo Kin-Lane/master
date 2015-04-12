@@ -55,9 +55,11 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 	
 	     	 $includeName = apiVal['name']; 
 	     	 $includeRootUrl = apiVal['url'];	      	 
-	     	 $includeUrl = $includeRootUrl.replace("apis.json","");	 
+	     	// $includeUrl = $includeRootUrl.replace("apis.json","");	 
 			 
-			 console.log($includeUrl);
+			 loadMasterSwaggerFromAPIsJSON($includeUrl)
+			 
+			 console.log("include:" + $includeUrl);
 	 
 			 $includecount++;										
 		});	
@@ -82,7 +84,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 			 			
 			    if($propertyType=='Swagger')
 			    	{
-			    	console.log($propertyURL);	
+			    	console.log("API: " + $propertyURL);	
 			    	}	 	
 		
 			 	$propertycount++;
