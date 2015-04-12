@@ -96,12 +96,13 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 						  $html = $html + '<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>';
 						  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
 						  $html = $html + '</div>';
-						  //console.log($html);
+						  console.log("container: " + $swaggerContainer);
+						  
 						  $('#master-swagger-section').append($html);  
 					  		
 						  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
 						  
-						  window.swaggerUi = new SwaggerUi({
+						  window.swaggerUi[$itemcount] = new SwaggerUi({
 						  	
 						    url: $swaggerURL,
 						    dom_id: $swaggerContainer,
@@ -145,7 +146,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 						    sorter : "alpha"
 						  });
 						
-						  window.swaggerUi.load();			    	
+						  window.swaggerUi[$itemcount].load();			    	
 				    	  $itemcount++;
 				    	  setTimeout(waitforit, 10000);
 				    	}	 	
