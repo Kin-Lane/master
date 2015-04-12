@@ -91,7 +91,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 				    	{
 				    		
 			    	  $showme = $itemcount;			    	  
-			    	  setTimeout(waitforit($showme), 10000);				    		
+			    	  setTimeout(waitforit($showme), 25000);				    		
 				    		
 				    	$swaggerURL = $propertyURL;
 				    	console.log("Loading Swagger: " + $propertyURL);	
