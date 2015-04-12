@@ -15,12 +15,15 @@ $apipropertyoptions = "";
   		
   	  $swaggerContainer = "swagger-ui-container-" + $includecount;	
   		
-  	  $html = '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
+	  $html = '<div class="swagger-section">';
+	  $html = $html + '<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>';
+	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
+	  $html = $html + '</div>';
 	  
-	  $('#swagger-section').append($html);  
+	  $('#master-swagger-section').append($html);  
   		
 	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
-	  console.log("rendinger..." + $swaggerURL);
+	  
 	  window.swaggerUi = new SwaggerUi({
 	    url: $swaggerURL,
 	    dom_id: $swaggerContainer,
@@ -29,7 +32,7 @@ $apipropertyoptions = "";
 	
 	      var textboxes = document.getElementsByTagName("input");        
 
-		  if($apikeys["API Evangelist"])
+		  if($apikeys["API Evangelist"]['appid'])
 		  	{
 	      	$appid = $apikeys["API Evangelist"]['appid'];
 	      	$appkey = $apikeys["API Evangelist"]['appkey'];
@@ -48,7 +51,6 @@ $apipropertyoptions = "";
 			       	textboxes[i].value = $appkey;	
 			       	}			       	
 			     }
-			   }
 			 } 	
 	
 	      $('pre code').each(function(i, e) {
@@ -170,11 +172,11 @@ function buildSwaggerFromAPIsJSON(apisJSON)
 
 		 	$propertyType = propertyVal['type'];
 		 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
-		 	//console.log($propertyType);
-		 	
+		 	console.log($propertyType);
 		    if($propertyType=='swagger'||$propertyType=='Swagger')
 		    	{
 		    	console.log("API: " + $propertyURL);	
+		    	//deploySwagger($propertyURL);
 		    	setTimeout(deploySwaggerMaster($propertyURL), 3000);
 		    	}	 	
 	
