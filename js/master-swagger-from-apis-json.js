@@ -120,9 +120,8 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 
      	 $includeName = apiVal['name']; 
      	 $includeRootUrl = apiVal['url'];	      	 
-     	// $includeUrl = $includeRootUrl.replace("apis.json","");	 
-		 //console.log($includecount);
-		 if($includecount< 3)
+		console.log('include: ' + $includecount);
+		 if($includecount < 3)
 		 	{
 		 	//window.setInterval(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 1000);				  
 		 	$Swag = window.setInterval(function () { loadSwaggerFromAPIsJSON($includeRootUrl) }, 5000);		 		
