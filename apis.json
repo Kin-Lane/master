@@ -32,13 +32,69 @@
       ],
       "properties": [
         {
+          "type": "X-blog-rss-feed",
+          "url": "http://www.talkwalker.com/alerts/rss/NG2GCZBIIN4ULOCFJRSUK6EIY2AZLCE2YTABNE6EHW4OAA2B53FA%3D%3D%3D%3D"
+        },
+        {
           "type": "X-blog",
-          "url": "https://kin-lane.github.io/master/blog/"
+          "url": "http://kinlane.com/blog/"
         },
         {
           "type": "X-blog-rss-feed",
-          "url": "https://kin-lane.github.io/master/blog/"
-        }               
+          "url": "http://kinlane.com/blog.xml"
+        },
+        {
+          "type": "X-change-log",
+          "url": "https://kin-lane.github.io/master/change-log/"
+        },
+        {
+          "type": "X-code",
+          "url": "https://kin-lane.github.io/master/code/"
+        },
+        {
+          "type": "X-portal",
+          "url": "https://kin-lane.github.io"
+        },
+        {
+          "type": "X-documentation",
+          "url": "https://kin-lane.github.io/master/documentation/"
+        },
+        {
+          "type": "X-faq",
+          "url": "https://kin-lane.github.io/master/faq/"
+        },
+        {
+          "type": "X-getting-started",
+          "url": "https://kin-lane.github.io/master/getting-started/"
+        },
+        {
+          "type": "X-pricing",
+          "url": "https://kin-lane.github.io/master/pricing/"
+        },
+        {
+          "type": "X-privacy-policy",
+          "url": "https://kin-lane.github.io/master/privacy-policy/"
+        },
+        {
+          "type": "X-rate-limits-page",
+          "url": "https://kin-lane.github.io/master/rate-limits/"
+        },
+        {
+          "type": "X-roadmap",
+          "url": "https://kin-lane.github.io/master/roadmap/"
+        },
+        {
+          "type": "X-status-dashboard",
+          "url": "https://kin-lane.github.io/master/status/"
+        },
+        {
+          "type": "X-terms-of-service",
+          "url": "https://kin-lane.github.io/master/terms-of-service/"
+        },
+        {
+          "type": "X-twitter",
+          "url": "https://twitter.com/kinlane"
+        }
       ],
       "contact": [
         {
@@ -53,7 +109,7 @@
     {
       "name": "API API (Inception)",
       "url": "https://kin-lane.github.io/api/apis.json"
-    },   
+    },
     {
       "name": "Audio API",
       "url": "https://kin-lane.github.io/audio/apis.json"
@@ -61,11 +117,11 @@
     {
       "name": "Blog API",
       "url": "https://kin-lane.github.io/blog/apis.json"
-    },  
+    },
     {
       "name": "Building Block API",
       "url": "https://kin-lane.github.io/buildingblock/apis.json"
-    },       
+    },
     {
       "name": "Comment API",
       "url": "https://kin-lane.github.io/comment/apis.json"
@@ -73,11 +129,11 @@
     {
       "name": "Curated API",
       "url": "https://kin-lane.github.io/curated/apis.json"
-    },     
+    },
     {
       "name": "Glossary API",
       "url": "https://kin-lane.github.io/glossary/apis.json"
-    },     
+    },
     {
       "name": "Image API",
       "url": "https://kin-lane.github.io/image/apis.json"
@@ -85,7 +141,7 @@
     {
       "name": "Job API",
       "url": "https://kin-lane.github.io/job/apis.json"
-    },     
+    },
     {
       "name": "Link API",
       "url": "https://kin-lane.github.io/link/apis.json"
@@ -97,7 +153,7 @@
     {
       "name": "Organization API",
       "url": "https://kin-lane.github.io/organization/apis.json"
-    },     
+    },
     {
       "name": "Page API",
       "url": "https://kin-lane.github.io/page/apis.json"
@@ -105,15 +161,15 @@
     {
       "name": "Paper API",
       "url": "https://kin-lane.github.io/paper/apis.json"
-    },    
+    },
     {
       "name": "Patent API",
       "url": "https://kin-lane.github.io/patent/apis.json"
-    },    
+    },
     {
       "name": "People API",
       "url": "https://kin-lane.github.io/people/apis.json"
-    },     
+    },
     {
       "name": "Project API",
       "url": "https://kin-lane.github.io/project/apis.json"
@@ -121,23 +177,23 @@
     {
       "name": "Question API",
       "url": "https://kin-lane.github.io/question/apis.json"
-    },    
+    },
     {
       "name": "Tag API",
       "url": "https://kin-lane.github.io/tag/apis.json"
-    },   
+    },
     {
       "name": "Tip API",
       "url": "https://kin-lane.github.io/tip/apis.json"
-    },         
+    },
     {
       "name": "Tool API",
       "url": "https://kin-lane.github.io/tool/apis.json"
-    },         
+    },
     {
       "name": "Video API",
       "url": "https://kin-lane.github.io/video/apis.json"
-    }     
+    }
   ],
   "maintainers": [
     {
