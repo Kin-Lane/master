@@ -27,7 +27,7 @@ $APIsJSONSwaggerUI = Array();
   	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
   		
 	  $html = '<div class="swagger-section">';
-	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
+	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div><p><br /></p>';
 	  $html = $html + '</div>';
 	  console.log($html);
 	  $('#master-swagger-section').append($html);  
