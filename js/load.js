@@ -101,7 +101,7 @@ if(document.getElementById("jsonNavigator"))
 	
 if(document.getElementById("master-swagger-section"))
 	{
-	loadMasterSwaggerFromAPIsJSON('/{{ site.repo }}/apis.json');
+	loadMasterSwaggerFromAPIsJSON('/apis.json');
 	}		
 	
 if(document.getElementById("swaggerEditor"))
