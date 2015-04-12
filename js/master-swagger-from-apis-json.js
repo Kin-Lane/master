@@ -56,7 +56,7 @@ $APIsJSONSwaggerUI = Array();
 	  });
 	
 	  $APIsJSONSwaggerUI[$itemcount].load();	
-	  waitforit();
+	 // waitforit();
   }
 
 function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
