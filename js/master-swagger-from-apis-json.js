@@ -23,7 +23,7 @@ function deploySwaggerMaster($swaggerURL,$itemcount)
 	  $html = $html + '</div><p><br /></p>';
 
 	  $('#master-swagger-section').append($html);  
-		console.log("Pulling: " + $swaggerURL);
+
 	  $APIsJSONSwaggerUI[$itemcount] = new SwaggerUi({
 	  	
 	    url: $swaggerURL,
