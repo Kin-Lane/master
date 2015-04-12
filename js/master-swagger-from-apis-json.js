@@ -30,28 +30,7 @@ function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
 	  	                 
         });		  
          	  	
-    } 
-    
-function loadSwaggerFromAPIsJSON($apisjsonURL,$itemcount)
-    {
-
-	console.log("processing..." + $apisjsonURL);
-
-	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
-
-
-		buildSwaggerFromAPIsJSON(apisJSON,$itemcount);
-
-	});	
-
-	// Set another completion function for the request above
-	jqxhr.complete(function() {
-		
-	  	//document.getElementById("jsonNavigator").style.display=''; 
-	  	                 
-        });		  
-         	  	
-    }     
+    }   
 
 function buildMasterSwaggerFromAPIsJSON(apisJSON)
 	{
