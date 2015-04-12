@@ -15,10 +15,14 @@
 		var $repo = '{{ site.repo }}';
 		var $oauthio = '{{ site.oauthio }}';
 
-      </script>    	
+      </script>	      
     	
-      <div class="masthead-inner" align="center">  	      	
-		<h2>{" {{ site.title }} "}</h2>      		                  	      	
+      <div class="masthead-inner" align="center">  	 
+      	     	
+		<h2>{" {{ site.title }} "}</h2>      		
+    	<a href="http://bit.ly/1cHBhd5" target="_blank">
+    		<img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/3scale/Winning-in-the-API-Economy-eBook-3scale.png" width="35%" style="border: 1px solid #FFF; margin-bottom: 25px;" />
+    	</a>                   	      	
         <div class="colophon">
           <ul class="colophon-links">
             <li>
@@ -44,21 +48,9 @@
             </li>      
             <li style="padding-top: 15px;">
               <a href="http://apievangelist.com"><< Return to API Evangelist</a>
-            </li>                                                                       
+            </li>                                                                                    
           </ul>
-        </div>   
-	        
-	    <script type="text/javascript">
-	    
-	    	$oAuth_Token = getUrlVar('oAuth_Token');
-	    	
-	    	if($oAuth_Token!='')
-	    		{
-				document.getElementById("home-nav").href = document.getElementById("home-nav").href + '?oAuth_Token=' + $oAuth_Token;
-				document.getElementById("apis-json-editor-nav").href = document.getElementById("apis-json-editor-nav").href + '?oAuth_Token=' + $oAuth_Token;
-				}
-	    		
-	    </script>           
+        </div>   	                
               
         <script id="parterListingTemplate" type="text/template"> 
             {% raw  %}  
@@ -92,7 +84,7 @@
       </div>
     </header>
 
-    <div class="content container">
+    <div class="content uicontainer">
     	
     	<p align="center">
     		<a href="http://apievangelist.com">
@@ -139,50 +131,6 @@
       
     </div>
 	
-	<script type="text/javascript">
-	
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-1119465-51']);
-	  _gaq.push(['_setDomainName', 'apievangelist.com']);
-	  _gaq.push(['_trackPageview']);
-	
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-	  
-	  function checkLinkRot()
-	    {
-	    var linkArray = [];
-	    var links = document.getElementsByTagName("a");
-	    for(var i=0; i<links.length; i++) {
-	        linkArray.push(links[i].href);
-	    }
-	    url = "http://linkrot.api.laneworks.net/v1/links/";
-	    var myJsonString = JSON.stringify(linkArray);                
-	    $.ajax({
-	        type: "POST",
-	        url: url,
-	        data: myJsonString,
-	        success: function (data) {            
-	             $.each(data, function($Key,$Value) {                 
-	                $URL = $Value['URL'];
-	                $returnURL = $Value['returnURL'];  
-	                var links = document.getElementsByTagName("a");
-	                for(var i=0; i<links.length; i++) {
-	                    if(links[i].href==$URL)
-	                        {
-	                        document.getElementsByTagName("a")[i].href=$returnURL;    
-	                        }
-	                     }                
-	             });                 
-	        }
-	    });                
-	    }   
-	
-	</script>
-	
 	<!-- Google Code for API Evangelist visitors -->
 	<script type="text/javascript">
 	/* <![CDATA[ */
@@ -198,7 +146,7 @@
 	<div style="display:inline;">
 	<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/964245031/?value=1.000000&amp;label=U2foCJGT0wkQp-zkywM&amp;guid=ON&amp;script=0"/>
 	</div>
-	</noscript>	
+	</noscript>					
 	
 	<script src="https://{{ site.org }}.github.io/master/js/editor-apis-json.js" type="text/javascript"></script>
 	<script src="https://{{ site.org }}.github.io/master/js/navigator-apis-json.js" type="text/javascript"></script>
@@ -206,9 +154,10 @@
 	<script src="https://{{ site.org }}.github.io/master/js/editor-config-json.js" type="text/javascript"></script>
 	<script src="https://{{ site.org }}.github.io/master/js/editor-keys-json.js" type="text/javascript"></script>
 	<script src="https://{{ site.org }}.github.io/master/js/editor-question-json.js" type="text/javascript"></script>
-	<script src="https://{{ site.org }}.github.io/master/js/master-swagger-from-apis-json.js" type="text/javascript"></script>
+	
+	<script src="https://{{ site.org }}.github.io/{{ site.repo }}/js/editor-resource-json.js" type="text/javascript"></script>
+	<script src="https://{{ site.org }}.github.io/{{ site.repo }}/js/load.js" type="text/javascript"></script>  	      	
+		
+</body>
 
-	<script src="https://{{ site.org }}.github.io/{{ site.repo }}/js/load.js" type="text/javascript"></script> 
-	  	
-  </body>
 </html>
