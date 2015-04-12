@@ -118,7 +118,8 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 		 //console.log($includecount);
 		 if($includecount< 5)
 		 	{
-		 	setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 15000);
+		 	window.setInterval(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 5000);	
+		 	//setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 15000);
 		 	//loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
 		 	//console.log("include (" + $includecount + "):" + $includeRootUrl);
 		 	}		 		 
