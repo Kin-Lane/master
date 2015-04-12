@@ -80,9 +80,8 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 		 if($includecount< 2)
 		 	{
 		 	//loadSwaggerFromAPIsJSON($includeRootUrl)
-		 	}
-		 
-		 console.log("include:" + $includeRootUrl);
+		 	console.log("include:" + $includeRootUrl);
+		 	}		 		 
  
 		 $includecount++;										
 	});	
