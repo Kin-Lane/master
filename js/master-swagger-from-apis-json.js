@@ -135,7 +135,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
      	 $includeRootUrl = apiVal['url'];	      	 
      	// $includeUrl = $includeRootUrl.replace("apis.json","");	 
 		 //console.log($includecount);
-		 if($includecount< 2)
+		 if($includecount< 3)
 		 	{
 		 	loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
 		 	console.log("include (" + $includecount + "):" + $includeRootUrl);
