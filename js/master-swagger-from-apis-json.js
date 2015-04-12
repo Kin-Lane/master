@@ -1,5 +1,7 @@
 // Purposely keeping this verbose, and expanded, until I figure out best patterns for config and extensability
 
+$Swag = "";
+
 $apicount = 0;  
 $propertycount = 0;
 
@@ -48,6 +50,7 @@ $APIsJSONSwaggerUI = Array();
 	  });
 	
 	  $APIsJSONSwaggerUI[$itemcount].load();	
+	  window.clearInterval($Swag);
   }
 
 function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
@@ -119,8 +122,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 		 if($includecount< 3)
 		 	{
 		 	//window.setInterval(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 1000);				  
-		 	$Swag = window.setInterval(function () { loadSwaggerFromAPIsJSON($includeRootUrl,$includecount) }, 5000);
-		 	window.clearInterval($Swag);	
+		 	$Swag = window.setInterval(function () { loadSwaggerFromAPIsJSON($includeRootUrl,$includecount) }, 5000);		 		
 		 	//setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 15000);
 		 	//loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
 		 	//console.log("include (" + $includecount + "):" + $includeRootUrl);
