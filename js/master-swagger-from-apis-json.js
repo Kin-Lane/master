@@ -19,7 +19,7 @@ $apipropertyoptions = "";
 	  $html = $html + '<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>';
 	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
 	  $html = $html + '</div>';
-	  
+	  console.log($html);
 	  $('#master-swagger-section').append($html);  
   		
 	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
@@ -173,7 +173,7 @@ function buildSwaggerFromAPIsJSON(apisJSON)
 
 		 	$propertyType = propertyVal['type'];
 		 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
-		 	console.log($propertyType);
+		 	//console.log($propertyType);
 		    if($propertyType=='swagger'||$propertyType=='Swagger')
 		    	{
 		    	console.log("API: " + $propertyURL);	
