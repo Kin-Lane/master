@@ -1,6 +1,5 @@
 var $login = getUrlVar('login');
 
-
   function deploySwagger()
   	{		
 	  var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
