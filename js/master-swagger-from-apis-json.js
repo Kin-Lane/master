@@ -27,7 +27,6 @@ $APIsJSONSwaggerUI = Array();
   	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
   		
 	  $html = '<div class="swagger-section">';
-	  $html = $html + '<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>';
 	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
 	  $html = $html + '</div>';
 	  console.log($html);
@@ -40,7 +39,7 @@ $APIsJSONSwaggerUI = Array();
 	    url: $swaggerURL,
 	    dom_id: $swaggerContainer,
 	    validatorUrl: null,
-	    supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+	    supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
 	    onComplete: function(swaggerApi, swaggerUi){
 	
 	      $('pre code').each(function(i, e) {
@@ -124,7 +123,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
      	 $includeName = apiVal['name']; 
      	 $includeRootUrl = apiVal['url'];	      	 
 
-		 if($includecount < 3)
+		 if($includecount < 5)
 		 	{
 		 	//window.setInterval(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 1000);				  
 		 	//$Swag = window.setInterval(function () { loadSwaggerFromAPIsJSON($includeRootUrl) }, 5000);		 		
