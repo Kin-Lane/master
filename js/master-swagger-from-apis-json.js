@@ -33,6 +33,8 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 	{
 	//console.log("run2");	
 	
+	mySwagger = Array();
+	
 	$itemcount = 1;
 		
 	$apisJSONName = apisJSON['name'];
@@ -102,7 +104,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 					  		
 						  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
 						  
-						  mySwagger = new SwaggerUi({
+						  mySwagger[$itemcount] = new SwaggerUi({
 						  	
 						    url: $swaggerURL,
 						    dom_id: $swaggerContainer,
@@ -146,7 +148,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 						    sorter : "alpha"
 						  });
 						
-						  mySwagger.load();			    	
+						  mySwagger[$itemcount].load();			    	
 				    	  $itemcount++;
 				    	  setTimeout(waitforit, 10000);
 				    	}	 	
