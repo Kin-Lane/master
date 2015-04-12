@@ -25,6 +25,7 @@ $apipropertyoptions = "";
 	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
 	  
 	  window.swaggerUi = new SwaggerUi({
+	  	
 	    url: $swaggerURL,
 	    dom_id: $swaggerContainer,
 	    supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
@@ -135,7 +136,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
      	 $includeRootUrl = apiVal['url'];	      	 
      	// $includeUrl = $includeRootUrl.replace("apis.json","");	 
 		 //console.log($includecount);
-		 if($includecount< 3)
+		 if($includecount< 11)
 		 	{
 		 	loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
 		 	console.log("include (" + $includecount + "):" + $includeRootUrl);
