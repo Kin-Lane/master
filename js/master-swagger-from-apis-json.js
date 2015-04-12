@@ -17,6 +17,8 @@ $apipropertyoptions = "";
   		
 	  $html = '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
 	  
+	  console.log($html);
+	  
 	  $('#swagger-section').append($html);  
   		
 	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
