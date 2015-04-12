@@ -10,7 +10,7 @@ $MasterAPISJSON = "";
 
 $apipropertyoptions = "";
 	
-  function deploySwagger($swaggerURL)
+  function deploySwaggerMaster($swaggerURL)
   	{		
   		
   	  $swaggerContainer = "swagger-ui-container-" + $includecount;	
@@ -171,11 +171,11 @@ function buildSwaggerFromAPIsJSON(apisJSON)
 		 	$propertyType = propertyVal['type'];
 		 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
 		 	//console.log($propertyType);
+		 	
 		    if($propertyType=='swagger'||$propertyType=='Swagger')
 		    	{
 		    	console.log("API: " + $propertyURL);	
-		    	//deploySwagger($propertyURL);
-		    	setTimeout(deploySwagger($propertyURL), 3000);
+		    	setTimeout(deploySwaggerMaster($propertyURL), 3000);
 		    	}	 	
 	
 		 	$propertycount++;
