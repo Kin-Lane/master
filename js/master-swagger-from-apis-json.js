@@ -28,6 +28,7 @@ $apipropertyoptions = "";
 	  	
 	    url: $swaggerURL,
 	    dom_id: $swaggerContainer,
+	    validatorUrl: null,
 	    supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
 	    onComplete: function(swaggerApi, swaggerUi){
 	
@@ -136,10 +137,11 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
      	 $includeRootUrl = apiVal['url'];	      	 
      	// $includeUrl = $includeRootUrl.replace("apis.json","");	 
 		 //console.log($includecount);
-		 if($includecount< 11)
+		 if($includecount< 6)
 		 	{
-		 	loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
-		 	console.log("include (" + $includecount + "):" + $includeRootUrl);
+		 	setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 3000);
+		 	//loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
+		 	//console.log("include (" + $includecount + "):" + $includeRootUrl);
 		 	}		 		 
  
 		 $includecount++;										
@@ -177,9 +179,8 @@ function buildSwaggerFromAPIsJSON(apisJSON,$itemcount)
 		 	//console.log($propertyType);
 		    if($propertyType=='swagger'||$propertyType=='Swagger')
 		    	{
-		    	console.log("API: " + $propertyURL);	
-		    	//deploySwagger($propertyURL);
-		    	setTimeout(deploySwaggerMaster($propertyURL,$itemcount), 3000);
+		    	console.log("Loading Swagger: " + $propertyURL);	
+		    	deploySwaggerMaster($propertyURL,$itemcount)
 		    	}	 	
 	
 		 	$propertycount++;
