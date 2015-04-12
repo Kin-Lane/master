@@ -80,10 +80,10 @@ function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
          	  	
     } 
     
-function loadSwaggerFromAPIsJSON($apisjsonURL$itemcount)
+function loadSwaggerFromAPIsJSON($apisjsonURL,$itemcount)
     {
 
-	console.log("processing..." + $apisjsonURL + " (" + $apisjsonURL$itemcount + ")");
+	console.log("processing..." + $apisjsonURL + " (" + $itemcount + ")");
 
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
