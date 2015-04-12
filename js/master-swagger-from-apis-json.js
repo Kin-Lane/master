@@ -14,6 +14,7 @@ $apipropertyoptions = "";
 function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
     {
 
+	console.log("run1");
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
 
@@ -31,8 +32,9 @@ function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
     } 
 
 function buildMasterSwaggerFromAPIsJSON(apisJSON)
-
 	{
+	console.log("run2");	
+		
 	$apisJSONName = apisJSON['name'];
 
  	$apisJSONDesc = apisJSON['description'];
