@@ -3,17 +3,17 @@
 $apicount = 0;  
 $propertycount = 0;
 
-$includecount = 0;
+$includecount = 1;
 	 	
 // The Master 
 $MasterAPISJSON = "";
 
 $apipropertyoptions = "";
 	
-  function deploySwaggerMaster($swaggerURL)
+  function deploySwaggerMaster($swaggerURL,$itemcount)
   	{		
   		
-  	  $swaggerContainer = "swagger-ui-container-" + $includecount;	
+  	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
   		
 	  $html = '<div class="swagger-section">';
 	  $html = $html + '<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>';
@@ -90,7 +90,7 @@ function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
          	  	
     } 
     
-function loadSwaggerFromAPIsJSON($apisjsonURL)
+function loadSwaggerFromAPIsJSON($apisjsonURL,$itemcount)
     {
 
 	console.log("processing..." + $apisjsonURL);
@@ -98,7 +98,7 @@ function loadSwaggerFromAPIsJSON($apisjsonURL)
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
 
-		buildSwaggerFromAPIsJSON(apisJSON);
+		buildSwaggerFromAPIsJSON(apisJSON,$itemcount);
 
 	});	
 
@@ -137,7 +137,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 		 //console.log($includecount);
 		 if($includecount< 2)
 		 	{
-		 	loadSwaggerFromAPIsJSON($includeRootUrl);
+		 	loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
 		 	console.log("include (" + $includecount + "):" + $includeRootUrl);
 		 	}		 		 
  
@@ -146,7 +146,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 
 	}
 	
-function buildSwaggerFromAPIsJSON(apisJSON)
+function buildSwaggerFromAPIsJSON(apisJSON,$itemcount)
 	{
 	//console.log("run3");	
 		
@@ -178,7 +178,7 @@ function buildSwaggerFromAPIsJSON(apisJSON)
 		    	{
 		    	console.log("API: " + $propertyURL);	
 		    	//deploySwagger($propertyURL);
-		    	setTimeout(deploySwaggerMaster($propertyURL), 3000);
+		    	setTimeout(deploySwaggerMaster($propertyURL,$itemcount), 3000);
 		    	}	 	
 	
 		 	$propertycount++;
