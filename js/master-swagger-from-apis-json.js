@@ -12,13 +12,16 @@ $MasterAPISJSON = "";
 
 $apipropertyoptions = "";
 
+function waitforit(){
+    console.log('blank!');
+    setTimeout(waitforit, 5000);
+}
+
 $APIsJSONSwaggerUI = Array();
 	
-  function deploySwaggerMaster($swaggerURL)
+  function deploySwaggerMaster($swaggerURL,$itemcount)
   	{		
-  	
-  	  $itemcount = $includecount;	
-  		
+  
   	  console.log('building: ' + $itemcount);
   	 
   	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
@@ -53,7 +56,7 @@ $APIsJSONSwaggerUI = Array();
 	  });
 	
 	  $APIsJSONSwaggerUI[$itemcount].load();	
-	  window.clearInterval($Swag);
+	  waitforit();
   }
 
 function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
@@ -77,15 +80,15 @@ function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
          	  	
     } 
     
-function loadSwaggerFromAPIsJSON($apisjsonURL)
+function loadSwaggerFromAPIsJSON($apisjsonURL$itemcount)
     {
 
-	console.log("processing..." + $apisjsonURL);
+	console.log("processing..." + $apisjsonURL + " (" + $apisjsonURL$itemcount + ")");
 
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
 
-		buildSwaggerFromAPIsJSON(apisJSON);
+		buildSwaggerFromAPIsJSON(apisJSON,$apisjsonURL$itemcount);
 
 	});	
 
@@ -120,13 +123,13 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 
      	 $includeName = apiVal['name']; 
      	 $includeRootUrl = apiVal['url'];	      	 
-		console.log('include: ' + $includecount);
+
 		 if($includecount < 3)
 		 	{
 		 	//window.setInterval(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 1000);				  
 		 	$Swag = window.setInterval(function () { loadSwaggerFromAPIsJSON($includeRootUrl) }, 5000);		 		
 		 	//setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 15000);
-		 	//loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
+		 	loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
 		 	//console.log("include (" + $includecount + "):" + $includeRootUrl);
 		 	}		 		 
  
@@ -135,7 +138,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 
 	}
 	
-function buildSwaggerFromAPIsJSON(apisJSON)
+function buildSwaggerFromAPIsJSON(apisJSON,$itemcount)
 	{
 	//console.log("run3");	
 		
@@ -166,7 +169,7 @@ function buildSwaggerFromAPIsJSON(apisJSON)
 		    if($propertyType=='swagger'||$propertyType=='Swagger')
 		    	{
 		    	console.log("Slowly Loading Swagger: " + $propertyURL);	
-		    	deploySwaggerMaster($propertyURL);
+		    	deploySwaggerMaster($propertyURL,$itemcount);
 		    	//window.setInterval(function () {deploySwaggerMaster($propertyURL,$itemcount)}, 5000);
 		    	}	 	
 	
