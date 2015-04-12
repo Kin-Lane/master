@@ -15,7 +15,7 @@ $apipropertyoptions = "";
   		
   	  $swaggerContainer = "swagger-ui-container-" + $includecount;	
   		
-	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
+  	  $html = '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
 	  
 	  $('#swagger-section').append($html);  
   		
