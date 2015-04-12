@@ -32,8 +32,10 @@ $apipropertyoptions = "";
 	
 	      var textboxes = document.getElementsByTagName("input");        
 
-	      $appid = $apikeys["API Evangelist"]['appid'];
-	      $appkey = $apikeys["API Evangelist"]['appkey'];
+		  if($apikeys["API Evangelist"]['appid'])
+		  	{
+	      	$appid = $apikeys["API Evangelist"]['appid'];
+	      	$appkey = $apikeys["API Evangelist"]['appkey'];
 
 			for (var i=0;i<textboxes.length;i++)
 			 	{
@@ -49,6 +51,7 @@ $apipropertyoptions = "";
 			       	textboxes[i].value = $appkey;	
 			       	}			       	
 			     }
+			   }
 			 } 	
 	
 	      $('pre code').each(function(i, e) {
