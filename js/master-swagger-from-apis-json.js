@@ -175,7 +175,7 @@ function buildSwaggerFromAPIsJSON(apisJSON)
 		    	{
 		    	console.log("API: " + $propertyURL);	
 		    	//deploySwagger($propertyURL);
-		    	setTimeout(deploySwagger($propertyURL), 3000);
+		    	//setTimeout(deploySwagger($propertyURL), 3000);
 		    	}	 	
 	
 		 	$propertycount++;
