@@ -18,7 +18,37 @@
   "modified": "2015-01-22",
   "url": "https://kin-lane.github.io/master/apis.json",
   "SpecificationVersion": "0.14",
-  "apis": [],
+  "apis": [
+    {
+      "name": "Master",
+      "description": "This is the master portal for all of the Kin Lane APIs.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/kin.png",
+      "humanURL": "https://kin-lane.github.io/master/",
+      "baseURL": "https://kin-lane.github.io/master/apis.json",
+      "tags": [
+        "API",
+        "Application Programming Interface",
+        "Master"
+      ],
+      "properties": [
+        {
+          "type": "X-blog",
+          "url": "https://kin-lane.github.io/master/blog/"
+        },
+        {
+          "type": "X-blog-rss-feed",
+          "url": "https://kin-lane.github.io/master/blog/"
+        }               
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    }
+  ],
   "include": [
     {
       "name": "API API (Inception)",
