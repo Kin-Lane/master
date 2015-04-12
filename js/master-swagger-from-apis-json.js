@@ -7,33 +7,23 @@ $propertycount = 0;
 
 $includecount = 1;
 	 	
-// The Master 
 $MasterAPISJSON = "";
 
 $apipropertyoptions = "";
 
-function waitforit(){
-    //console.log('blank!');
-    setTimeout(waitforit, 5000);
-}
-
 $APIsJSONSwaggerUI = Array();
 	
-  function deploySwaggerMaster($swaggerURL,$itemcount)
+function deploySwaggerMaster($swaggerURL,$itemcount)
   	{		
-  
-  	  console.log('building: ' + $itemcount);
-  	 
+
   	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
   		
 	  $html = '<div class="swagger-section">';
 	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
 	  $html = $html + '</div><p><br /></p>';
-	  //console.log($html);
+
 	  $('#master-swagger-section').append($html);  
-  		
-	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
-	  
+
 	  $APIsJSONSwaggerUI[$itemcount] = new SwaggerUi({
 	  	
 	    url: $swaggerURL,
@@ -55,16 +45,13 @@ $APIsJSONSwaggerUI = Array();
 	  });
 	
 	  $APIsJSONSwaggerUI[$itemcount].load();	
-	 // waitforit();
+
   }
 
 function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
     {
 
-	console.log("loading..." + $apisjsonURL);
-
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
-
 
 		buildMasterSwaggerFromAPIsJSON(apisJSON);
 
@@ -91,19 +78,15 @@ function loadSwaggerFromAPIsJSON($apisjsonURL,$itemcount)
 
 	});	
 
-	// Set another completion function for the request above
 	jqxhr.complete(function() {
-		
-	  	//document.getElementById("jsonNavigator").style.display=''; 
-	  	                 
+              
         });		  
          	  	
     }     
 
 function buildMasterSwaggerFromAPIsJSON(apisJSON)
 	{
-	//console.log("run2");	
-		
+
 	$apisJSONName = apisJSON['name'];
 
  	$apisJSONDesc = apisJSON['description'];
@@ -159,10 +142,9 @@ function buildSwaggerFromAPIsJSON(apisJSON,$itemcount)
 
 		 	$propertyType = propertyVal['type'];
 		 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
-		 	//console.log($propertyType);
+		 	;
 		    if($propertyType=='swagger'||$propertyType=='Swagger')
 		    	{
-		    	//console.log("Slowly Loading Swagger: " + $propertyURL);	
 		    	deploySwaggerMaster($propertyURL,$itemcount);
 		    	}	 	
 	
