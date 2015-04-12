@@ -32,10 +32,8 @@ $apipropertyoptions = "";
 	
 	      var textboxes = document.getElementsByTagName("input");        
 
-		  if($apikeys["API Evangelist"]['appid'])
-		  	{
-	      	$appid = $apikeys["API Evangelist"]['appid'];
-	      	$appkey = $apikeys["API Evangelist"]['appkey'];
+	      $appid = $apikeys["API Evangelist"]['appid'];
+	      $appkey = $apikeys["API Evangelist"]['appkey'];
 
 			for (var i=0;i<textboxes.length;i++)
 			 	{
