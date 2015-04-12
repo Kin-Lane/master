@@ -14,7 +14,7 @@ $APIsJSONSwaggerUI = Array();
 	
   function deploySwaggerMaster($swaggerURL,$itemcount)
   	{		
-  	  alert('goodbye!');
+  	  //alert('goodbye!');
   	 
   	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
   		
@@ -142,7 +142,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 		 //console.log($includecount);
 		 if($includecount< 5)
 		 	{
-		 	setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 3000);
+		 	setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 15000);
 		 	//loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
 		 	//console.log("include (" + $includecount + "):" + $includeRootUrl);
 		 	}		 		 
