@@ -15,12 +15,9 @@ $apipropertyoptions = "";
   		
   	  $swaggerContainer = "swagger-ui-container-" + $includecount;	
   		
-	  $html = '<div class="swagger-section">';
-	  $html = $html + '<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>';
 	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
-	  $html = $html + '</div>';
 	  
-	  $('#master-swagger-section').append($html);  
+	  $('#swagger-section').append($html);  
   		
 	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
 	  
