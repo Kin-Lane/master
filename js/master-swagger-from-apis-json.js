@@ -10,9 +10,9 @@ $MasterAPISJSON = "";
 
 $apipropertyoptions = "";
 
-function waitforit()
+function waitforit($showme)
 	{
-	console.log("waiting...");
+	console.log("waiting..." + $showme);
 	}
 
 function loadMasterSwaggerFromAPIsJSON($url)
@@ -129,7 +129,10 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 						  mySwagger[$itemcount].load();		
 						  	    	
 				    	  $itemcount++;
-				    	  setTimeout(waitforit, 10000);
+				    	  
+				    	  $showme = $itemcount;
+				    	  
+				    	  setTimeout(waitforit($showme), 10000);
 				    	}	 	
 			
 				 	$propertycount++;
