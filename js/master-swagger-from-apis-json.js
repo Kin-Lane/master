@@ -12,7 +12,7 @@ $apipropertyoptions = "";
 	
   function deploySwaggerMaster($swaggerURL,$itemcount)
   	{		
-  		
+  	 alert('hello!');
   	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
   		
 	  $html = '<div class="swagger-section">';
