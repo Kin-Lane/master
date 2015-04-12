@@ -92,6 +92,8 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 				    	$swaggerURL = $propertyURL;
 				    	console.log("Loading Swagger: " + $propertyURL);	
 				    	
+				    	  swaggerUi = "";
+				    	
 					  	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
 					  		
 						  $html = '<div class="swagger-section">';
@@ -148,7 +150,8 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 						    sorter : "alpha"
 						  });
 						
-						  mySwagger[$itemcount].load();			    	
+						  mySwagger[$itemcount].load();		
+						  	    	
 				    	  $itemcount++;
 				    	  setTimeout(waitforit, 10000);
 				    	}	 	
