@@ -24,7 +24,7 @@ $apipropertyoptions = "";
   		
 	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
 	  
-	  window.swaggerUi+$itemcount = new SwaggerUi({
+	  window.swaggerUi = new SwaggerUi({
 	  	
 	    url: $swaggerURL,
 	    dom_id: $swaggerContainer,
@@ -67,7 +67,7 @@ $apipropertyoptions = "";
 	    sorter : "alpha"
 	  });
 	
-	  window.swaggerUi+$itemcount.load();	
+	  window.swaggerUi.load();	
   }
 
 function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
