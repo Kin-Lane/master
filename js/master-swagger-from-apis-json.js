@@ -12,7 +12,9 @@ $apipropertyoptions = "";
 	
   function deploySwaggerMaster($swaggerURL)
   	{		
-  		
+  	
+  		console.log('in');
+  	
   	  $swaggerContainer = "swagger-ui-container-" + $includecount;	
   		
 	  $html = '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
