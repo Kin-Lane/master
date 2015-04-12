@@ -20,7 +20,7 @@ $apipropertyoptions = "";
 	  $('#swagger-section').append($html);  
   		
 	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
-	  
+	  console.log("rendinger..." + $swaggerURL);
 	  window.swaggerUi = new SwaggerUi({
 	    url: $swaggerURL,
 	    dom_id: $swaggerContainer,
@@ -175,7 +175,7 @@ function buildSwaggerFromAPIsJSON(apisJSON)
 		    	{
 		    	console.log("API: " + $propertyURL);	
 		    	//deploySwagger($propertyURL);
-		    	//setTimeout(deploySwagger($propertyURL), 3000);
+		    	setTimeout(deploySwagger($propertyURL), 3000);
 		    	}	 	
 	
 		 	$propertycount++;
