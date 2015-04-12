@@ -40,7 +40,7 @@ function loadSwaggerFromAPIsJSON($apisjsonURL)
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
 
-		buildMasterSwaggerFromAPIsJSON(apisJSON);
+		buildSwaggerFromAPIsJSON(apisJSON);
 
 	});	
 
