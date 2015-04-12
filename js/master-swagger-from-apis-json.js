@@ -14,8 +14,11 @@ $apipropertyoptions = "";
 
 $APIsJSONSwaggerUI = Array();
 	
-  function deploySwaggerMaster($swaggerURL,$itemcount)
+  function deploySwaggerMaster($swaggerURL)
   	{		
+  	
+  	  $itemcount = $includecount;	
+  		
   	  console.log('building: ' + $itemcount);
   	 
   	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
@@ -74,7 +77,7 @@ function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
          	  	
     } 
     
-function loadSwaggerFromAPIsJSON($apisjsonURL,$itemcount)
+function loadSwaggerFromAPIsJSON($apisjsonURL)
     {
 
 	console.log("processing..." + $apisjsonURL);
@@ -82,7 +85,7 @@ function loadSwaggerFromAPIsJSON($apisjsonURL,$itemcount)
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
 
-		buildSwaggerFromAPIsJSON(apisJSON,$itemcount);
+		buildSwaggerFromAPIsJSON(apisJSON);
 
 	});	
 
@@ -122,7 +125,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 		 if($includecount< 3)
 		 	{
 		 	//window.setInterval(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 1000);				  
-		 	$Swag = window.setInterval(function ($includeRootUrl,$includecount) { loadSwaggerFromAPIsJSON($includeRootUrl,$includecount) }, 5000);		 		
+		 	$Swag = window.setInterval(function () { loadSwaggerFromAPIsJSON($includeRootUrl) }, 5000);		 		
 		 	//setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 15000);
 		 	//loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
 		 	//console.log("include (" + $includecount + "):" + $includeRootUrl);
@@ -133,7 +136,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 
 	}
 	
-function buildSwaggerFromAPIsJSON(apisJSON,$itemcount)
+function buildSwaggerFromAPIsJSON(apisJSON)
 	{
 	//console.log("run3");	
 		
@@ -164,7 +167,7 @@ function buildSwaggerFromAPIsJSON(apisJSON,$itemcount)
 		    if($propertyType=='swagger'||$propertyType=='Swagger')
 		    	{
 		    	console.log("Slowly Loading Swagger: " + $propertyURL);	
-		    	deploySwaggerMaster($propertyURL,$itemcount);
+		    	deploySwaggerMaster($propertyURL);
 		    	//window.setInterval(function () {deploySwaggerMaster($propertyURL,$itemcount)}, 5000);
 		    	}	 	
 	
