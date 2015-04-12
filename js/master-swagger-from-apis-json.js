@@ -100,8 +100,6 @@ function buildSwaggerFromAPIsJSON(apisJSON)
  	  
     apisJSONTags = apisJSON['tags'];            
     apisJSONAPIs = apisJSON['apis'];
-    apisJSONIncludes = apisJSON['include'];
-    apisJSONMaintainers = apisJSON['maintainers'];	
     
      $.each(apisJSONAPIs, function(apiKey, apiVal) { 
 
@@ -117,7 +115,7 @@ function buildSwaggerFromAPIsJSON(apisJSON)
 
 		 	$propertyType = propertyVal['type'];
 		 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
-		 			
+		 	console.log($propertyType);
 		    if($propertyType=='Swagger')
 		    	{
 		    	console.log("API: " + $propertyURL);	
