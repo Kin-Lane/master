@@ -30,6 +30,26 @@ function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
         });		  
          	  	
     } 
+    
+function loadSwaggerFromAPIsJSON($apisjsonURL)
+    {
+
+	console.log("run1");
+	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
+
+
+		buildMasterSwaggerFromAPIsJSON(apisJSON);
+
+	});	
+
+	// Set another completion function for the request above
+	jqxhr.complete(function() {
+		
+	  	//document.getElementById("jsonNavigator").style.display=''; 
+	  	                 
+        });		  
+         	  	
+    }     
 
 function buildMasterSwaggerFromAPIsJSON(apisJSON)
 	{
@@ -49,52 +69,62 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
     howmanyapis = apisJSONAPIs.length;	
     howmanyincludes = apisJSONIncludes.length;
     
-    if(howmanyincludes > howmanyapis)
-    	{
-	     $.each(apisJSONIncludes, function(apiKey, apiVal) { 
-	
-	     	 $includeName = apiVal['name']; 
-	     	 $includeRootUrl = apiVal['url'];	      	 
-	     	// $includeUrl = $includeRootUrl.replace("apis.json","");	 
-			 
-			 loadMasterSwaggerFromAPIsJSON($includeRootUrl)
-			 
-			 console.log("include:" + $includeRootUrl);
-	 
-			 $includecount++;										
-		});	
-		}
-	else
-		{
-			
-	     $.each(apisJSONAPIs, function(apiKey, apiVal) { 
-	
-	     	 $apiName = apiVal['name']; 
-	     	 $apiDesc = apiVal['description'];
-	     	 $apiImage = apiVal['image']; 
-	     	 $apiHumanURL = apiVal['humanURL']; 
-	     	 $apiBaseURL = apiVal['baseURL'];               	                         	 
-			 $apiTags = apiVal['tags'];			 	 
-			 
-			 $apiProperties = apiVal['properties'];
-			 $.each($apiProperties, function(propertyKey, propertyVal) { 
-	
-			 	$propertyType = propertyVal['type'];
-			 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
-			 			
-			    if($propertyType=='Swagger')
-			    	{
-			    	console.log("API: " + $propertyURL);	
-			    	}	 	
-		
-			 	$propertycount++;
-			 	
-			 	}); 				 	                                           
-	        				 					 				 	 				 					 											
-			 $apiContact = apiVal['contact'];
-			 $apicount++;										
-		});
-					
-		}
-		
+     $.each(apisJSONIncludes, function(apiKey, apiVal) { 
+
+     	 $includeName = apiVal['name']; 
+     	 $includeRootUrl = apiVal['url'];	      	 
+     	// $includeUrl = $includeRootUrl.replace("apis.json","");	 
+		 
+		 buildSwaggerFromAPIsJSON($includeRootUrl)
+		 
+		 console.log("include:" + $includeRootUrl);
+ 
+		 $includecount++;										
+	});	
+
 	}
+	
+function buildSwaggerFromAPIsJSON(apisJSON)
+	{
+	console.log("run2");	
+		
+	$apisJSONName = apisJSON['name'];
+
+ 	$apisJSONDesc = apisJSON['description'];
+ 	$apisJSONLogo = apisJSON['image'];
+ 	$apisJSONURL = apisJSON['url'];
+ 	  
+    apisJSONTags = apisJSON['tags'];            
+    apisJSONAPIs = apisJSON['apis'];
+    apisJSONIncludes = apisJSON['include'];
+    apisJSONMaintainers = apisJSON['maintainers'];	
+    
+     $.each(apisJSONAPIs, function(apiKey, apiVal) { 
+
+     	 $apiName = apiVal['name']; 
+     	 $apiDesc = apiVal['description'];
+     	 $apiImage = apiVal['image']; 
+     	 $apiHumanURL = apiVal['humanURL']; 
+     	 $apiBaseURL = apiVal['baseURL'];               	                         	 
+		 $apiTags = apiVal['tags'];			 	 
+		 
+		 $apiProperties = apiVal['properties'];
+		 $.each($apiProperties, function(propertyKey, propertyVal) { 
+
+		 	$propertyType = propertyVal['type'];
+		 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
+		 			
+		    if($propertyType=='Swagger')
+		    	{
+		    	console.log("API: " + $propertyURL);	
+		    	}	 	
+	
+		 	$propertycount++;
+		 	
+		 	}); 				 	                                           
+        				 					 				 	 				 					 											
+		 $apiContact = apiVal['contact'];
+		 $apicount++;										
+	});
+		
+	}	
