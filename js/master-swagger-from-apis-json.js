@@ -130,6 +130,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 		 	//$Swag = window.setInterval(function () { loadSwaggerFromAPIsJSON($includeRootUrl) }, 5000);		 		
 		 	setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 5000);
 		 	setTimeout(waitforit, 5000);
+		 	console.log('ok?');
 		 	//loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
 		 	//console.log("include (" + $includecount + "):" + $includeRootUrl);
 		 	}		 		 
