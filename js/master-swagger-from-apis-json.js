@@ -82,6 +82,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 				 	
 				    if($propertyType=='swagger'||$propertyType=='Swagger')
 				    	{
+				    	$swaggerURL = $propertyURL;
 				    	console.log("Loading Swagger: " + $propertyURL);	
 				    	
 					  	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
