@@ -90,9 +90,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 				    if($propertyType=='swagger'||$propertyType=='Swagger')
 				    	{
 				    		
-			    	  $showme = $itemcount;			    	  
-			    	  setTimeout(waitforit($showme), 25000);				    		
-				    		
+			
 				    	$swaggerURL = $propertyURL;
 				    	console.log("Loading Swagger: " + $propertyURL);	
 				    	
@@ -130,7 +128,8 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 						    sorter : "alpha"
 						  });
 						
-						  mySwagger[$itemcount].load();		
+		
+						  setTimeout(mySwagger[$itemcount].load(), 25000);
 						  	    	
 				    	  $itemcount++;
 				    	  
