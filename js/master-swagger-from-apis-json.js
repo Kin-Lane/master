@@ -125,8 +125,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 
 		 if($includecount < 35)
 		 	{	 		
-		 	setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 5000);
-		 	setTimeout(waitforit, 5000);
+		 	loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
 		 	}		 		 
  
 		 $includecount++;										
