@@ -14,7 +14,8 @@ $APIsJSONSwaggerUI = Array();
 	
   function deploySwaggerMaster($swaggerURL,$itemcount)
   	{		
-  	 alert('hello!');
+  	  alert('goodbye!');
+  	 
   	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
   		
 	  $html = '<div class="swagger-section">';
