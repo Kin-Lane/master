@@ -114,30 +114,6 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 						    supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
 						    onComplete: function(swaggerApi, swaggerUi){
 						
-						      var textboxes = document.getElementsByTagName("input");        
-					
-							  if($apikeys["API Evangelist"] === false)
-							  	{
-						      $appid = $apikeys["API Evangelist"]['appid'];
-						      $appkey = $apikeys["API Evangelist"]['appkey'];
-					
-								for (var i=0;i<textboxes.length;i++)
-								 	{
-								    var textbox = textboxes[i];
-								    if (textbox.type.toLowerCase() == "text")
-								       {
-								       if(textbox.name=='appid')
-								       	{
-								       	textboxes[i].value = $appid	;
-								       	}
-								       if(textbox.name=='appkey')
-								       	{
-								       	textboxes[i].value = $appkey;	
-								       	}			       	
-								     }
-								 } 
-								 }	
-						
 						      $('pre code').each(function(i, e) {
 						        hljs.highlightBlock(e)
 						      });
