@@ -161,8 +161,8 @@ function buildSwaggerFromAPIsJSON(apisJSON,$itemcount)
 		    if($propertyType=='swagger'||$propertyType=='Swagger')
 		    	{
 		    	console.log("Slowly Loading Swagger: " + $propertyURL);	
-		    	//deploySwaggerMaster($propertyURL,$itemcount)
-		    	window.setInterval(function () {deploySwaggerMaster($propertyURL,$itemcount)}, 5000);
+		    	deploySwaggerMaster($propertyURL,$itemcount);
+		    	//window.setInterval(function () {deploySwaggerMaster($propertyURL,$itemcount)}, 5000);
 		    	}	 	
 	
 		 	$propertycount++;
