@@ -170,12 +170,12 @@ function buildSwaggerFromAPIsJSON(apisJSON)
 
 		 	$propertyType = propertyVal['type'];
 		 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
-		 	console.log($propertyType);
+		 	//console.log($propertyType);
 		    if($propertyType=='swagger'||$propertyType=='Swagger')
 		    	{
 		    	console.log("API: " + $propertyURL);	
 		    	//deploySwagger($propertyURL);
-		    	setTimeout(deploySwagger($propertyURL), 3000);
+		    	//setTimeout(deploySwagger($propertyURL), 3000);
 		    	}	 	
 	
 		 	$propertycount++;
