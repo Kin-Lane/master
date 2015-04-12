@@ -88,7 +88,7 @@ function loadSwaggerFromAPIsJSON($apisjsonURL,$itemcount)
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
 
-		buildSwaggerFromAPIsJSON(apisJSON,$apisjsonURL$itemcount);
+		buildSwaggerFromAPIsJSON(apisJSON,$itemcount);
 
 	});	
 
