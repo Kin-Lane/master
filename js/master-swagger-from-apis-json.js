@@ -15,7 +15,7 @@ function loadMasterSwaggerFromAPIsJSON($url)
 
 	console.log("load..." + $url);
 
-	var jqxhr = $.getJSON($url, function(apisJSON) { 													
+	$.getJSON($url, function(apisJSON) { 													
 
 
 		buildMasterSwaggerFromAPIsJSON(apisJSON);
