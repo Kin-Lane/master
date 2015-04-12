@@ -13,7 +13,7 @@ $apipropertyoptions = "";
 function loadMasterSwaggerFromAPIsJSON($url)
     {
 
-	console.log("loading..." + $url);
+	console.log("load..." + $url);
 
 	var jqxhr = $.getJSON($url, function(apisJSON) { 													
 
