@@ -192,6 +192,7 @@
   	<!-- what do we do with these? -->
   	<script src="https://kin-lane.github.io/master/js/editor-apis-json.js" type="text/javascript"></script>
   	<script src="https://kin-lane.github.io/master/js/navigator-apis-json.js" type="text/javascript"></script>
+  	<script src="https://kin-lane.github.io/master/js/master-swagger-from-apis-json.js" type="text/javascript"></script>
      	
 	<script type="text/javascript">		
 	
@@ -204,7 +205,10 @@
 			{
 			loadAPIsJSONNavigator('/{{ site.repo }}/apis.json');
 			}						
-
+		if(document.getElementById("master-swagger-section"))
+			{
+			loadMasterSwaggerFromAPIsJSON('/{{ site.repo }}/apis.json');
+			}
 	</script>
   </body>
 </html>
