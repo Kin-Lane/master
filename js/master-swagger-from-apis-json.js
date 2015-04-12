@@ -11,12 +11,12 @@ $MasterAPISJSON = "";
 $apipropertyoptions = "";
 	
 
-function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
+function loadMasterSwaggerFromAPIsJSON($url)
     {
 
-	console.log("loading..." + $apisjsonURL);
+	console.log("loading..." + $url);
 
-	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
+	var jqxhr = $.getJSON($url, function(apisJSON) { 													
 
 
 		buildMasterSwaggerFromAPIsJSON(apisJSON);
