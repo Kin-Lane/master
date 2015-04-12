@@ -13,7 +13,7 @@ $MasterAPISJSON = "";
 $apipropertyoptions = "";
 
 function waitforit(){
-    console.log('blank!');
+    //console.log('blank!');
     setTimeout(waitforit, 5000);
 }
 
@@ -27,9 +27,9 @@ $APIsJSONSwaggerUI = Array();
   	  $swaggerContainer = "swagger-ui-container-" + $itemcount;	
   		
 	  $html = '<div class="swagger-section">';
-	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div><p><br /></p>';
-	  $html = $html + '</div>';
-	  console.log($html);
+	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
+	  $html = $html + '</div><p><br /></p>';
+	  //console.log($html);
 	  $('#master-swagger-section').append($html);  
   		
 	  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
