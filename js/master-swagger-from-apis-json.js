@@ -9,7 +9,6 @@ $includecount = 1;
 $MasterAPISJSON = "";
 
 $apipropertyoptions = "";
-	
 
 function loadMasterSwaggerFromAPIsJSON($url)
     {
@@ -21,14 +20,7 @@ function loadMasterSwaggerFromAPIsJSON($url)
 
 		buildMasterSwaggerFromAPIsJSON(apisJSON);
 
-	});	
-
-	// Set another completion function for the request above
-	jqxhr.complete(function() {
-		
-	  	//document.getElementById("jsonNavigator").style.display=''; 
-	  	                 
-        });		  
+	});	  
          	  	
     }   
 
