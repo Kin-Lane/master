@@ -27,6 +27,8 @@ function loadMasterSwaggerFromAPIsJSON($url)
 function buildMasterSwaggerFromAPIsJSON(apisJSON)
 	{
 	//console.log("run2");	
+	
+	$itemcount = 1;
 		
 	$apisJSONName = apisJSON['name'];
 
@@ -77,6 +79,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 				 	$propertyType = propertyVal['type'];
 				 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
 				 	//console.log($propertyType);
+				 	
 				    if($propertyType=='swagger'||$propertyType=='Swagger')
 				    	{
 				    	console.log("Loading Swagger: " + $propertyURL);	
@@ -137,7 +140,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 						  });
 						
 						  window.swaggerUi.load();			    	
-				    	
+				    	  $itemcount++;
 				    	}	 	
 			
 				 	$propertycount++;
