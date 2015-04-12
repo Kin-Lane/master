@@ -102,7 +102,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 					  		
 						  //var url = "https://kin-lane.github.io/" + $repo + "/swagger.json";
 						  
-						  window.swaggerUi[$itemcount] = new SwaggerUi({
+						  mySwagger = new SwaggerUi({
 						  	
 						    url: $swaggerURL,
 						    dom_id: $swaggerContainer,
@@ -146,7 +146,7 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 						    sorter : "alpha"
 						  });
 						
-						  window.swaggerUi[$itemcount].load();			    	
+						  mySwagger.load();			    	
 				    	  $itemcount++;
 				    	  setTimeout(waitforit, 10000);
 				    	}	 	
