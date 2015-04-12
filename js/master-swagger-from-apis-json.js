@@ -15,10 +15,10 @@ $apipropertyoptions = "";
   		
   	  $swaggerContainer = "swagger-ui-container-" + $includecount;	
   		
-	  html = '<div class="swagger-section">';
-	  html = html + '<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>';
-	  html = html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
-	  html = html + '</div>';
+	  $html = '<div class="swagger-section">';
+	  $html = $html + '<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>';
+	  $html = $html + '<div id="' + $swaggerContainer + '" class="swagger-ui-wrap"></div>';
+	  $html = $html + '</div>';
 	  
 	  $('#master-swagger-section').append($html);  
   		
