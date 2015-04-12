@@ -56,7 +56,7 @@ $APIsJSONSwaggerUI = Array();
 	  });
 	
 	  $APIsJSONSwaggerUI[$itemcount].load();	
-	 waitforit();
+	 // waitforit();
   }
 
 function loadMasterSwaggerFromAPIsJSON($apisjsonURL)
@@ -126,7 +126,12 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 
 		 if($includecount < 3)
 		 	{
-		 	loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
+		 	//window.setInterval(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 1000);				  
+		 	//$Swag = window.setInterval(function () { loadSwaggerFromAPIsJSON($includeRootUrl) }, 5000);		 		
+		 	setTimeout(loadSwaggerFromAPIsJSON($includeRootUrl,$includecount), 5000);
+		 	setTimeout(waitforit, 5000);
+		 	//loadSwaggerFromAPIsJSON($includeRootUrl,$includecount);
+		 	//console.log("include (" + $includecount + "):" + $includeRootUrl);
 		 	}		 		 
  
 		 $includecount++;										
