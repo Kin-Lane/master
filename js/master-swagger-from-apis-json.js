@@ -50,7 +50,8 @@ function buildMasterSwaggerFromAPIsJSON(apisJSON)
 		 //console.log($includecount);
 		 if($includecount< 6)
 		 	{
-			var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
+			
+			$.getJSON($includeRootUrl, function(apisJSON) { 													
 		
 			$apisJSONName = apisJSON['name'];
 		
