@@ -123,10 +123,6 @@
       "url": "https://kin-lane.github.io/buildingblock/apis.json"
     },
     {
-      "name": "Comment API",
-      "url": "https://kin-lane.github.io/comment/apis.json"
-    },
-    {
       "name": "Curated API",
       "url": "https://kin-lane.github.io/curated/apis.json"
     },
