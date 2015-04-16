@@ -475,8 +475,8 @@ function buildAPIsJSONBrowser(apisJSON)
 	 	$html = APIJSONBrowserGetIncludeSpacer();
 	 	$('#jsonBrowserTable').append($html);   	 
 			
-	 	$html = APIJSONBrowserGetIncludeTitle('Includes');
-	 	$('#jsonBrowserTable').append($html);
+	 	//$html = APIJSONBrowserGetIncludeTitle('Includes');
+	 	//$('#jsonBrowserTable').append($html);
 	 	   	 		
 		}
 		
