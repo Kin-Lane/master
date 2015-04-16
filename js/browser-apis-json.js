@@ -329,6 +329,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("communication").style.display = '';		
 	        		}	        		
 	        	}
@@ -338,6 +339,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("communication").style.display = '';		
 	        		}	        		
 	        	}
@@ -347,6 +349,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("updates").style.display = '';		
 	        		}	        		
 	        	}
@@ -356,6 +359,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("onboarding").style.display = '';		
 	        		}	        		
 	        	}
@@ -365,6 +369,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("communication").style.display = '';		
 	        		}	        		
 	        	}
@@ -374,6 +379,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("integration").style.display = '';		
 	        		}	        		
 	        	}
@@ -383,6 +389,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("onboarding").style.display = '';		
 	        		}	        		
 	        	}
@@ -392,6 +399,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("onboarding").style.display = '';		
 	        		}	        		
 	        	}
@@ -401,6 +409,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("integration").style.display = '';		
 	        		}	        		
 	        	}
@@ -410,6 +419,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("legal").style.display = '';		
 	        		}	        		
 	        	}
@@ -419,6 +429,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("integration").style.display = '';		
 	        		}	        		
 	        	}
@@ -428,6 +439,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("updates").style.display = '';		
 	        		}	        		
 	        	}
@@ -437,6 +449,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("updates").style.display = '';		
 	        		}	        		
 	        	}
@@ -446,6 +459,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("legal").style.display = '';		
 	        		}	        		
 	        	}
@@ -455,6 +469,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
 	        		document.getElementById("communication").style.display = '';		
 	        		}	        		
 	        	}
