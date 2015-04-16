@@ -69,10 +69,9 @@ function APIJSONBrowserGetHeaderCell(name,description,url,image,apijsonurl)
 	{		
 	html = "";
 	
-    html = html + '<a href="' + url + '" title="' + name + '"><img src="' + image + '" width="175" align="left" style="padding: 15px;" /></a>';
-    
+    html = html + '<a href="' + url + '" title="' + name + '"><img src="' + image + '" width="175" align="left" style="padding: 15px;" /></a>';    
     html = html + '<a href="' + url + '" style="color: #000; font-size: 22px; text-decoration: none;" title="' + name + '"><strong>' + name + '</strong></a>';
-   html = html + '  (<a href="' + url + '" style="color: #000; font-size: 18px;" title="' + name + '">apis.json</a>)';
+    html = html + '  (<a href="' + url + '" style="color: #000; font-size: 18px;" title="' + name + '">apis.json</a>)';
     html = html + '<br />' + description;  	
 	
 	return html; 			
@@ -301,14 +300,8 @@ function buildAPIsJSONBrowser(apisJSON)
     apisJSONMaintainers = apisJSON['maintainers'];	
     
     howmanyapis = apisJSONAPIs.length;
-
-    if(howmanyapis>0)
-    	{
- 		$html = APIJSONBrowserGetAPITitle('APIs');
- 		$('#jsonBrowserTable').append($html);   	 			 	    
-		}
 		
-     $.each(apisJSONAPIs, function(apiKey, apiVal) { 
+    $.each(apisJSONAPIs, function(apiKey, apiVal) { 
 
      	 $apiName = apiVal['name']; 
      	 $apiDesc = apiVal['description'];
