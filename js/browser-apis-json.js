@@ -473,6 +473,17 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		document.getElementById("communication").style.display = '';		
 	        		}	        		
 	        	}
+	        if($propertyType == "X-github")
+	        	{
+	        	if(document.getElementById($propertyType + "-row"))	
+	        		{
+	        		document.getElementById($propertyType + "-row").style.display = '';
+	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
+	        		document.getElementById("communication").style.display = '';		
+	        		}	        		
+	        	}	        	
+	        	
 	        		 				 			 							 		 					 			 	
 		 	$propertycount++;
 		 	
