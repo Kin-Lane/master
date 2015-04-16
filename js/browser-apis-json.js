@@ -293,7 +293,7 @@ function buildAPIsJSONBrowser(apisJSON)
  	
  	// Header	 	
     $html = APIJSONBrowserGetHeader($apisJSONName,$apisJSONDesc,$apisJSONURL,$apisJSONLogo,$apisJSONURL);
-    $('#jsonBrowserTable').append($html);      
+    $('#jsonBrowserHeaderTable').append($html);      
             
     apisJSONTags = apisJSON['tags'];            
     apisJSONAPIs = apisJSON['apis'];
@@ -317,8 +317,8 @@ function buildAPIsJSONBrowser(apisJSON)
      	 $apiBaseURL = apiVal['baseURL'];               	                         	 
 		 $apiTags = apiVal['tags'];			 	 
 		 
-         $html = APIJSONBrowserGetAPIListing($apiName,$apiDesc,$apiImage,$apiHumanURL,$apicount)
-         $('#jsonBrowserTable').append($html); 	
+         //$html = APIJSONBrowserGetAPIListing($apiName,$apiDesc,$apiImage,$apiHumanURL,$apicount)
+         //$('#jsonBrowserTable').append($html); 	
 
 		 $apiProperties = apiVal['properties'];
 		 $.each($apiProperties, function(propertyKey, propertyVal) { 
