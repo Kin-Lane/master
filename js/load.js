@@ -99,6 +99,11 @@ if(document.getElementById("jsonNavigator"))
 	loadAPIsJSONNavigator('apis.json');
 	}
 	
+if(document.getElementById("jsonBrowser"))
+	{
+	loadAPIsJSONBrowser('apis.json');
+	}	
+	
 if(document.getElementById("master-swagger-section"))
 	{
 	loadMasterSwaggerFromAPIsJSON('/master/apis.json');
