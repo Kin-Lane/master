@@ -353,7 +353,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display=='';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("update").style.display=='';		
+	        		document.getElementById("updates").style.display=='';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-code")
@@ -434,7 +434,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display=='';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("update").style.display=='';		
+	        		document.getElementById("updates").style.display=='';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-status-dashboard")
@@ -443,7 +443,7 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display=='';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("update").style.display=='';		
+	        		document.getElementById("updates").style.display=='';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-terms-of-service")
