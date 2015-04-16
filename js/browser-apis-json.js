@@ -328,7 +328,7 @@ function buildAPIsJSONBrowser(apisJSON)
 		 				 	
 			//$Property = APIJSONBrowserPropertyListing($apiName,$propertyType,$propertyURL,$apicount,$propertycount); 			
 			//$('#jsonBrowserTable').append($Property);
-
+			console.log($propertyType);
 	        if($propertyType == "X-blog")
 	        	{
 	        	if(document.getElementById($propertyType + "-row"))	
@@ -494,7 +494,7 @@ function buildAPIsJSONBrowser(apisJSON)
      	 $includeUrl = $includeRootUrl.replace("apis.json","");	 
 		 
          $html = APIJSONBrowserGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$apicount)
-         $('#jsonBrowserTable').append($html); 	          
+         $('#jsonBrowserIncludeTable').append($html); 	          
 
 		 $includecount++;										
 	});	
