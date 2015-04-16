@@ -331,6 +331,7 @@ function buildAPIsJSONBrowser(apisJSON)
 			console.log($propertyType);
 	        if($propertyType == "X-blog")
 	        	{
+	        	console.log("blog:" + document.getElementById($propertyType + "-row"));
 	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
 	        		document.getElementById($propertyType + "-row").style.display=='';
