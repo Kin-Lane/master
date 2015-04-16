@@ -94,6 +94,10 @@
         {
           "type": "X-twitter",
           "url": "https://twitter.com/kinlane"
+        },
+        {
+          "type": "X-github",
+          "url": "https://github.com/kin-lane/"
         }
       ],
       "contact": [
