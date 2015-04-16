@@ -324,138 +324,138 @@ function buildAPIsJSONBrowser(apisJSON)
 			console.log($propertyType);
 	        if($propertyType == "X-blog")
 	        	{
-	        	console.log("blog:" + document.getElementById($propertyType + "-cell"));
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	console.log("blog:" + document.getElementById($propertyType + "-row"));
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("communication").style.display=='';		
+	        		document.getElementById("communication").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-blog-rss-feed")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("communication").style.display=='';		
+	        		document.getElementById("communication").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-change-log")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("updates").style.display=='';		
+	        		document.getElementById("updates").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-code")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("onboarding").style.display=='';		
+	        		document.getElementById("onboarding").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-portal")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("communication").style.display=='';		
+	        		document.getElementById("communication").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-documentation")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("integration").style.display=='';		
+	        		document.getElementById("integration").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-faq")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("onboarding").style.display=='';		
+	        		document.getElementById("onboarding").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-getting-started")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("onboarding").style.display=='';		
+	        		document.getElementById("onboarding").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-pricing")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("integration").style.display=='';		
+	        		document.getElementById("integration").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-privacy-policy")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("legal").style.display=='';		
+	        		document.getElementById("legal").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-rate-limits-page")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("integration").style.display=='';		
+	        		document.getElementById("integration").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-roadmap")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("updates").style.display=='';		
+	        		document.getElementById("updates").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-status-dashboard")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("updates").style.display=='';		
+	        		document.getElementById("updates").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-terms-of-service")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("legal").style.display=='';		
+	        		document.getElementById("legal").style.display = '';		
 	        		}	        		
 	        	}
 	        if($propertyType == "X-twitter")
 	        	{
-	        	if(document.getElementById($propertyType + "-cell"))	
+	        	if(document.getElementById($propertyType + "-row"))	
 	        		{
-	        		document.getElementById($propertyType + "-cell").style.display=='';
+	        		document.getElementById($propertyType + "-row").style.display = '';
 	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById("communication").style.display=='';		
+	        		document.getElementById("communication").style.display = '';		
 	        		}	        		
 	        	}
 	        		 				 			 							 		 					 			 	
