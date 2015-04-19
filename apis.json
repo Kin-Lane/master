@@ -32,16 +32,20 @@
       "properties": [
         {
           "type": "X-blog",
-          "url": "http://kinlane.com/blog/"
+          "url": "https://kin-lane.github.io/master/blog/"
         },
         {
           "type": "X-blog-rss-feed",
-          "url": "http://kinlane.com/blog.xml"
+          "url": "https://kin-lane.github.io/master/blog/blog.xml"
         },
         {
           "type": "X-change-log",
           "url": "https://kin-lane.github.io/master/change-log/"
         },
+        {
+          "type": "X-issues",
+          "url": "https://kin-lane.github.io/master/issues/"
+        },        
         {
           "type": "X-code",
           "url": "https://kin-lane.github.io/master/code/"
