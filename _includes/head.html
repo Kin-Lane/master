@@ -12,12 +12,15 @@
     {{ site.tagline }}
   </title>
   
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/swagger-typography.css">
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/swagger-reset.css">
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/swagger.css">      
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/hyde-with-swagger.css">
+  {% if page.title == 'Documentation' %}
+	  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/swagger-typography.css">
+	  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/swagger-reset.css">
+	  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/swagger.css">      
+	  <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/hyde-with-swagger.css">
+  {% else %}
+  		<link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/hyde.css">
+  {% endif %}
+  
   <link rel="stylesheet" href="https://s3.amazonaws.com/kinlane-productions/css/syntax.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
 
