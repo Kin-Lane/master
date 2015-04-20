@@ -69,7 +69,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
 
      	 $apiName = apiVal['name'];
 		  
-		 if($apiName!'Master')
+		 if($apiName!='Master')
 		 	{   	 
 			$html = '<tr>';
 			$html = $html + '<td colspan="2" style="padding-top: 3px; padding-bottom: 5px;">';				
