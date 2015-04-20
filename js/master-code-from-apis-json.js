@@ -68,22 +68,25 @@ function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
      $.each(apisJSONAPIs, function(apiKey, apiVal) { 
 
      	 $apiName = apiVal['name'];
-		     	 
-		$html = '<tr>';
-		$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';				
-		$html = $html + '<span style="font-size:20px;">';
-		$html = $html + '<strong>' + $apiName + '</strong>';
-		$html = $html + '</span>';				
-		$html = $html + '</td>';
-		$html = $html + '</tr>';	
-		$html = $html + '<tr>';
-		$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';	
-		$html = $html + '<table align="center" style="padding-left: 25px;" id="code-page-api-' + $includecount + '" width="95%"></table>';						
-		$html = $html + '</td>';
-		$html = $html + '</tr>';
-										
-		$('#code-page').append($html);      	 
-	
+		  
+		 if($apiName!'Master')
+		 	{   	 
+			$html = '<tr>';
+			$html = $html + '<td colspan="2" style="padding-top: 3px; padding-bottom: 5px;">';				
+			$html = $html + '<span style="font-size:20px;">';
+			$html = $html + '<strong>' + $apiName + '</strong>';
+			$html = $html + '</span>';				
+			$html = $html + '</td>';
+			$html = $html + '</tr>';	
+			$html = $html + '<tr>';
+			$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';	
+			$html = $html + '<table align="center" style="padding-left: 25px;" id="code-page-api-' + $includecount + '" width="95%"></table>';						
+			$html = $html + '</td>';
+			$html = $html + '</tr>';
+											
+			$('#code-page').append($html);      	 
+			}
+			
      	 $apiDesc = apiVal['description'];
      	 $apiImage = apiVal['image']; 
      	 $apiHumanURL = apiVal['humanURL']; 
