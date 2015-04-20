@@ -107,6 +107,11 @@ if(document.getElementById("jsonBrowser"))
 if(document.getElementById("master-swagger-section"))
 	{
 	loadMasterSwaggerFromAPIsJSON('/master/apis.json');
+	}	
+	
+if(document.getElementById("code-page"))
+	{
+	loadCodeFromAPIsJSON('/master/apis.json');
 	}		
 	
 if(document.getElementById("swaggerEditor"))
@@ -117,12 +122,7 @@ if(document.getElementById("swaggerEditor"))
 if(document.getElementById("jsonQuestionEditor"))
 	{			
 	loadQuestionEditor();			
-	}			
-	
-if(document.getElementById("swagger-ui-container"))
-	{				  
-	 setTimeout(deploySwagger, 3000);			
-	}											
+	}													
 
 if($oAuth_Token!='')
 	{			
