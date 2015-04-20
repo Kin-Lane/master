@@ -99,12 +99,10 @@ function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
 	
 	     	 $includeName = apiVal['name']; 
 	     	 $includeRootUrl = apiVal['url'];	      	 
-	 		
-			 loadCodeFromAPIsJSON($includeRootUrl,1,$includecount);	
-			 
-			 $.getJSON($apisjsonURL, function($apisJSON) { 													
+
+			 $.getJSON($includeRootUrl, function($apisJSON) { 													
 				
-				 buildCodeFromAPIsJSON($apisJSON,$master,$includecount);
+				 buildCodeFromAPIsJSON($apisJSON,1,$includecount);
 			
 				 });				 
 			 			 		 
