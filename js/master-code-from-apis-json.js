@@ -39,7 +39,7 @@ function deployCodeMaster($codeLibraryURL,$apiName,$includecount)
 			
 		$html = $html + '</td>';																	
 		$html = $html + '</tr>';						
-		$('#code-page-api-' + $includecount + ').append($html); 			
+		$('#code-page-api-' + $includecount).append($html); 			
 		
 		});	
 
