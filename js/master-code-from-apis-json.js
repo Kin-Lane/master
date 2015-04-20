@@ -3,7 +3,7 @@
 function deployCodeMaster($codeLibraryURL,$apiName,$includecount)
   	{		
   		
-	console.log("processing..." + $codeLibraryURL);
+	//console.log("processing..." + $codeLibraryURL);
 
 	$html = '<tr>';
 	$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';				
@@ -51,7 +51,7 @@ function deployCodeMaster($codeLibraryURL,$apiName,$includecount)
 function loadCodeFromAPIsJSON($apisjsonURL,$master,$includecount)
     {
 
-	console.log("processing..." + $apisjsonURL);
+	//console.log("processing..." + $apisjsonURL);
 
 	var jqxhr = $.getJSON($apisjsonURL, function($apisJSON) { 													
 
@@ -70,7 +70,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
 	{
 
 	$apisJSONName = apisJSON['name'];
-	console.log("APIs.json Name: " + $apisJSONName); 
+	//console.log("APIs.json Name: " + $apisJSONName); 
  	$apisJSONDesc = apisJSON['description'];
  	$apisJSONLogo = apisJSON['image'];
  	$apisJSONURL = apisJSON['url'];
@@ -83,7 +83,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
      $.each(apisJSONAPIs, function(apiKey, apiVal) { 
 
      	 $apiName = apiVal['name'];
-     	 console.log("API Name: " + $apiName); 
+     	 //console.log("API Name: " + $apiName); 
      	 $apiDesc = apiVal['description'];
      	 $apiImage = apiVal['image']; 
      	 $apiHumanURL = apiVal['humanURL']; 
@@ -96,7 +96,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
 	 	 	$propertyType = propertyVal['type'];
 	 	 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
 
-			console.log($propertyURL);
+			//console.log($propertyURL);
 
 		    if($propertyType=='x-api-code-libraries')
 		    	{
