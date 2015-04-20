@@ -343,16 +343,6 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		document.getElementById("communication").style.display = '';		
 	        		}	        		
 	        	}
-	        if($propertyType == "X-change-log")
-	        	{
-	        	if(document.getElementById($propertyType + "-row"))	
-	        		{
-	        		document.getElementById($propertyType + "-row").style.display = '';
-	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
-	        		document.getElementById("updates").style.display = '';		
-	        		}	        		
-	        	}
 	        if($propertyType == "X-code")
 	        	{
 	        	if(document.getElementById($propertyType + "-row"))	
@@ -383,16 +373,6 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		document.getElementById("integration").style.display = '';		
 	        		}	        		
 	        	}
-	        if($propertyType == "X-faq")
-	        	{
-	        	if(document.getElementById($propertyType + "-row"))	
-	        		{
-	        		document.getElementById($propertyType + "-row").style.display = '';
-	        		document.getElementById($propertyType + "-url").href=$propertyURL;
-	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
-	        		document.getElementById("onboarding").style.display = '';		
-	        		}	        		
-	        	}
 	        if($propertyType == "X-getting-started")
 	        	{
 	        	if(document.getElementById($propertyType + "-row"))	
@@ -403,6 +383,26 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		document.getElementById("onboarding").style.display = '';		
 	        		}	        		
 	        	}
+	        if($propertyType == "X-authentication")
+	        	{
+	        	if(document.getElementById($propertyType + "-row"))	
+	        		{
+	        		document.getElementById($propertyType + "-row").style.display = '';
+	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
+	        		document.getElementById("onboarding").style.display = '';		
+	        		}	        		
+	        	}	        	
+	        if($propertyType == "X-faq")
+	        	{
+	        	if(document.getElementById($propertyType + "-row"))	
+	        		{
+	        		document.getElementById($propertyType + "-row").style.display = '';
+	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
+	        		document.getElementById("onboarding").style.display = '';		
+	        		}	        		
+	        	}	        	
 	        if($propertyType == "X-pricing")
 	        	{
 	        	if(document.getElementById($propertyType + "-row"))	
@@ -433,6 +433,16 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		document.getElementById("integration").style.display = '';		
 	        		}	        		
 	        	}
+	        if($propertyType == "X-support")
+	        	{
+	        	if(document.getElementById($propertyType + "-row"))	
+	        		{
+	        		document.getElementById($propertyType + "-row").style.display = '';
+	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
+	        		document.getElementById("support").style.display = '';		
+	        		}	        		
+	        	}	        	
 	        if($propertyType == "X-roadmap")
 	        	{
 	        	if(document.getElementById($propertyType + "-row"))	
@@ -443,6 +453,26 @@ function buildAPIsJSONBrowser(apisJSON)
 	        		document.getElementById("updates").style.display = '';		
 	        		}	        		
 	        	}
+	        if($propertyType == "X-issues")
+	        	{
+	        	if(document.getElementById($propertyType + "-row"))	
+	        		{
+	        		document.getElementById($propertyType + "-row").style.display = '';
+	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
+	        		document.getElementById("updates").style.display = '';		
+	        		}	        		
+	        	}	 
+	        if($propertyType == "X-change-log")
+	        	{
+	        	if(document.getElementById($propertyType + "-row"))	
+	        		{
+	        		document.getElementById($propertyType + "-row").style.display = '';
+	        		document.getElementById($propertyType + "-url").href=$propertyURL;
+	        		document.getElementById($propertyType + "-img-url").href=$propertyURL;
+	        		document.getElementById("updates").style.display = '';		
+	        		}	        		
+	        	}	        	       	
 	        if($propertyType == "X-status-dashboard")
 	        	{
 	        	if(document.getElementById($propertyType + "-row"))	
