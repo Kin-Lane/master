@@ -27,7 +27,7 @@ function deployCodeMaster($codeLibraryURL,$itemcount,$apiName)
 	     	 		
 		 	 $html = $html + '<a href="' + $zipurl + '"><img src="' + $iconurl + '" width="60" style="display: inline; padding: 3px;" /></a>';																											 	
 		 		
-			);	
+			});	
 			
 		$html = $html + '</td>';																	
 		$html = $html + '</tr>';						
