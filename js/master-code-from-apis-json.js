@@ -3,7 +3,7 @@
 function deployCodeMaster($codeLibraryURL,$apiName)
   	{		
   		
-	console.log("processing..." + $codeLibraryURL + " (" + $itemcount + ")");
+	console.log("processing..." + $codeLibraryURL);
 
 	$html = '<tr>';
 	$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';				
