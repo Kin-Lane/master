@@ -40,7 +40,7 @@ function deployCodeMaster($codeLibraryURL,$apiName)
         });		           	  	
     }   		
     
-function loadCodeFromAPIsJSON($apisjsonURL,$master=0)
+function loadCodeFromAPIsJSON($apisjsonURL,$master)
     {
 
 	console.log("processing..." + $apisjsonURL);
@@ -94,7 +94,9 @@ function buildCodeFromAPIsJSON(apisJSON,$master)
 
 			}); 				 	                                           										
 		}); 
-	console.log("master: " + $master);   
+	
+	console.log("master: " + $master);  
+	 
     if($master==0)
     	{
 	     $.each(apisJSONIncludes, function(apiKey, apiVal) { 
