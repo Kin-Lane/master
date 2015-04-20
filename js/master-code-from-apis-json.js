@@ -25,7 +25,7 @@ function deployCodeMaster($codeLibraryURL,$apiName)
 			console.log(libraryVal);
 	
 	     	 $iconurl = libraryVal['icon-url']; 
-	     	 $zipurl = apiVal['zip-url'];	      	 		 								
+	     	 $zipurl = libraryVal['zip-url'];	      	 		 								
 	     	 		
 		 	 $html = $html + '<a href="' + $zipurl + '"><img src="' + $iconurl + '" width="60" style="display: inline; padding: 3px;" /></a>';																											 	
 		 		
@@ -88,7 +88,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master)
 
 	 	 	$propertyType = propertyVal['type'];
 	 	 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
-	 		console.log($propertyType);
+
 		    if($propertyType=='x-api-code-libraries')
 		    	{
 		    	deployCodeMaster($propertyURL,$apiName);
@@ -96,9 +96,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master)
 
 			}); 				 	                                           										
 		}); 
-	
-	console.log("master: " + $master);  
-	 
+ 
     if($master==0)
     	{
 	     $.each(apisJSONIncludes, function(apiKey, apiVal) { 
