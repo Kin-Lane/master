@@ -59,17 +59,25 @@
           "url": "https://kin-lane.github.io/master/documentation/"
         },
         {
-          "type": "X-faq",
-          "url": "https://kin-lane.github.io/master/faq/"
-        },
-        {
           "type": "X-getting-started",
           "url": "https://kin-lane.github.io/master/getting-started/"
         },
         {
+          "type": "X-authentication",
+          "url": "https://kin-lane.github.io/master/authentication/"
+        },        
+        {
+          "type": "X-faq",
+          "url": "https://kin-lane.github.io/master/faq/"
+        },        
+        {
           "type": "X-pricing",
           "url": "https://kin-lane.github.io/master/pricing/"
         },
+        {
+          "type": "X-support",
+          "url": "https://kin-lane.github.io/master/support/"
+        },        
         {
           "type": "X-privacy-policy",
           "url": "https://kin-lane.github.io/master/privacy-policy/"
@@ -78,6 +86,10 @@
           "type": "X-rate-limits-page",
           "url": "https://kin-lane.github.io/master/rate-limits/"
         },
+        {
+          "type": "X-issues",
+          "url": "https://kin-lane.github.io/master/issues/"
+        },        
         {
           "type": "X-roadmap",
           "url": "https://kin-lane.github.io/master/roadmap/"
