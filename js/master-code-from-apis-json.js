@@ -32,18 +32,13 @@ function deployCodeMaster($codeLibraryURL,$itemcount,$apiName)
 		$html = $html + '</td>';																	
 		$html = $html + '</tr>';						
 		$('#code-page').append($html); 			
-												
-		});	
 		
-
-	});	
+		});	
 
 	jqxhr.complete(function() {
               
-        });		  
-         	  	
+        });		           	  	
     }   		
-	}
 
 function loadCodeFromAPIsJSON($apisjsonURL)
     {
