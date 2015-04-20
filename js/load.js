@@ -111,7 +111,7 @@ if(document.getElementById("master-swagger-section"))
 	
 if(document.getElementById("code-page"))
 	{
-	loadCodeFromAPIsJSON('/master/apis.json',0);
+	loadCodeFromAPIsJSON('/master/apis.json',0,0);
 	}		
 	
 if(document.getElementById("swaggerEditor"))

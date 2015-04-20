@@ -1,6 +1,6 @@
 
 
-function deployCodeMaster($codeLibraryURL,$apiName)
+function deployCodeMaster($codeLibraryURL,$apiName,$includecount)
   	{		
   		
 	console.log("processing..." + $codeLibraryURL);
@@ -11,7 +11,13 @@ function deployCodeMaster($codeLibraryURL,$apiName)
 	$html = $html + '<strong>' + $apiName + '</strong>';
 	$html = $html + '</span>';				
 	$html = $html + '</td>';
-	$html = $html + '</tr>';						
+	$html = $html + '</tr>';	
+	$html = $html + '<tr>';
+	$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';	
+	$html = $html + '<table align="center" style="padding-left: 25px;" id="code-page-api-' + $includecount + '" width="95%"></table>';						
+	$html = $html + '</td>';
+	$html = $html + '</tr>';
+									
 	$('#code-page').append($html); 	
 
 	var jqxhr = $.getJSON($codeLibraryURL, function(apiCodeLibrary) {
@@ -33,7 +39,7 @@ function deployCodeMaster($codeLibraryURL,$apiName)
 			
 		$html = $html + '</td>';																	
 		$html = $html + '</tr>';						
-		$('#code-page').append($html); 			
+		$('#code-page-api-' + $includecount + ').append($html); 			
 		
 		});	
 
@@ -42,7 +48,7 @@ function deployCodeMaster($codeLibraryURL,$apiName)
         });		           	  	
     }   		
     
-function loadCodeFromAPIsJSON($apisjsonURL,$master)
+function loadCodeFromAPIsJSON($apisjsonURL,$master,$includecount)
     {
 
 	console.log("processing..." + $apisjsonURL);
@@ -50,7 +56,7 @@ function loadCodeFromAPIsJSON($apisjsonURL,$master)
 	var jqxhr = $.getJSON($apisjsonURL, function($apisJSON) { 													
 
 
-		buildCodeFromAPIsJSON($apisJSON,$master);
+		buildCodeFromAPIsJSON($apisJSON,$master,$includecount);
 
 	});	
 
@@ -60,7 +66,7 @@ function loadCodeFromAPIsJSON($apisjsonURL,$master)
          	  	
     }     
 
-function buildCodeFromAPIsJSON(apisJSON,$master)
+function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
 	{
 
 	$apisJSONName = apisJSON['name'];
@@ -94,7 +100,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master)
 
 		    if($propertyType=='x-api-code-libraries')
 		    	{
-		    	deployCodeMaster($propertyURL,$apiName);
+		    	deployCodeMaster($propertyURL,$apiName,$includecount);
 		    	}	 	
 
 			}); 				 	                                           										
@@ -102,12 +108,13 @@ function buildCodeFromAPIsJSON(apisJSON,$master)
  
     if($master==0)
     	{
+    	 $includecount = 1;	
 	     $.each(apisJSONIncludes, function(apiKey, apiVal) { 
 	
 	     	 $includeName = apiVal['name']; 
 	     	 $includeRootUrl = apiVal['url'];	      	 
 	 		
-			 loadCodeFromAPIsJSON($includeRootUrl,1);				 		 
+			 loadCodeFromAPIsJSON($includeRootUrl,1,$includecount);				 		 
 	 
 			 $includecount++;										
 		  });	
