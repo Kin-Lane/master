@@ -36,7 +36,7 @@
         },
         {
           "type": "X-blog-rss-feed",
-          "url": "https://kin-lane.github.io/master/blog/blog.xml"
+          "url": "https://kin-lane.github.io/master/blog.xml"
         },
         {
           "type": "X-change-log",
