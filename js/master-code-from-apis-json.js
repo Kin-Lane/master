@@ -45,10 +45,10 @@ function loadCodeFromAPIsJSON($apisjsonURL)
 
 	console.log("processing..." + $apisjsonURL);
 
-	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
+	var jqxhr = $.getJSON($apisjsonURL, function($apisJSON) { 													
 
 
-		buildCodeFromAPIsJSON(apisJSON,$itemcount);
+		buildCodeFromAPIsJSON($apisJSON);
 
 	});	
 
