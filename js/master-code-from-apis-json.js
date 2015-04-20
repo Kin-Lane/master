@@ -64,7 +64,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master)
 	{
 
 	$apisJSONName = apisJSON['name'];
-
+	console.log("APIs.json Name: " + $apisJSONName); 
  	$apisJSONDesc = apisJSON['description'];
  	$apisJSONLogo = apisJSON['image'];
  	$apisJSONURL = apisJSON['url'];
@@ -77,7 +77,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master)
      $.each(apisJSONAPIs, function(apiKey, apiVal) { 
 
      	 $apiName = apiVal['name'];
-     	 console.log($apiName); 
+     	 console.log("API Name: " + $apiName); 
      	 $apiDesc = apiVal['description'];
      	 $apiImage = apiVal['image']; 
      	 $apiHumanURL = apiVal['humanURL']; 
