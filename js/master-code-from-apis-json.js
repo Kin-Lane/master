@@ -40,7 +40,7 @@ function deployCodeMaster($codeLibraryURL,$apiName)
         });		           	  	
     }   		
     
-function loadCodeFromAPIsJSON($apisjsonURL)
+function loadCodeFromAPIsJSON($apisjsonURL,$master=0)
     {
 
 	console.log("processing..." + $apisjsonURL);
@@ -48,7 +48,7 @@ function loadCodeFromAPIsJSON($apisjsonURL)
 	var jqxhr = $.getJSON($apisjsonURL, function($apisJSON) { 													
 
 
-		buildCodeFromAPIsJSON($apisJSON);
+		buildCodeFromAPIsJSON($apisJSON,$master);
 
 	});	
 
@@ -58,7 +58,7 @@ function loadCodeFromAPIsJSON($apisjsonURL)
          	  	
     }     
 
-function buildCodeFromAPIsJSON(apisJSON)
+function buildCodeFromAPIsJSON(apisJSON,$master)
 	{
 
 	$apisJSONName = apisJSON['name'];
@@ -93,16 +93,18 @@ function buildCodeFromAPIsJSON(apisJSON)
 		    	}	 	
 
 			}); 				 	                                           										
-		});    
-    
-     $.each(apisJSONIncludes, function(apiKey, apiVal) { 
-
-     	 $includeName = apiVal['name']; 
-     	 $includeRootUrl = apiVal['url'];	      	 
- 		
-		 loadCodeFromAPIsJSON($includeRootUrl,$includecount);				 		 
- 
-		 $includecount++;										
-	  });	
-
+		}); 
+	console.log("master: " + $master);   
+    if($master==0)
+    	{
+	     $.each(apisJSONIncludes, function(apiKey, apiVal) { 
+	
+	     	 $includeName = apiVal['name']; 
+	     	 $includeRootUrl = apiVal['url'];	      	 
+	 		
+			 loadCodeFromAPIsJSON($includeRootUrl,1);				 		 
+	 
+			 $includecount++;										
+		  });	
+		}
 	}
