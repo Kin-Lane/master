@@ -3,22 +3,7 @@
 function deployCodeMaster($codeLibraryURL,$apiName,$includecount)
   	{		
   		
-	//console.log("processing..." + $codeLibraryURL);
-
-	$html = '<tr>';
-	$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';				
-	$html = $html + '<span style="font-size:20px;">';
-	$html = $html + '<strong>' + $apiName + '</strong>';
-	$html = $html + '</span>';				
-	$html = $html + '</td>';
-	$html = $html + '</tr>';	
-	$html = $html + '<tr>';
-	$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';	
-	$html = $html + '<table align="center" style="padding-left: 25px;" id="code-page-api-' + $includecount + '" width="95%"></table>';						
-	$html = $html + '</td>';
-	$html = $html + '</tr>';
-									
-	$('#code-page').append($html); 	
+	//console.log("processing..." + $codeLibraryURL);	
 
 	var jqxhr = $.getJSON($codeLibraryURL, function(apiCodeLibrary) {
 		
@@ -83,7 +68,22 @@ function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
      $.each(apisJSONAPIs, function(apiKey, apiVal) { 
 
      	 $apiName = apiVal['name'];
-     	 //console.log("API Name: " + $apiName); 
+		     	 
+		$html = '<tr>';
+		$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';				
+		$html = $html + '<span style="font-size:20px;">';
+		$html = $html + '<strong>' + $apiName + '</strong>';
+		$html = $html + '</span>';				
+		$html = $html + '</td>';
+		$html = $html + '</tr>';	
+		$html = $html + '<tr>';
+		$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';	
+		$html = $html + '<table align="center" style="padding-left: 25px;" id="code-page-api-' + $includecount + '" width="95%"></table>';						
+		$html = $html + '</td>';
+		$html = $html + '</tr>';
+										
+		$('#code-page').append($html);      	 
+	
      	 $apiDesc = apiVal['description'];
      	 $apiImage = apiVal['image']; 
      	 $apiHumanURL = apiVal['humanURL']; 
