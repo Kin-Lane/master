@@ -1,4 +1,3 @@
-// Purposely keeping this verbose, and expanded, until I figure out best patterns for config and extensability
 
 
 function deployCodeMaster($codeLibraryURL,$itemcount,$apiName)
