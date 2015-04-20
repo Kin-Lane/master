@@ -1,6 +1,6 @@
 
 
-function deployCodeMaster($codeLibraryURL,$itemcount,$apiName)
+function deployCodeMaster($codeLibraryURL,$apiName)
   	{		
   		
 	console.log("processing..." + $codeLibraryURL + " (" + $itemcount + ")");
@@ -39,29 +39,11 @@ function deployCodeMaster($codeLibraryURL,$itemcount,$apiName)
               
         });		           	  	
     }   		
-
+    
 function loadCodeFromAPIsJSON($apisjsonURL)
     {
 
-	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
-
-		buildCodeFromAPIsJSON(apisJSON);
-
-	});	
-
-	// Set another completion function for the request above
-	jqxhr.complete(function() {
-		
-	  	//document.getElementById("jsonNavigator").style.display=''; 
-	  	                 
-        });		  
-         	  	
-    } 
-    
-function loadCodeFromAPIsJSON($apisjsonURL,$itemcount)
-    {
-
-	console.log("processing..." + $apisjsonURL + " (" + $itemcount + ")");
+	console.log("processing..." + $apisjsonURL);
 
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) { 													
 
@@ -89,37 +71,7 @@ function buildCodeFromAPIsJSON(apisJSON)
     apisJSONAPIs = apisJSON['apis'];
     apisJSONIncludes = apisJSON['include'];
     apisJSONMaintainers = apisJSON['maintainers'];	
-    
-    howmanyapis = apisJSONAPIs.length;	
-    howmanyincludes = apisJSONIncludes.length;
-    
-     $.each(apisJSONIncludes, function(apiKey, apiVal) { 
 
-     	 $includeName = apiVal['name']; 
-     	 $includeRootUrl = apiVal['url'];	      	 
-
-		 if($includecount < 35)
-		 	{	 		
-		 	loadCodeFromAPIsJSON($includeRootUrl,$includecount);
-		 	}		 		 
- 
-		 $includecount++;										
-	});	
-
-	}
-	
-function buildCodeFromAPIsJSON(apisJSON,$itemcount)
-	{
-
-	$apisJSONName = apisJSON['name'];
-
- 	$apisJSONDesc = apisJSON['description'];
- 	$apisJSONLogo = apisJSON['image'];
- 	$apisJSONURL = apisJSON['url'];
- 	  
-    apisJSONTags = apisJSON['tags'];            
-    apisJSONAPIs = apisJSON['apis'];
-    
      $.each(apisJSONAPIs, function(apiKey, apiVal) { 
 
      	 $apiName = apiVal['name']; 
@@ -132,20 +84,25 @@ function buildCodeFromAPIsJSON(apisJSON,$itemcount)
 		 $apiProperties = apiVal['properties'];
 		 $.each($apiProperties, function(propertyKey, propertyVal) { 
 
-		 	$propertyType = propertyVal['type'];
-		 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
-		 	;
+	 	 	$propertyType = propertyVal['type'];
+	 	 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
+	 
 		    if($propertyType=='x-api-code-libraries')
 		    	{
-		    	deployCodeMaster($propertyURL,$itemcount,$apiName);
+		    	deployCodeMaster($propertyURL,$apiName);
 		    	}	 	
-	
-		 	$propertycount++;
-		 	
-		 	}); 				 	                                           
-        				 					 				 	 				 					 											
-		 $apiContact = apiVal['contact'];
-		 $apicount++;										
-	});
-		
-	}	
+
+			}); 				 	                                           										
+		});    
+    
+     $.each(apisJSONIncludes, function(apiKey, apiVal) { 
+
+     	 $includeName = apiVal['name']; 
+     	 $includeRootUrl = apiVal['url'];	      	 
+ 		
+		 loadCodeFromAPIsJSON($includeRootUrl,$includecount);				 		 
+ 
+		 $includecount++;										
+	  });	
+
+	}
