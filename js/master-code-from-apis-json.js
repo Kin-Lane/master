@@ -22,6 +22,8 @@ function deployCodeMaster($codeLibraryURL,$apiName)
 
 	     $.each(apiCodeLibrary['libraries'], function(libraryKey, libraryVal) { 
 	
+			console.log(libraryVal);
+	
 	     	 $iconurl = libraryVal['icon-url']; 
 	     	 $zipurl = apiVal['zip-url'];	      	 		 								
 	     	 		
@@ -86,7 +88,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master)
 
 	 	 	$propertyType = propertyVal['type'];
 	 	 	$propertyURL = propertyVal['url'];					 				 			 							 		 					 	
-	 
+	 		console.log($propertyType);
 		    if($propertyType=='x-api-code-libraries')
 		    	{
 		    	deployCodeMaster($propertyURL,$apiName);
