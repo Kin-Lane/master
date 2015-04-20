@@ -1,12 +1,69 @@
 
+
+function deployCodeMaster($codeLibraryURL,$apiName,$includecount)
+  	{		
+  		
+	console.log("processing..." + $codeLibraryURL);
+
+	$html = '<tr>';
+	$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';				
+	$html = $html + '<span style="font-size:20px;">';
+	$html = $html + '<strong>' + $apiName + '</strong>';
+	$html = $html + '</span>';				
+	$html = $html + '</td>';
+	$html = $html + '</tr>';	
+	$html = $html + '<tr>';
+	$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';	
+	$html = $html + '<table align="center" style="padding-left: 25px;" id="code-page-api-' + $includecount + '" width="95%"></table>';						
+	$html = $html + '</td>';
+	$html = $html + '</tr>';
+									
+	$('#code-page').append($html); 	
+
+	var jqxhr = $.getJSON($codeLibraryURL, function(apiCodeLibrary) {
+		
+		$html = '<tr>';					
+		$html = $html + '<td width="50"></td>';					
+		$html = $html + '<td style="padding-top: 0px; padding-bottom: 0px;">';				 													
+
+	     $.each(apiCodeLibrary['libraries'], function(libraryKey, libraryVal) { 
+	
+			//console.log(libraryVal);
+	
+	     	 $iconurl = libraryVal['icon-url']; 
+	     	 $zipurl = libraryVal['zip-url'];	      	 		 								
+	     	 		
+		 	 $html = $html + '<a href="' + $zipurl + '"><img src="' + $iconurl + '" width="75" style="display: inline; padding: 5px;" /></a>';																											 	
+		 		
+			});	
+			
+		$html = $html + '</td>';																	
+		$html = $html + '</tr>';						
+		$('#code-page-api-' + $includecount).append($html); 			
+		
+		});	
+
+	jqxhr.complete(function() {
+              
+        });		           	  	
+    }   		
+    
 function loadCodeFromAPIsJSON($apisjsonURL,$master,$includecount)
     {
 
-	jqxhr = $.getJSON($apisjsonURL, function($apisJSON) { 													
+	console.log("processing..." + $apisjsonURL);
+
+	var jqxhr = $.getJSON($apisjsonURL, function($apisJSON) { 													
+
 
 		buildCodeFromAPIsJSON($apisJSON,$master,$includecount);
 
-		});	 	
+	});	
+
+	jqxhr.complete(function() {
+              
+        });		  
+         	  	
     }     
 
 function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
@@ -43,49 +100,7 @@ function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
 
 		    if($propertyType=='x-api-code-libraries')
 		    	{
-
-				$html = '<tr>';
-				$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';				
-				$html = $html + '<span style="font-size:20px;">';
-				$html = $html + '<strong>' + $apiName + '</strong>';
-				$html = $html + '</span>';				
-				$html = $html + '</td>';
-				$html = $html + '</tr>';	
-				$html = $html + '<tr>';
-				$html = $html + '<td colspan="2" style="padding-top: 0px; padding-bottom: 0px;">';	
-				$html = $html + '<table align="center" style="padding-left: 25px;" id="code-page-api-' + $includecount + '" width="95%"></table>';						
-				$html = $html + '</td>';
-				$html = $html + '</tr>';
-												
-				$('#code-page').append($html); 	
-			
-				var jqxhr = $.getJSON($codeLibraryURL, function(apiCodeLibrary) {
-					
-					$html = '<tr>';					
-					$html = $html + '<td width="50"></td>';					
-					$html = $html + '<td style="padding-top: 0px; padding-bottom: 0px;">';				 													
-			
-				     $.each(apiCodeLibrary['libraries'], function(libraryKey, libraryVal) { 
-				
-						//console.log(libraryVal);
-				
-				     	 $iconurl = libraryVal['icon-url']; 
-				     	 $zipurl = libraryVal['zip-url'];	      	 		 								
-				     	 		
-					 	 $html = $html + '<a href="' + $zipurl + '"><img src="' + $iconurl + '" width="75" style="display: inline; padding: 5px;" /></a>';																											 	
-					 		
-						});	
-						
-					$html = $html + '</td>';																	
-					$html = $html + '</tr>';						
-					$('#code-page-api-' + $includecount).append($html); 			
-					
-					});	
-			
-				jqxhr.complete(function() {
-			              
-			        });	
-
+		    	deployCodeMaster($propertyURL,$apiName,$includecount);
 		    	}	 	
 
 			}); 				 	                                           										
@@ -93,22 +108,15 @@ function buildCodeFromAPIsJSON(apisJSON,$master,$includecount)
  
     if($master==0)
     	{
-    		
     	 $includecount = 1;	
 	     $.each(apisJSONIncludes, function(apiKey, apiVal) { 
 	
 	     	 $includeName = apiVal['name']; 
 	     	 $includeRootUrl = apiVal['url'];	      	 
-
-			 $.getJSON($includeRootUrl, function($apisJSON) { 													
-				
-				 buildCodeFromAPIsJSON($apisJSON,1,$includecount);
-			
-				 });				 
-			 			 		 
+	 		
+			 loadCodeFromAPIsJSON($includeRootUrl,1,$includecount);				 		 
 	 
 			 $includecount++;										
-		  });
-		  	
+		  });	
 		}
 	}
