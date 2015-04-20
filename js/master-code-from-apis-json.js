@@ -18,7 +18,7 @@ function deployCodeMaster($codeLibraryURL,$apiName,$includecount)
 	     	 $iconurl = libraryVal['icon-url']; 
 	     	 $zipurl = libraryVal['zip-url'];	      	 		 								
 	     	 		
-		 	 $html = $html + '<a href="' + $zipurl + '"><img src="' + $iconurl + '" width="75" style="display: inline; padding: 5px;" /></a>';																											 	
+		 	 $html = $html + '<a href="' + $zipurl + '"><img src="' + $iconurl + '" width="100" style="display: inline; padding: 5px 8px 5px 5px;" /></a>';																											 	
 		 		
 			});	
 			
