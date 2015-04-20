@@ -76,7 +76,8 @@ function buildCodeFromAPIsJSON(apisJSON,$master)
 
      $.each(apisJSONAPIs, function(apiKey, apiVal) { 
 
-     	 $apiName = apiVal['name']; 
+     	 $apiName = apiVal['name'];
+     	 console.log($apiName); 
      	 $apiDesc = apiVal['description'];
      	 $apiImage = apiVal['image']; 
      	 $apiHumanURL = apiVal['humanURL']; 
