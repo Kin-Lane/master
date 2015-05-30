@@ -168,7 +168,11 @@
     {
       "name": "Linkrot API",
       "url": "https://kin-lane.github.io/linkrot/apis.json"
-    },    
+    },   
+    {
+      "name": "News API",
+      "url": "https://kin-lane.github.io/news/apis.json"
+    },     
     {
       "name": "Note API",
       "url": "https://kin-lane.github.io/note/apis.json"
