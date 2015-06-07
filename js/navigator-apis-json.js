@@ -304,12 +304,6 @@ function buildAPIsJSONNavigator(apisJSON)
     apisJSONMaintainers = apisJSON['maintainers'];	
     
     howmanyapis = apisJSONAPIs.length;
-
-    if(howmanyapis>0)
-    	{
- 		$html = APIJSONNavigatorGetAPITitle('APIs');
- 		$('#jsonNavigatorTable').append($html);   	 			 	    
-		}
 		
      $.each(apisJSONAPIs, function(apiKey, apiVal) { 
 
