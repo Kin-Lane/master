@@ -314,8 +314,8 @@ function buildAPIsJSONNavigator(apisJSON)
      	 $apiBaseURL = apiVal['baseURL'];               	                         	 
 		 $apiTags = apiVal['tags'];			 	 
 		 
-         $html = APIJSONNavigatorGetAPIListing($apiName,$apiDesc,$apiImage,$apiHumanURL,$apicount)
-         $('#jsonNavigatorTable').append($html); 	
+         //$html = APIJSONNavigatorGetAPIListing($apiName,$apiDesc,$apiImage,$apiHumanURL,$apicount)
+         //$('#jsonNavigatorTable').append($html); 	
 
 		 $apiProperties = apiVal['properties'];
 		 $.each($apiProperties, function(propertyKey, propertyVal) { 
