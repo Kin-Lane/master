@@ -175,6 +175,8 @@ function APIJSONNavigatorPropertyListing($apiName,$thistype,$thisurl,$apicount,$
 	{		
 		
 	$thistype = $thistype.toLowerCase();
+	$thistypeclean = $thistype.replace("x-", "");
+	$thistypeclean = $thistypeclean.replace("x-", "");
 	$thisslug = $thistype.replace(" ", "-");
 	
     html = '<tr>';
@@ -185,7 +187,7 @@ function APIJSONNavigatorPropertyListing($apiName,$thistype,$thisurl,$apicount,$
     html = html + '</td>';
     html = html + '<td align="left" id="api-' + $apicount + '-property-' + $propertycount + '-2" width="50%" valign="middle" style="border: 0px solid #000; vertical-align: middle; padding-left: 10px;">';
     
-    html = html + '<a href="' + $thisurl + '" style="color: #000; font-size: 18px;" title="' + $thistype + '" target="_blank"><strong>' + $thistype + '</strong></a>';
+    html = html + '<a href="' + $thisurl + '" style="color: #000; font-size: 18px;" title="' + $thistypeclean + '" target="_blank"><strong>' + $thistypeclean + '</strong></a>';
     
     if($thistype=='swagger')
     	{
