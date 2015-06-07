@@ -176,7 +176,8 @@ function APIJSONNavigatorPropertyListing($apiName,$thistype,$thisurl,$apicount,$
 		
 	$thistype = $thistype.toLowerCase();
 	$thistypeclean = $thistype.replace("x-", "");
-	$thistypeclean = $thistypeclean.replace("x-", "");
+	$thistypeclean = $thistypeclean.replace("X-", "");
+	$thistypeclean = $thistypeclean.replace("-", " ");
 	$thisslug = $thistype.replace(" ", "-");
 	
     html = '<tr>';
