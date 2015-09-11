@@ -202,6 +202,10 @@
       "url": "https://kin-lane.github.io/question/apis.json"
     },
     {
+      "name": "Scraping API",
+      "url": "https://kin-lane.github.io/scraping/apis.json"
+    },
+    {
       "name": "Slide API",
       "url": "https://kin-lane.github.io/slide/apis.json"
     },
