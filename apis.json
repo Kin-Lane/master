@@ -1,6 +1,6 @@
 {
   "name": "Kin Lane",
-  "description": "This is the master portal where I access all of the APIs I depend on to run the API Evangelist network of sites. Currently there is no public access, but once hardened a little bit more, I will open up access. For right now it is to demonstrate what is possible with a simple, yet complete, API platform.",
+  "description": "This is the master portal where I access all of the APIs I depend on to run the API Evangelist network of sites. Visit the getting started page to kick things off, and if you have any questions let me know.",
   "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/kin.png",
   "tags": [
     "Kin Lane",
