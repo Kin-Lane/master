@@ -146,6 +146,10 @@
       "url": "https://kin-lane.github.io/glossary/apis.json"
     },
     {
+      "name": "Idea API",
+      "url": "https://kin-lane.github.io/idea/apis.json"
+    },
+    {
       "name": "Image API",
       "url": "https://kin-lane.github.io/image/apis.json"
     },
