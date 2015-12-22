@@ -266,13 +266,12 @@ function APIJSONNavigatorGetIncludeListing($includeName,$includeRootUrl,$include
 
 function loadAPIsJSONNavigator($apisjsonURL)
     {
-	console.log($apisjsonURL);
 
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) {
 
 		// Set our Master Store
 		$MasterAPISJSON = apisJSON;
-		console.log(apisJSON);
+
 		buildAPIsJSONNavigator(apisJSON);
 
 	});
