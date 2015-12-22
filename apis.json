@@ -16,7 +16,9 @@
   "created": "2015-01-22",
   "modified": "2015-01-22",
   "url": "https://kin-lane.github.io/master/apis.json",
-  "SpecificationVersion": "0.14",
+  "specificationVersion": "0.14",
+  "x-country": "US",
+  "x-license": "http://creativecommons.org/licenses/by-sa/4.0/",
   "apis": [
     {
       "name": "Master",
