@@ -136,6 +136,10 @@
       "url": "https://kin-lane.github.io/certification/apis.json"
     },
     {
+      "name": "Content API",
+      "url": "https://kin-lane.github.io/content/apis.json"
+    },
+    {
       "name": "Curated API",
       "url": "https://kin-lane.github.io/curated/apis.json"
     },
