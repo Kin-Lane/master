@@ -3,20 +3,9 @@ function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$incl
 	$thisslug = $includeName.toLowerCase();
 	$thisslug = $thisslug.replace(" ", "-");
 
-	if($includeToggle == 0 )
-		{
-  	html = '<div style="float:right; width: 250px; border: 1px solid #000; padding-right: 35px;">';
-		}
-	else if($includeToggle == 1 )
-		{
-		html = '<div style="width: 250px; border: 1px solid #000;">';
-		}
-	else if($includeToggle == 2 )
-		{
-		html = '<div style="width: 250px; border: 1px solid #000;">';
-		}
+	html = '<li style="float: left; width: 50%;">';
   html = html + '<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>';
-  html = html + '</div>';
+  html = html + '</li>';
 
 	return html;
 	}
