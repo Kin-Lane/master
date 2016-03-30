@@ -3,7 +3,7 @@ function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$incl
 	$thisslug = $includeName.toLowerCase();
 	$thisslug = $thisslug.replace(" ", "-");
 
-  html = '<div style="padding: 10px; border: 2px solid #000; width: 400px; margin: auto;">';
+  html = '<div id="include-' + $includecount + '" style="padding: 10px; border: 2px solid #000; width: 400px; margin: auto;">';
   html = html + '<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>';
   html = html + '</div>';
 
@@ -45,6 +45,7 @@ function buildAPIsJSONIncludeList(apisJSON)
      	 	$includeUrl = $includeRootUrl.replace("apis.json","");
         $html = APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
         $('#jsonBrowser').append($html);
+				$("#include" + $includecount).width(500).height(100);
 		 	 	$includecount++;
 			});
 		}
