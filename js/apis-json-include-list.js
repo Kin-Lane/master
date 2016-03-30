@@ -5,7 +5,7 @@ function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$incl
 
 	html = '';
 	if($includeToggle == 0) { html = html + '<div class="row">'; }
-  html = html + '<div id="include-' + $includecount + '" class="col-md-5">';
+  html = html + '<div class="col-md-4">';
   html = html + '<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>';
   html = html + '</div>';
 	if($includeToggle == 1) { html = html + '</div>'; }
@@ -50,6 +50,7 @@ function buildAPIsJSONIncludeList(apisJSON)
         $('#includeListing').append($html);
 				//$("#include" + $includecount).width(400).height(75);
 		 	 	$includecount++;
+				console.log($includeToggle);
 				if($includeToggle==0){ $includeToggle = 1; } else { $includeToggle = 0; }
 			});
 		}
