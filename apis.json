@@ -65,7 +65,7 @@
   ],
   "include": [
     {
-      "name": "API API (Inception)",
+      "name": "API API",
       "url": "https://kin-lane.github.io/api/apis.json"
     },
     {
