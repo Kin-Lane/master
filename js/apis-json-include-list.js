@@ -45,7 +45,7 @@ function buildAPIsJSONIncludeList(apisJSON)
      	 	$includeUrl = $includeRootUrl.replace("apis.json","");
         $html = APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
         $('#jsonBrowser').append($html);
-				$("#include" + $includecount).width(500).height(100);
+				$("#include" + $includecount).width(400).height(75);
 		 	 	$includecount++;
 			});
 		}
