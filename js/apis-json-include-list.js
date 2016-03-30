@@ -5,7 +5,7 @@ function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$incl
 
 	if($includeToggle == 0 )
 		{
-  	html = '<div style="float:right; width: 325px; border: 1px solid #000;">';
+  	html = '<div style="float:right; width: 325px; border: 1px solid #000;margin-left: 35px;">';
 		}
 	else
 		{
