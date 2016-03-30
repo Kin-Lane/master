@@ -3,7 +3,7 @@ function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$incl
 	$thisslug = $includeName.toLowerCase();
 	$thisslug = $thisslug.replace(" ", "-");
 
-  html = '<div style="margin-left: 35px; margin-right: 10px; padding: 10px; display: inline; border: 1px solid #000; width: 400px;">';
+  html = '<div style="margin-left: 35px; margin-right: 10px; padding: 10px; display: inline; border: 1px solid #000; width: 400px; margin: auto;">';
   html = html + '<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>';
   html = html + '</div>';
 
