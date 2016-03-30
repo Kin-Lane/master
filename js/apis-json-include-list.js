@@ -51,7 +51,7 @@ function buildAPIsJSONIncludeList(apisJSON)
      		$includeName = apiVal['name'];
      	 	$includeRootUrl = apiVal['url'];
      	 	$includeUrl = $includeRootUrl.replace("apis.json","");
-        $html = APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecountm,$includeToggle);
+        $html = APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount,$includeToggle);
         $('#includeListing').append($html);
 		 	 	$includecount++;
 				if($includeToggle == 0 ) { $includeToggle = 1; } else { $includeToggle = 0; }
