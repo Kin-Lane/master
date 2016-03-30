@@ -13,7 +13,7 @@ function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$incl
 		}
 	else if($includeToggle == 2 )
 		{
-		html = '<div style="float:left; width: 250px; border: 1px solid #000; padding-left: 35px;">';
+		html = '<div style="width: 250px; border: 1px solid #000;">';
 		}
   html = html + '<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>';
   html = html + '</div>';
