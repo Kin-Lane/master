@@ -1,11 +1,14 @@
-function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
+function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount,$includeToggle)
 	{
 	$thisslug = $includeName.toLowerCase();
 	$thisslug = $thisslug.replace(" ", "-");
 
-  html = '<div id="include-' + $includecount + '" class="col-md-5">';
+	html = '';
+	if($includeToggle == 0) { html = html + '<div class="row">'; }
+  html = html + '<div id="include-' + $includecount + '" class="col-md-5">';
   html = html + '<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>';
   html = html + '</div>';
+	f($includeToggle == 1) { html = html + '</div>'; }
 
 	return html;
 	}
@@ -39,14 +42,16 @@ function buildAPIsJSONIncludeList(apisJSON)
   if(howmanyincludes>0)
   	{
 		$includecount = 0;
+		$includeToggle = 0;
     $.each(apisJSONIncludes, function(apiKey, apiVal) {
      		$includeName = apiVal['name'];
      	 	$includeRootUrl = apiVal['url'];
      	 	$includeUrl = $includeRootUrl.replace("apis.json","");
-        $html = APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
+        $html = APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount,$includeToggle)
         $('#includeListing').append($html);
 				//$("#include" + $includecount).width(400).height(75);
 		 	 	$includecount++;
+				if($includeToggle==0){ $includeToggle = 1; } else { $includeToggle = 0; }
 			});
 		}
 	}
