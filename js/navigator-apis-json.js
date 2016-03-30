@@ -359,6 +359,4 @@ function buildAPIsJSONNavigator(apisJSON)
 
 		 $includecount++;
 	});
-
-
 	}

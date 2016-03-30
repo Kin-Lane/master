@@ -103,36 +103,6 @@
 	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
-
-	  function checkLinkRot()
-	    {
-	    var linkArray = [];
-	    var links = document.getElementsByTagName("a");
-	    for(var i=0; i<links.length; i++) {
-	        linkArray.push(links[i].href);
-	    }
-	    url = "http://linkrot.api.laneworks.net/v1/links/";
-	    var myJsonString = JSON.stringify(linkArray);
-	    $.ajax({
-	        type: "POST",
-	        url: url,
-	        data: myJsonString,
-	        success: function (data) {
-	             $.each(data, function($Key,$Value) {
-	                $URL = $Value['URL'];
-	                $returnURL = $Value['returnURL'];
-	                var links = document.getElementsByTagName("a");
-	                for(var i=0; i<links.length; i++) {
-	                    if(links[i].href==$URL)
-	                        {
-	                        document.getElementsByTagName("a")[i].href=$returnURL;
-	                        }
-	                     }
-	             });
-	        }
-	       });
-	    }
-
 	</script>
 
 	<!-- Google Code for API Evangelist visitors -->
@@ -157,18 +127,6 @@
   	$url = "http://project.api.kinlane.com/project/view/";
   	$vlog = $.post($url, function() {});
   </script>
-
-  <script src="https://{{ site.org }}.github.io/master/js/editor-apis-json.js" type="text/javascript"></script>
-  <script src="https://{{ site.org }}.github.io/master/js/navigator-apis-json.js" type="text/javascript"></script>
-  <script src="https://{{ site.org }}.github.io/master/js/browser-apis-json.js" type="text/javascript"></script>;
-  <script src="https://{{ site.org }}.github.io/master/js/editor-swagger-json.js" type="text/javascript"></script>
-  <script src="https://{{ site.org }}.github.io/master/js/editor-config-json.js" type="text/javascript"></script>
-  <script src="https://{{ site.org }}.github.io/master/js/editor-keys-json.js" type="text/javascript"></script>
-  <script src="https://{{ site.org }}.github.io/master/js/editor-question-json.js" type="text/javascript"></script>
-  <script src="https://{{ site.org }}.github.io/master/js/master-swagger-from-apis-json.js" type="text/javascript"></script>
-  <script src="https://{{ site.org }}.github.io/master/js/master-code-from-apis-json.js" type="text/javascript"></script>
-
-  <script src="https://{{ site.org }}.github.io/{{ site.repo }}/js/load.js" type="text/javascript"></script>
 
   </body>
 
