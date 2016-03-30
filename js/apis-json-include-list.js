@@ -8,7 +8,7 @@ function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$incl
   html = html + '<div id="include-' + $includecount + '" class="col-md-5">';
   html = html + '<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>';
   html = html + '</div>';
-	f($includeToggle == 1) { html = html + '</div>'; }
+	if($includeToggle == 1) { html = html + '</div>'; }
 
 	return html;
 	}
