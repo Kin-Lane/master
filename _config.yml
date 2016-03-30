@@ -51,42 +51,6 @@ navigation:
     size2: 0
     padding: 0
     decorate: 0
-  - label1: Getting Started
-    link1: /getting-started/
-    size1: 80
-    extend: 0
-    label2:
-    link2:
-    size2: 60
-    padding: 0
-    decorate: 0
-  - label1: Blog
-    link1: /blog/
-    size1: 80
-    extend: 1
-    label2: RSS
-    link2: /blog.xml
-    size2: 60
-    padding: 5
-    decorate: 0
-  - label1: Support
-    link1: /support/
-    size1: 80
-    extend: 0
-    label2:
-    link2:
-    size2: 60
-    padding: 0
-    decorate: 0
-  - label1: Pricing
-    link1: /pricing/
-    size1: 80
-    extend: 0
-    label2:
-    link2:
-    size2: 60
-    padding: 0
-    decorate: 0
   - label1: Return to API Evangelist
     link1: http://apievangelist.com
     size1: 80
@@ -94,7 +58,7 @@ navigation:
     label2:
     link2:
     size2: 10
-    padding: 12
+    padding: 25
     decorate: 1
 
 # Footer Navigation
