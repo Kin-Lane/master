@@ -5,11 +5,11 @@ function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$incl
 
 	if($includeToggle == 0 )
 		{
-  	html = '<div style="float:right; width: 325px; border: 0px solid #000; padding-right: 35px;">';
+  	html = '<div style="float:right; width: 250px; border: 0px solid #000; padding-right: 35px;">';
 		}
 	else
 		{
-		html = '<div style="float:left; width: 425px; border: 0px solid #000; padding-left: 35px;">';
+		html = '<div style="float:left; width: 350px; border: 0px solid #000; padding-left: 35px;">';
 		}
   html = html + '<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>';
   html = html + '</div>';
@@ -54,7 +54,7 @@ function buildAPIsJSONIncludeList(apisJSON)
         $html = APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount,$includeToggle);
         $('#includeListing').append($html);
 		 	 	$includecount++;
-				if($includeToggle == 0 ) { $includeToggle = 1; } else { $includeToggle = 0; }
+				if($includeToggle == 0 ) { $includeToggle = 1; } else { $includeToggle++; }
 			});
 		}
 	}
