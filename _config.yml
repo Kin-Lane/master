@@ -42,9 +42,9 @@ project_summary: This is the master portal where I access all of the APIs I depe
 
 # Navigation
 navigation:
-  - label1: Home
+  - label1: All APIs
     link1: /index.html
-    size1: 80
+    size1: 100
     extend: 0
     label2:
     link2:
