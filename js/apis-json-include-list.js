@@ -5,11 +5,11 @@ function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$incl
 
 	if($includeToggle == 0 )
 		{
-  	html = '<div style="float:right; width: 250px; border: 0px solid #000; padding-right: 35px;">';
+  	html = '<div style="float:right; width: 150px; border: 0px solid #000; padding-right: 35px;">';
 		}
 	else
 		{
-		html = '<div style="float:left; width: 350px; border: 0px solid #000; padding-left: 35px;">';
+		html = '<div style="width: 250px; border: 0px solid #000;">';
 		}
   html = html + '<a href="' + $includeUrl + '" style="color: #000; font-size: 18px; text-decoration: none;" title="' + $includeName + '"><strong>' + $includeName + '</strong></a>';
   html = html + '</div>';
