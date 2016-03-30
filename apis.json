@@ -1,6 +1,6 @@
 {
   "name": "Kin Lane - Master",
-  "description": "This is the master portal where I access all of the APIs I depend on to run the API Evangelist network of sites. Visit the getting started page to kick things off, and if you have any questions let me know.",
+  "description": "This is a master list of all of the APIs that I operate, and I make publicly available for anyone to use. Each API is intended to operate independent, within its own portal, but taking advantage of some common elements. Just click on the name of the API and you will be taken to its specific portal.",
   "image": "https://s3.amazonaws.com/kinlane-productions/bw-icons/kin.png",
   "tags": [
     "Kin Lane",
