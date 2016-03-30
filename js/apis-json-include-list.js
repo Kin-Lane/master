@@ -1,4 +1,4 @@
-function APIJSONBrowserGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
+function APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
 	{
 	$thisslug = $includeName.toLowerCase();
 	$thisslug = $thisslug.replace(" ", "-");
@@ -12,16 +12,16 @@ function APIJSONBrowserGetIncludeListing($includeName,$includeRootUrl,$includeUr
 	return html;
 	}
 
-function loadAPIsJSONBrowser($apisjsonURL)
+function loadAPIsJSONIncludeList($apisjsonURL)
 	{
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) {
 		$MasterAPISJSON = apisJSON;
-		buildAPIsJSONBrowser(apisJSON);
+		buildAPIsJSONIncludeList(apisJSON);
 		document.getElementById("jsonBrowser").style.display='';
 		});
   }
 
-function buildAPIsJSONBrowser(apisJSON)
+function buildAPIsJSONIncludeList(apisJSON)
 	{
 	$apisJSONName = apisJSON['name'];
  	$apisJSONDesc = apisJSON['description'];
@@ -45,7 +45,7 @@ function buildAPIsJSONBrowser(apisJSON)
      		$includeName = apiVal['name'];
      	 	$includeRootUrl = apiVal['url'];
      	 	$includeUrl = $includeRootUrl.replace("apis.json","");
-        $html = APIJSONBrowserGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
+        $html = APIJSONGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
         $('#apisJSONListing').append($html);
 		 	 	$includecount++;
 			});
