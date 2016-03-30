@@ -18,7 +18,6 @@ function loadAPIsJSONIncludeList($apisjsonURL)
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) {
 		$MasterAPISJSON = apisJSON;
 		buildAPIsJSONIncludeList(apisJSON);
-		document.getElementById("jsonBrowser").style.display='';
 		});
   }
 
