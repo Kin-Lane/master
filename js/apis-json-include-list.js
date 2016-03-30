@@ -40,11 +40,12 @@ function buildAPIsJSONBrowser(apisJSON)
 
   if(howmanyincludes>0)
   	{
+		$includecount = 0;
     $.each(apisJSONIncludes, function(apiKey, apiVal) {
      		$includeName = apiVal['name'];
      	 	$includeRootUrl = apiVal['url'];
      	 	$includeUrl = $includeRootUrl.replace("apis.json","");
-        $html = APIJSONBrowserGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$apicount)
+        $html = APIJSONBrowserGetIncludeListing($includeName,$includeRootUrl,$includeUrl,$includecount)
         $('#apisJSONListing').append($html);
 		 	 	$includecount++;
 			});
