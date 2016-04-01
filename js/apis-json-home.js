@@ -265,28 +265,17 @@ function APIJSONNavigatorGetIncludeListing($includeName,$includeRootUrl,$include
 	}
 
 function loadAPIsJSONNavigator($apisjsonURL)
-    {
-
+  {
 	var jqxhr = $.getJSON($apisjsonURL, function(apisJSON) {
-
-		// Set our Master Store
 		$MasterAPISJSON = apisJSON;
-
 		buildAPIsJSONNavigator(apisJSON);
-
 	});
-
-	// Set another completion function for the request above
 	jqxhr.complete(function() {
-
 	  	document.getElementById("jsonNavigator").style.display='';
-
-        });
-
-    }
+    	});
+	}
 
 function buildAPIsJSONNavigator(apisJSON)
-
 	{
 	$apisJSONName = apisJSON['name'];
 
@@ -295,42 +284,39 @@ function buildAPIsJSONNavigator(apisJSON)
  	$apisJSONURL = apisJSON['url'];
 
  	// Header
-    $html = APIJSONNavigatorGetHeader($apisJSONName,$apisJSONDesc,$apisJSONURL,$apisJSONLogo,$apisJSONURL);
-    $('#jsonNavigatorTable').append($html);
+  $html = APIJSONNavigatorGetHeader($apisJSONName,$apisJSONDesc,$apisJSONURL,$apisJSONLogo,$apisJSONURL);
+  $('#jsonNavigatorTable').append($html);
 
-    apisJSONTags = apisJSON['tags'];
-    apisJSONAPIs = apisJSON['apis'];
-    apisJSONIncludes = apisJSON['include'];
-    apisJSONMaintainers = apisJSON['maintainers'];
+  apisJSONTags = apisJSON['tags'];
+  apisJSONAPIs = apisJSON['apis'];
+  apisJSONIncludes = apisJSON['include'];
+  apisJSONMaintainers = apisJSON['maintainers'];
 
-    howmanyapis = apisJSONAPIs.length;
+  howmanyapis = apisJSONAPIs.length;
 
-     $.each(apisJSONAPIs, function(apiKey, apiVal) {
+   $.each(apisJSONAPIs, function(apiKey, apiVal) {
 
-     	 $apiName = apiVal['name'];
-     	 $apiDesc = apiVal['description'];
-     	 $apiImage = apiVal['image'];
-     	 $apiHumanURL = apiVal['humanURL'];
-     	 $apiBaseURL = apiVal['baseURL'];
-		 $apiTags = apiVal['tags'];
+   	$apiName = apiVal['name'];
+   	$apiDesc = apiVal['description'];
+   	$apiImage = apiVal['image'];
+   	$apiHumanURL = apiVal['humanURL'];
+   	$apiBaseURL = apiVal['baseURL'];
+	 	$apiTags = apiVal['tags'];
+	 	$apiProperties = apiVal['properties'];
 
-         //$html = APIJSONNavigatorGetAPIListing($apiName,$apiDesc,$apiImage,$apiHumanURL,$apicount)
-         //$('#jsonNavigatorTable').append($html);
+	 	$.each($apiProperties, function(propertyKey, propertyVal) {
 
-		 $apiProperties = apiVal['properties'];
-		 $.each($apiProperties, function(propertyKey, propertyVal) {
-
-		 	$propertyType = propertyVal['type'];
-		 	$propertyURL = propertyVal['url'];
+	 		$propertyType = propertyVal['type'];
+	 		$propertyURL = propertyVal['url'];
 
 			$Property = APIJSONNavigatorPropertyListing($apiName,$propertyType,$propertyURL,$apicount,$propertycount);
 			$('#jsonNavigatorTable').append($Property);
 
-		 	$propertycount++;
+	 		$propertycount++;
 
-		 	});
+	 		});
 
-		 $apiContact = apiVal['contact'];
-		 $apicount++;
+	 	$apiContact = apiVal['contact'];
+	 	$apicount++;
 		});
 	}
