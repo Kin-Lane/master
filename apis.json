@@ -102,11 +102,15 @@
     },
     {
       "name": "Idea API",
-      "url": "https://kin-lane.github.io/idea/apis.json"
+      "url": "https://kin-lane.github.io/ideas/apis.json"
     },
     {
       "name": "Image API",
       "url": "https://kin-lane.github.io/image/apis.json"
+    },
+    {
+      "name": "Image Manipulation API",
+      "url": "https://kin-lane.github.io/image-manipulation/apis.json"
     },
     {
       "name": "Job API",
@@ -163,6 +167,10 @@
     {
       "name": "Scraping API",
       "url": "https://kin-lane.github.io/scraping/apis.json"
+    },
+    {
+      "name": "Screen Capture API",
+      "url": "https://kin-lane.github.io/screen-capture/apis.json"
     },
     {
       "name": "Slide API",
